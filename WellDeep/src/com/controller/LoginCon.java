@@ -33,8 +33,7 @@ public class LoginCon implements ICommand {
 		if (info != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
-//			System.out.println(info.getC_num());
-//			System.out.println(info.getC_name());
+			System.out.println(info.getP_id() +"¥‘ ¿‘¿Â");
 			moveURL = "index.jsp";
 		}
 
