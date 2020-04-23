@@ -374,7 +374,7 @@ ul.contact li a.icon-rss:before
 	{
 	}
 
-#triangle-up {
+/* #triangle-up {
 	margin: 0 auto;
 	width: 0;
 	height: 0;
@@ -382,7 +382,7 @@ ul.contact li a.icon-rss:before
 	border-right: 60px solid transparent;
 	border-bottom: 30px solid #3D3D3D;
 }
-
+ */
 /*********************************************************************************/
 /* Logo                                                                          */
 /*********************************************************************************/
@@ -432,16 +432,24 @@ ul.contact li a.icon-rss:before
 	#menu-wrapper
 	{
 		background: #3D3D3D;
+		
 	}
 
 	#menu
 	{
 		margin: 0px auto;
+		
 	}
 	
 	#menu ul
 	{
-		text-align: center;
+		text-align: right;
+		position: fixed;
+  		top: 0;
+  		/* width: 100%; */
+  		left: 0;
+  		right: 0;
+  		background-color: #3D3D3D;
 	}
 	
 	#menu li
@@ -455,6 +463,7 @@ ul.contact li a.icon-rss:before
 		margin-left: 0.50em;
 		padding: 2em 1.5em 1em 1.5em;
 		letter-spacing: 0.20em;
+		padding-top: 15px;
 		text-decoration: none;
 		font-size: 0.90em;
 		font-weight: 600;
