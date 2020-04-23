@@ -1,34 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by TEMPLATED
-http://templated.co
-Released for free under the Creative Commons Attribution License
-
-Name       : Plushiness 
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20131117
-
--->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<meta charset="EUC-KR">
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
-
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
+<title>Insert title here</title>
 </head>
 <body>
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
 			<span class="icon icon-group"></span>
-			<h1><a href="#">ì›°ë”¥</a></h1>
+			<h1><a href="#">À£µö</a></h1>
 			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
 		</div>
 		<!-- <div id="triangle-up"></div> -->
@@ -52,12 +40,12 @@ Released   : 20131117
     <form action="LoginService.do">
     	<input style = "width: 120px; height: 12px; font-size: 10px;" type="text" id="loginId" name="p_id" placeholder="ID" >
     	<input style = "width: 120px; height: 12px; font-size: 10px;" type="password" id="loginPw" name="p_pw" placeholder="Password" >
-    	<button type="submit" class="btn btn-primary">ë¡œê·¸ì¸</button>
+    	<button type="submit" class="btn btn-primary">·Î±×ÀÎ</button>
     </form>
     <input type="button" value="Join">
     
     </div>
- <!--  <button type="submit"  disabled="disabled">ë¡œê·¸ì¸</button> -->
+ <!--  <button type="submit"  disabled="disabled">·Î±×ÀÎ</button> -->
 
 
 			</ul>
@@ -70,7 +58,7 @@ Released   : 20131117
 			<div class="ebox1">
 				<div class="hexagon"><span class="icon icon-lightbulb"></span></div>
 				<div class="title">
-					<h2>ì„œë¹„ìŠ¤ ì†Œê°œ</h2>
+					<h2>¼­ºñ½º ¼Ò°³</h2>
 					<span class="byline">Service Introduction</span>
 				</div>
 				<p>This is <strong>Plushiness</strong>, a free, fully standards-compliant CSS template designed by 
@@ -110,18 +98,5 @@ Released   : 20131117
  <p>In feugiat ante elementum nulla arcu.</p>
   <p>Maecenas vulputate faucibus, convallis ligula ipsum dolor feugiat tempus adipiscing.</p>
 <ul class="actions"><li><a class="button">Learn more</a></li></ul></section>
-
-
-<!-- <section class="contact-info"><h4 class="major">Get in Touch</h4><ul class="contact">
-<li class="icon solid fa-phone">(000) 000-0000</li>
-<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-<li class="icon brands fa-twitter"><a href="#">@untitled-tld</a></li>
-<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled</a></li></ul>
-<ul class="contact"><li class="icon solid fa-home">Untitled Corp<br> 1234 Fictional Road<br> Suite 5432<br> Nashville, TN 00000<br> USA</li></ul></section></div>
-<div class="copyright"><p>Â© Untitled Corp. All rights reserved.</p></div>
-</div>
- -->
-
-			
 </body>
 </html>
