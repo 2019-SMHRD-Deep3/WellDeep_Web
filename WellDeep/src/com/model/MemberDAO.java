@@ -133,6 +133,7 @@ public class MemberDAO {
 //				System.out.println(p_email);
 //				System.out.println(l_grade);
 				info = new MemberDTO(p_id, p_pw, p_addr, p_phone, p_name, p_sex, c_num, c_name, c_sex, c_age, c_photo);
+				System.out.println(info.getP_id());
 				System.out.println(info.getC_num());
 				System.out.println(info.getC_name());
 			}
