@@ -17,7 +17,7 @@
 		<div id="logo">
 			<span class="icon icon-group"></span>
 			<h1><a href="#">웰딥</a></h1>
-			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
+			<span>Design by <a href="http://templated.co" rel="nofollow">WellDeep</a></span>
 		</div>
 		<!-- <div id="triangle-up"></div> -->
 	</div>
@@ -25,24 +25,32 @@
 <div id="menu-wrapper">
 		<div id="menu">
 			<ul>
-				<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+				<li class="current_page_item"><a href="#" accesskey="1" title="">Home</a></li>
 				<li><a href="#" accesskey="2" title="">About Us</a></li>
 				<li><a href="#" accesskey="3" title="">Contact Us</a></li>
 				
 				
-				<!-- <li><a href="#" accesskey="4" title="">Login</a></li>
-				<li><a href="#" accesskey="5" title="">Join</a></li>
-				 -->
+			
 				
 
 
-	<div style="position: relative; float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">  
+	<div style="position: relative; float: right; width: 500px; text-align: right; margin-top: 10px; margin-right: 120px;">  
     <form action="LoginService.do">
-    	<input style = "width: 120px; height: 12px; font-size: 10px;" type="text" id="loginId" name="p_id" placeholder="ID" >
-    	<input style = "width: 120px; height: 12px; font-size: 10px;" type="password" id="loginPw" name="p_pw" placeholder="Password" >
-    	<button type="submit" class="btn btn-primary">로그인</button>
+    	<input style = "width: 150px; height: 15px; font-size: 10px;" type="text" id="loginId" name="p_id" placeholder="ID" >
+    	<input style = "width: 150px; height: 15px; font-size: 10px;" type="password" id="loginPw" name="p_pw" placeholder="Password" >
+ 		<!-- <button type="submit" class="btn">로그인</button> 
+    	<button style ="position: absolute;"type="submit" class="btn">회원가입</button>
+    	 -->
+ 
+ 		<!-- <a href="#" class="btn purple">로그인</a>
+		<a href="#" class="btn purple">회원가입</a> -->
+		<a href="#" class="btn purple"><input type = "submit" value="" 
+
+ style="background-color:transparent; border:0px transparent solid;">로그인</a>
+		<a href="#" class="btn purple">회원가입</a>
+		
+</div>
     </form>
-    <input type="button" value="Join">
     
     </div>
  <!--  <button type="submit"  disabled="disabled">로그인</button> -->
