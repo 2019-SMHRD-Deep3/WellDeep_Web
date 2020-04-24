@@ -118,5 +118,5 @@ insert into voice values (voice_seq.nextval,SYSDATE,'voice_file');
 insert into record values (record_seq.nextval,'record_file',sysdate,1111,1,1,1);
 insert into alarm values (alarm_seq.nextval,sysdate,1111,1,1,1,1);
 insert into post values (post_seq.nextval,'title','context',sysdate,1111,1,1);
-select * from parents where perents_id='1111' and perents_pw='1111';
+select * from parents where perents_id='t1t1';
 commit
