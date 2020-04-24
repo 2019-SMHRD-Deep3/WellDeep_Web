@@ -44,7 +44,12 @@
 				 -->
 
 
+<script language=javascript>
+      if ("<%=request.getParameter("success")%>"=="False") {
+                 alert('아이디나 비밀번호를 확인해주세요');
 
+      } 
+   </script>
 				<div
 					style="position: relative; float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
 					<%
@@ -57,8 +62,8 @@
 							type="password" id="loginPw" name="p_pw" placeholder="Password">
 						<button type="submit" class="btn btn-primary">로그인</button>
 					</form>
-					<form action="JoinService.do">
-					<input type="button" value="회원가입">
+					<form action="join.jsp">
+						<button type="submit">회원가입</button>
 					</form>
 					<%
 						} else {
@@ -67,8 +72,8 @@
 					<li><%= info.getP_id() %> 님 환영합니다.</li>
 						<button type="submit" class="btn btn-primary">로그아웃</button>
 					</form>
-					<form action="UpdateUserService.do">
-					<input type="button" value="정보수정">
+					<form action="Update.jsp">
+						<button type="submit">정보수정</button>
 					</form>
 					<%
 						}
