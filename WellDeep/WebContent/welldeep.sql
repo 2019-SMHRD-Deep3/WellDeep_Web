@@ -12,6 +12,8 @@ drop table parents;
 drop table img;
 drop sequence img_seq;
 
+select * from PARENTS;
+
 create table parents (
 perents_id varchar2(50) PRIMARY key,
 perents_pw varchar2(50) not null,

@@ -10,7 +10,6 @@ import com.model.MemberDTO;
 import front.ICommand;
 
 public class LoginCon implements ICommand {
-
 	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -35,7 +34,7 @@ public class LoginCon implements ICommand {
 			session.setAttribute("info", info);
 			System.out.println(info.getP_id() +"¥‘ ¿‘¿Â");
 			moveURL = "index.jsp";
-		}
+		} 
 
 //		if (request.getParameter("detail") != null) {
 //			moveURL = "result.jsp";
@@ -58,7 +57,6 @@ public class LoginCon implements ICommand {
 //		}
 
 		return moveURL;
-
 	}
 
 }

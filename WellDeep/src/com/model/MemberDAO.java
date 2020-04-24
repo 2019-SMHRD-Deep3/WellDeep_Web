@@ -53,6 +53,8 @@ public class MemberDAO {
 	}
 	
 	public int join(MemberDTO dto) {
+		System.out.println("dao로 넘어온 비번:" +dto.getP_pw());
+		System.out.println("dao로 넘어온 아이디:"+dto.getP_id());
 
 		int cnt = 0;
 
@@ -142,6 +144,9 @@ public class MemberDAO {
 			e.printStackTrace();
 		} finally {
 			close();
+		}
+		if(info == null) {
+			System.out.println("null");
 		}
 		
 		return info;
