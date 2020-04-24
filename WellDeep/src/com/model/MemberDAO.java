@@ -53,13 +53,8 @@ public class MemberDAO {
 	}
 	
 	public int join(MemberDTO dto) {
-		System.out.println("dao로 넘어온 비번:" +dto.getP_pw());
-		System.out.println("dao로 넘어온 아이디:"+dto.getP_id());
-
 		int cnt = 0;
-
 		try {
-
 			getConnection();
 			String sql = "insert into parents values(?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
@@ -82,7 +77,6 @@ public class MemberDAO {
 		
 	public MemberDTO login(MemberDTO dto) {
 		MemberDTO info = null;
-		
 		String p_id = null;
 		String p_pw = null;
 		String p_addr = null;
@@ -144,9 +138,6 @@ public class MemberDAO {
 			e.printStackTrace();
 		} finally {
 			close();
-		}
-		if(info == null) {
-			System.out.println("null");
 		}
 		
 		return info;

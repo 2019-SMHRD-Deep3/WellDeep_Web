@@ -12,8 +12,6 @@ drop table parents;
 drop table img;
 drop sequence img_seq;
 
-select * from PARENTS;
-
 create table parents (
 perents_id varchar2(50) PRIMARY key,
 perents_pw varchar2(50) not null,
@@ -119,4 +117,5 @@ insert into record values (record_seq.nextval,'record_file',sysdate,1111,1,1,1);
 insert into alarm values (alarm_seq.nextval,sysdate,1111,1,1,1,1);
 insert into post values (post_seq.nextval,'title','context',sysdate,1111,1,1);
 select * from parents where perents_id='t1t1';
+select * from PARENTS;
 commit
