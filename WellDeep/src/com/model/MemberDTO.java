@@ -23,7 +23,7 @@ public class MemberDTO {
 		this.p_phone = p_phone;
 		this.p_name = p_name;
 		this.p_sex = p_sex;
-		this.setC_cnt(c_cnt);
+		this.c_cnt = c_cnt;
 	}
 	
 	// ·Î±×ÀÎ

@@ -33,8 +33,8 @@ public class LoginCon implements ICommand {
 		if (info != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
-//			System.out.println(info.getC_num());
-//			System.out.println(info.getC_name());
+			System.out.println(info.getP_id() +"님 입장");
+			System.out.println(info.getC_name());
 			moveURL = "index.jsp";
 		}
 
@@ -54,9 +54,10 @@ public class LoginCon implements ICommand {
 //		}
 //		else if(info == null){
 //			moveURL = "login.jsp?success=False";
-//		}else {
-//			moveURL = "index.jsp";
-//		}
+		else {
+//			System.out.println("로그인실패");
+			moveURL = "index.jsp?success=False";
+		}
 
 		return moveURL;
 
