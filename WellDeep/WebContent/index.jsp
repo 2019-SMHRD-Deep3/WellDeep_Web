@@ -15,6 +15,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
@@ -33,18 +34,35 @@
 	<div id="menu-wrapper">
 		<div id="menu">
 			<ul>
+
 				<li class="current_page_item"><a href="#" accesskey="1"
 					title="">Homepage</a></li>
 				<li><a href="#" accesskey="2" title="">About Us</a></li>
 				<li><a href="#" accesskey="3" title="">Contact Us</a></li>
 
 
-				<!-- <li><a href="#" accesskey="4" title="">Login</a></li>
-				<li><a href="#" accesskey="5" title="">Join</a></li>
-				 -->
 
 
+<!-- 	<div style="position: relative; float: right; width: 500px; text-align: right; margin-top: 10px; margin-right: 120px;">  
+    <form action="LoginService.do">
+    	<input style = "width: 150px; height: 15px; font-size: 10px;" type="text" id="loginId" name="p_id" placeholder="ID" >
+    	<input style = "width: 150px; height: 15px; font-size: 10px;" type="password" id="loginPw" name="p_pw" placeholder="Password" >
+		<a href="#" class="btn purple"><input type = "submit" value="" 
 
+ style="background-color:transparent; border:0px transparent solid;">로그인</a>
+		<a href="#" class="btn purple">회원가입</a>
+		
+</div>
+    </form>
+    
+    </div>
+ -->
+<script language=javascript>
+      if ("<%=request.getParameter("success")%>"=="False") {
+                 alert('아이디나 비밀번호를 확인해주세요');
+
+      } 
+   </script>
 				<div
 					style="position: relative; float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
 					<%
@@ -57,8 +75,8 @@
 							type="password" id="loginPw" name="p_pw" placeholder="Password">
 						<button type="submit" class="btn btn-primary">로그인</button>
 					</form>
-					<form action="JoinService.do">
-					<input type="button" value="회원가입">
+					<form action="join.jsp">
+						<button type="submit">회원가입</button>
 					</form>
 					<%
 						} else {
@@ -67,15 +85,14 @@
 					<li><%= info.getP_id() %> 님 환영합니다.</li>
 						<button type="submit" class="btn btn-primary">로그아웃</button>
 					</form>
-					<form action="UpdateUserService.do">
-					<input type="button" value="정보수정">
+					<form action="Update.jsp">
+						<button type="submit">정보수정</button>
 					</form>
 					<%
 						}
 					%>
 
 				</div>
-				<!--  <button type="submit"  disabled="disabled">로그인</button> -->
 
 
 			</ul>

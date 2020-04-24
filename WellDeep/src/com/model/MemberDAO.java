@@ -53,11 +53,8 @@ public class MemberDAO {
 	}
 	
 	public int join(MemberDTO dto) {
-
 		int cnt = 0;
-
 		try {
-
 			getConnection();
 			String sql = "insert into parents values(?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
@@ -80,7 +77,6 @@ public class MemberDAO {
 		
 	public MemberDTO login(MemberDTO dto) {
 		MemberDTO info = null;
-		
 		String p_id = null;
 		String p_pw = null;
 		String p_addr = null;
