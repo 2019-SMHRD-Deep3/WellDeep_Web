@@ -13,6 +13,15 @@
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 <title>Insert title here</title>
+<style>
+
+#header-wrapper {
+	overflow: hidden;
+	padding: 50px 0px 0px 0px;
+	background: #FFC000 url(images/overlay.png) repeat;
+}
+</style>
+
 </head>
 <body>
 
@@ -26,14 +35,16 @@
 				<h1>
 					<a href="#">웰딥</a>
 				</h1>
-				<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
+				<span>Design by <a href="http://templated.co" rel="nofollow">WellDeep</a></span>
 			</div>
 			<!-- <div id="triangle-up"></div> -->
 		</div>
 	</div>
 	<div id="menu-wrapper">
-		<div id="menu">
+		<div id="menu" style="position: relative; z-index: 2;">
 			<ul>
+
+
 
 				<li class="current_page_item"><a href="#" accesskey="1"
 					title="">Homepage</a></li>
@@ -43,50 +54,53 @@
 
 
 
-<!-- 	<div style="position: relative; float: right; width: 500px; text-align: right; margin-top: 10px; margin-right: 120px;">  
-    <form action="LoginService.do">
-    	<input style = "width: 150px; height: 15px; font-size: 10px;" type="text" id="loginId" name="p_id" placeholder="ID" >
-    	<input style = "width: 150px; height: 15px; font-size: 10px;" type="password" id="loginPw" name="p_pw" placeholder="Password" >
-		<a href="#" class="btn purple"><input type = "submit" value="" 
 
+
+   
+   
+   
+   <!-- <div style="position: relative; float: right; width: 500px; text-align: right; margin-top: 10px; margin-right: 120px;">  
+   
+   	<form action="LoginService.do">
+    	
+		<a href="#" class="btn purple"><input type = "submit" value="" 
  style="background-color:transparent; border:0px transparent solid;">로그인</a>
 		<a href="#" class="btn purple">회원가입</a>
-		
+			
 </div>
     </form>
     
     </div>
- -->
-<script language=javascript>
-      if ("<%=request.getParameter("success")%>"=="False") {
-                 alert('아이디나 비밀번호를 확인해주세요');
-
-      } 
-   </script>
+   
+    -->
+   
+   
+   
+   
 				<div
 					style="position: relative; float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
 					<%
 						if (info == null) {
 					%>
-					<form action="LoginService.do">
-						<input style="width: 120px; height: 12px; font-size: 10px;"
-							type="text" id="loginId" name="p_id" placeholder="ID"> <input
-							style="width: 120px; height: 12px; font-size: 10px;"
-							type="password" id="loginPw" name="p_pw" placeholder="Password">
+				<!-- 	<form action="LoginService.do">
+					
 						<button type="submit" class="btn btn-primary">로그인</button>
-					</form>
+					</form> 
+					 -->
 					<form action="join.jsp">
-						<button type="submit">회원가입</button>
+						<button type="submit" class= "btn purple" >로그인 / 회원가입</button>
+					
 					</form>
 					<%
 						} else {
 					%>
 					<form action="LogoutService.do">
-					<li><%= info.getP_id() %> 님 환영합니다.</li>
-						<button type="submit" class="btn btn-primary">로그아웃</button>
+					<li style = "color:#fff;"><%= info.getP_id() %> 님 환영합니다.</li>
+						<button type="submit" class= "btn purple">로그아웃</button>
 					</form>
-					<form action="update.jsp">
-						<button type="submit">정보수정</button>
+					<form action="Update.jsp">
+						<button type="submit" class= "btn purple" >정보수정</button>
+
 					</form>
 					<%
 						}
