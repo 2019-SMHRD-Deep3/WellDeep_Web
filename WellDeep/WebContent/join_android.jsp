@@ -39,5 +39,5 @@ if (type.equals("join")) {
 	ChildDAO dao = ChildDAO.getDAO();
 	int cnt = dao.join(dto);
 
-}
+} 
 %>

@@ -77,14 +77,14 @@ post_title varchar2(500) not null,
 post_context varchar2(2000) not null,
 post_time date,
 perents_id varchar2(50) not null,
-img_number varchar2(50) not null,
-voice_number varchar2(50) not null,
+--img_number varchar2(50) not null,
+--voice_number varchar2(50) not null,
 constraint fk_perents_id_post foreign key(perents_id)
-references parents,
-constraint fk_img_number_post foreign key(img_number)
-references img,
-constraint fk_voice_number_post foreign key(voice_number)
-references voice
+references parents
+--constraint fk_img_number_post foreign key(img_number)
+--references img,
+--constraint fk_voice_number_post foreign key(voice_number)
+--references voice
 );
 create sequence post_seq start with 1 increment by 1 maxvalue 9999 cycle nocache;
 
@@ -117,8 +117,9 @@ insert into img values (img_seq.nextval,SYSDATE,'img_file');
 insert into voice values (voice_seq.nextval,SYSDATE,'voice_file');
 insert into record values (record_seq.nextval,'record_file',sysdate,1111,1,1,1);
 insert into alarm values (alarm_seq.nextval,sysdate,1111,1,1,1,1);
-insert into post values (post_seq.nextval,'title','context',sysdate,1111,1,1);
+insert into post values (post_seq.nextval,'title','context',sysdate,1111);
 select * from parents where perents_id='t1t1';
 select * from PARENTS;
 select * from CHILDREN;
+select * from POST;
 commit
