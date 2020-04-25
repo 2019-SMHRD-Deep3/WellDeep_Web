@@ -51,10 +51,11 @@ private static final long serialVersionUID = 1L;
 		ICommand iCommand = map.get(resultURL);
 		moveURL = iCommand.execute(request, response);
 		
-//		if(resultURL.equals("ReadPost.do")) {
-//			response.getWriter().print(moveURL);
-//			return;
-//		}
+		if(resultURL.equals("UpdateUserService.do")) {
+			System.out.println("이 데이터는 무엇이죠 "+moveURL);
+			response.getWriter().print(moveURL);
+			return ;
+		}
 //		if(resultURL.equals("ReadReply.do")) {
 //			response.getWriter().print(moveURL);
 //			return;
