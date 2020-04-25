@@ -100,6 +100,7 @@
 					</form>
 					<form action="Update.jsp">
 						<button type="submit" class= "btn purple" >정보수정</button>
+
 					</form>
 					<%
 						}

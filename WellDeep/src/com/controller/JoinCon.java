@@ -42,7 +42,7 @@ public class JoinCon implements ICommand{
 		if(cnt == 0) {
 			moveURL = "join.jsp?joinsuccess=False";
 		}else {
-			moveURL = "index.jsp";
+			moveURL = "join.jsp?joinsuccess=True";
 		}
 		
 		return moveURL;
