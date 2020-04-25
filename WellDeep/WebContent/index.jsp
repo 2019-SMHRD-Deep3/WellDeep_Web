@@ -85,7 +85,7 @@
 					<li><%= info.getP_id() %> 님 환영합니다.</li>
 						<button type="submit" class="btn btn-primary">로그아웃</button>
 					</form>
-					<form action="Update.jsp">
+					<form action="update.jsp">
 						<button type="submit">정보수정</button>
 					</form>
 					<%

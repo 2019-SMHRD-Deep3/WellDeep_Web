@@ -32,10 +32,13 @@
 	</div>
 	<script language=javascript>
 
-    if ("<%=request.getParameter("joinsuccess")%>
-		" == "False") {
+    if ("<%=request.getParameter("joinsuccess")%>" == "False") {
 			alert('회원가입 실패');
-		}
+	}
+    if("<%=request.getParameter("joinsuccess")%>" == "True"){
+    	alert('회원가입 성공');
+    	location.href = "index.jsp";
+    }
 	</script>
 
 	<div id="menu-wrapper">
@@ -67,7 +70,7 @@
 						<li><%=info.getP_id()%> 님 환영합니다.</li>
 						<button type="submit" class="btn btn-primary">로그아웃</button>
 					</form>
-					<form action="UpdateUserService.do">
+					<form action="update.jsp">
 						<input type="button" value="정보수정">
 					</form>
 					<%
@@ -94,14 +97,12 @@
 					type="text" class="form-control input-lg" placeholder="전화번호를 입력하세요"><br>
 				<input name="p_name"
 					type="text" class="form-control input-lg" placeholder="이름을 입력하세요"><br>	
-				<input type="radio" name="p_sex" value="남성">남성
+				<input type="radio" name="p_sex" value="남성" checked="checked">남성
 				<input type="radio" name="p_sex" value="여성">여성<br>	
 				<button type="submit" class="btn btn-primary">가입하기</button>
 				<button type="reset" class="btn btn-primary">새로쓰기</button>
 			</form>
 		</div>
-
-		<div id="copyright" class="container">
-			<div class="inner">
+</div>
 </body>
 </html>
