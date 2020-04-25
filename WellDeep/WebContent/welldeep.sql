@@ -21,10 +21,12 @@ perents_name varchar2(50) not null,
 perents_sex varchar2(20) not null
 );
 
+select * from CHILDREN;
+
 create table children (
 children_number varchar2(50) PRIMARY key,
 children_name varchar2(50) not null,
-children_sex varchar2(10) not null,
+children_sex varchar2(20) not null,
 children_age varchar2(20) not null,
 children_photo varchar2(1000),
 perents_id varchar2(50) not null,
@@ -118,4 +120,5 @@ insert into alarm values (alarm_seq.nextval,sysdate,1111,1,1,1,1);
 insert into post values (post_seq.nextval,'title','context',sysdate,1111,1,1);
 select * from parents where perents_id='t1t1';
 select * from PARENTS;
+select * from CHILDREN;
 commit
