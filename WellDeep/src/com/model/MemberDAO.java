@@ -55,11 +55,8 @@ public class MemberDAO {
 	}
 
 	public int join(MemberDTO dto) {
-
 		int cnt = 0;
-
 		try {
-
 			getConnection();
 			String sql = "insert into parents values(?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);

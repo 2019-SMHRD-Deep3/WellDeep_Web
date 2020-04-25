@@ -57,15 +57,14 @@ public class ChildDAO {
 		try {
 
 			getConnection();
-			String sql = "insert into children values(?,?,?,?,?,?)";
+			String sql = "insert into children values(children_seq.nextval,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setString(1, dto.getC_num());
-			psmt.setString(2, dto.getC_name());
-			psmt.setString(3, dto.getC_sex());
-			psmt.setString(4, dto.getC_age());
-			psmt.setString(5, dto.getC_photo());
-			psmt.setString(6, dto.getP_id());
+			psmt.setString(1, dto.getC_name());
+			psmt.setString(2, dto.getC_sex());
+			psmt.setString(3, dto.getC_age());
+			psmt.setString(4, dto.getC_photo());
+			psmt.setString(5, dto.getP_id());
 			
 			cnt = psmt.executeUpdate();
 
