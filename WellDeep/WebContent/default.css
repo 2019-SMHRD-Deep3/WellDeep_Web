@@ -366,8 +366,9 @@ ul.contact li a.icon-rss:before
 	#header-wrapper
 	{
 		overflow: hidden;
-		padding: 5em 0em 0em 0em;
+		padding: 50px 0em 0em 0em;
 		background: #FFC000 url(images/overlay.png) repeat;
+		height: 387px;
 	}
 
 	#header
@@ -389,7 +390,7 @@ ul.contact li a.icon-rss:before
 
 	#logo
 	{
-		padding: 5em 0em;
+		padding: 50px 0em;
 		text-align: center;
 	}
 	
@@ -456,6 +457,7 @@ ul.contact li a.icon-rss:before
 	#menu li
 	{
 		display: inline-block;
+		color: aliceblue;
 	}
 	
 	#menu li a, #menu li span
@@ -464,7 +466,7 @@ ul.contact li a.icon-rss:before
 		margin-left: 0.50em;
 		padding: 2em 1.5em 0em 1.5em;
 		letter-spacing: 0.20em;
-		padding-top: 15px;
+		padding-top: 21px;
 		text-decoration: none;
 		margin-left: 200px;
 		font-weight: 600;
@@ -655,7 +657,9 @@ ul.contact li a.icon-rss:before
 	overflow: hidden;
 	padding: 10em 0em;
 	background: beige;
-	text-align: center;
+
+	height: 1200px;
+	position: relative;
 }
 
 #featured
@@ -1077,6 +1081,12 @@ $colorC: #8e44ad;
     color: #fff; 
     border-bottom: 2px solid #ccc;
      transition: background 0.12s ease; 
+     padding: 5px;
+    font-size: 13px;
+    background: border-box;
+    
+    
+   
      } 
      
 .btn:active 
@@ -1085,13 +1095,10 @@ $colorC: #8e44ad;
 	top: 2px;
 	margin-bottom: 2px;
 	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.42);
+	background: black;
 	 } 
 
-.btn 
-{ 
-	padding: 5px;
-    font-size: 13px;
-} 
+
 
 .purple:link, .purple:visited 
 { 
