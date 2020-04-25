@@ -90,10 +90,10 @@
 			<% if (info != null) {%>
 				<h2>내 정보</h2>
 				<table align="center" border="1px">
-					<tr><td>비밀번호</td><td id="pw"></td><td id="pw_td"><button id="pw_modify">수정</button></td></tr>
-					<tr><td>이름</td><td id="name"><%= info.getP_name() %></td><td id="name_td"><button id="name_modify">수정</button></td></tr>
-					<tr><td>주소</td><td id="addr"><%= info.getP_addr() %></td><td id="addr_td"><button id="addr_modify">수정</button></td></tr>
-					<tr><td>전화번호</td><td id="phone"><%= info.getP_phone() %></td><td id="phone_td"><button id="phone_modify">수정</button></td></tr>
+					<tr><td>비밀번호</td><td id="pw"></td><td id="pw_td"><button onclick="click_pw();" id="pw_modify">수정</button></td></tr>
+					<tr><td>이름</td><td id="name"><%= info.getP_name() %></td><td id="name_td"><button onclick="click_name();" id="name_modify">수정</button></td></tr>
+					<tr><td>주소</td><td id="addr"><%= info.getP_addr() %></td><td id="addr_td"><button onclick="click_addr();" id="addr_modify">수정</button></td></tr>
+					<tr><td>전화번호</td><td id="phone"><%= info.getP_phone() %></td><td id="phone_td"><button onclick="click_phone();" id="phone_modify">수정</button></td></tr>
 				</table>
 				<h2>아이 정보</h2>
 				<h3>- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
@@ -118,28 +118,16 @@
 	var addr = null;
 	var pw = null;
 	var phone = null;
-	function getInputValue_name(){
-		name = $('#name_input').val();
+	var isCheck = false;
+
+	function click_pw(){
+		$("#pw").html('<input type="text" id="pw_input">');
+		$("#pw_modify").remove();
+		$("#pw_td").append('<button onclick="click_pw_r();" id="pw_modified">변경</button>');
 	}
-	function getInputValue_addr(){
-		addr = $('#addr_input').val();
-	}
-	function getInputValue_pw(){
+	function click_pw_r(){
 		pw = $('#pw_input').val();
-	}
-	function getInputValue_phone(){
-		phone = $('#phone_input').val();
-	}
-</script>
-<script type="text/javascript">
-$('#pw_modify').on('click',function() {
-	   $("#pw").html('<input type="text" id="pw_input">');
-	   $("#pw_modify").remove();
-	   $("#pw_td").append('<button onclick="getInputValue_pw();" id="pw_modified">변경</button>');
-	   	   
-	   var isCheck = false;
-	   $("#pw_modified").on('click',function(){
-		   isCheck = true;
+		isCheck = true;
 		   if(isCheck && pw !== ""){
 			   console.log(pw);
 			   $.ajax({
@@ -152,7 +140,7 @@ $('#pw_modify').on('click',function() {
 						var re_pw = result.p_pw;
 						$("#pw").html("변경완료");
 						$("#pw_modified").remove();
-						$("#pw_td").append('<button id="pw_modify">수정</button>');
+						$("#pw_td").append('<button onclick="click_pw();" id="pw_modify">수정</button>');
 						console.log("성공");
 			   		},
 			   		error : function() {
@@ -162,104 +150,102 @@ $('#pw_modify').on('click',function() {
 		   if(isCheck && pw == ""){
 			   alert('비밀번호를 입력해주세요.');
 		   }
-	   })
-	})
-$('#name_modify').on('click',function() {
-   $("#name").html('<input type="text" id="name_input">');
-   $("#name_modify").remove();
-   $("#name_td").append('<button onclick="getInputValue_name();" id="name_modified">변경</button>');
-   
-   var isCheck = false;
-   $("#name_modified").on('click',function(){
-	   isCheck = true;
-	   if(isCheck && name !== ""){
-		   console.log(name);
-		   $.ajax({
-			   url : "UpdateUserService.do",
-				type : "POST",
-				cache : false,
-				dataType : "json",
-				data : "name=" + name,
-				success : function(result) {
-					var re_name = result.p_name;
-					$("#name").html(re_name);
-					$("#name_modified").remove();
-					$("#name_td").append('<button id="name_modify">수정</button>');
-					console.log("성공");
-		   		},
-		   		error : function() {
-					console.log("error");
-				}});
-	   }
-	   if(isCheck && name == ""){
-		   alert('이름을 입력해주세요.');
-	   }
-   })
-})
-$('#addr_modify').on('click',function() {
-   $("#addr").html('<input type="text" id="addr_input">');
-   $("#addr_modify").remove();
-   $("#addr_td").append('<button onclick="getInputValue_addr();" id="addr_modified">변경</button>');
-   
-   var isCheck = false;
-   $("#addr_modified").on('click',function(){
-	   isCheck = true;
-	   if(isCheck && addr !== ""){
-		   console.log(addr);
-		   $.ajax({
-			   url : "UpdateUserService.do",
-				type : "POST",
-				cache : false,
-				dataType : "json",
-				data : "addr=" + addr,
-				success : function(result) {
-					var re_addr = result.p_addr;
-					$("#addr").html(re_addr);
-					$("#addr_modified").remove();
-					$("#addr_td").append('<button id="addr_modify">수정</button>');
-					console.log("성공");
-		   		},
-		   		error : function() {
-					console.log("error");
-				}});
-	   }
-	   if(isCheck && addr == ""){
-		   alert('주소를 입력해주세요.');
-	   }
-   })
-})   
-$('#phone_modify').on('click',function() {
-   $("#phone").html('<input type="text" id="phone_input">');
-   $("#phone_modify").remove();
-   $("#phone_td").append('<button onclick="getInputValue_phone();" id="phone_modified">변경</button>');
-      
-   var isCheck = false;
-   $("#phone_modified").on('click',function(){
-	   isCheck = true;
-	   if(isCheck && phone !== ""){
-		   console.log(phone);
-		   $.ajax({
-			   url : "UpdateUserService.do",
-				type : "POST",
-				cache : false,
-				dataType : "json",
-				data : "phone=" + phone,
-				success : function(result) {
-					var re_phone = result.p_phone;
-					$("#phone").html(re_phone);
-					$("#phone_modified").remove();
-					$("#phone_td").append('<button id="phone_modify">수정</button>');
-					console.log("성공");
-		   		},
-		   		error : function() {
-					console.log("error");
-				}});
-	   }
-	   if(isCheck && phone == ""){
-		   alert('전화번호를 입력해주세요.');
-	   }
-   })
-})   
+	}
+	function click_name(){
+		$("#name").html('<input type="text" id="name_input">');
+		$("#name_modify").remove();
+		$("#name_td").append('<button onclick="click_name_r();" id="name_modified">변경</button>');
+	}
+	function click_name_r(){
+		name = $('#name_input').val();
+		isCheck = true;
+		   if(isCheck && name !== ""){
+			   console.log(name);
+			   $.ajax({
+				   url : "UpdateUserService.do",
+					type : "POST",
+					cache : false,
+					dataType : "json",
+					data : "name=" + name,
+					success : function(result) {
+						var re_name = result.p_name;
+						$("#name").html(re_name);
+						$("#name_modified").remove();
+						$("#name_td").append('<button onclick="click_name();" id="name_modify">수정</button>');
+						console.log("성공");
+			   		},
+			   		error : function() {
+						console.log("error");
+					}});
+		   }
+		   if(isCheck && name == ""){
+			   alert('이름을 입력해주세요.');
+		   }
+	}
+	function click_addr(){
+		$("#addr").html('<input type="text" id="addr_input">');
+		$("#addr_modify").remove();
+		$("#addr_td").append('<button onclick="click_addr_r();" id="addr_modified">변경</button>');
+	}
+	function click_addr_r(){
+		addr = $('#addr_input').val();
+		isCheck = true;
+		   if(isCheck && addr !== ""){
+			   console.log(addr);
+			   $.ajax({
+				   url : "UpdateUserService.do",
+					type : "POST",
+					cache : false,
+					dataType : "json",
+					data : "addr=" + addr,
+					success : function(result) {
+						var re_addr = result.p_addr;
+						$("#addr").html(re_addr);
+						$("#addr_modified").remove();
+						$("#addr_td").append('<button onclick="click_addr();" id="addr_modify">수정</button>');
+						console.log("성공");
+			   		},
+			   		error : function() {
+						console.log("error");
+					}});
+		   }
+		   if(isCheck && addr == ""){
+			   alert('주소를 입력해주세요.');
+		   }
+	}
+	function click_phone(){
+		$("#phone").html('<input type="text" id="phone_input">');
+		$("#phone_modify").remove();
+		$("#phone_td").append('<button onclick="click_phone_r();" id="phone_modified">변경</button>');
+	}
+	function click_phone_r(){
+		phone = $('#phone_input').val();
+		isCheck = true;
+		   if(isCheck && phone !== ""){
+			   console.log(phone);
+			   $.ajax({
+				   url : "UpdateUserService.do",
+					type : "POST",
+					cache : false,
+					dataType : "json",
+					data : "phone=" + phone,
+					success : function(result) {
+						var re_phone = result.p_phone;
+						$("#phone").html(re_phone);
+						$("#phone_modified").remove();
+						$("#phone_td").append('<button onclick="click_phone();" id="phone_modify">수정</button>');
+						console.log("성공");
+			   		},
+			   		error : function() {
+						console.log("error");
+					}});
+		   }
+		   if(isCheck && phone == ""){
+			   alert('전화번호를 입력해주세요.');
+		   }
+	}
+</script>
+<script type="text/javascript">
 </script>
 </body>
 </html>
