@@ -388,13 +388,13 @@ form-panel.two.active {
 	</div>
 	<script language=javascript>
 
-    <%-- if ("<%=request.getParameter("joinsuccess")%>" == "False") {
+    if ("<%=request.getParameter("joinsuccess")%>" == "False") {
 			alert('회원가입 실패');
 	}
     if ("<%=request.getParameter("joinsuccess")%>" == "True") {
 		alert('회원가입 성공');
 		location.href = "index.jsp";
-	} --%>
+	}
 	</script>
 
 	<div id="menu-wrapper">
