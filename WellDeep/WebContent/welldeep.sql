@@ -119,8 +119,22 @@ insert into record values (record_seq.nextval,'record_file',sysdate,1111,1,1,1);
 insert into alarm values (alarm_seq.nextval,sysdate,1111,1,1,1,1);
 insert into post values (post_seq.nextval,'title','context',sysdate,1111);
 
-select * from parents where perents_id='t1t1';
-select * from PARENTS;
-select * from CHILDREN;
-select * from POST;
+insert into parents values ('2222','2222','서울','010-1111-0000','안선진','여자');
+insert into children values (children_seq.nextval,'민이','여자',7,'children_photo',2222);
+insert into img values (img_seq.nextval,SYSDATE,'img_file2');
+insert into voice values (voice_seq.nextval,SYSDATE,'voice_file2');
+insert into record values (record_seq.nextval,'record_file2',sysdate,2222,2,2,2);
+insert into alarm values (alarm_seq.nextval,sysdate,2222,2,2,2,2);
+insert into post values (post_seq.nextval,'title2','context2',sysdate,2222);
+
+insert into parents values ('3333','3333','인천','010-3333-0000','승현','남');
+insert into children values (children_seq.nextval,'성순','남',5,'children_photo',2222);
+insert into img values (img_seq.nextval,SYSDATE,'img_file');
+insert into voice values (voice_seq.nextval,SYSDATE,'voice_file');
+insert into record values (record_seq.nextval,'record_file',sysdate,3333,3,3,3);
+insert into alarm values (alarm_seq.nextval,sysdate,3333,3,3,3,3);
+insert into post values (post_seq.nextval,'title','context',sysdate,3333);
+
+select * from RECORD;
+
 commit
