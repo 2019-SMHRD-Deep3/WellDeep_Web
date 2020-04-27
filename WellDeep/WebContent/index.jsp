@@ -98,7 +98,7 @@
 					<li style = "color:#fff;"><%= info.getP_id() %> 님 환영합니다.</li>
 						<button type="submit" class= "btn purple">로그아웃</button>
 					</form>
-					<form action="Update.jsp">
+					<form action="update.jsp">
 						<button type="submit" class= "btn purple" >정보수정</button>
 
 					</form>

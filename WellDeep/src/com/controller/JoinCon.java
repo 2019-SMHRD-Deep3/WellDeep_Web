@@ -17,13 +17,6 @@ public class JoinCon implements ICommand{
 		// TODO Auto-generated method stub
 		String moveURL = null;
 		
-	    response.setCharacterEncoding("EUC-KR");
-		try {
-			request.setCharacterEncoding("EUC-KR");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		String p_id = request.getParameter("p_id");
 		String p_pw = request.getParameter("p_pw");
 		String p_addr = request.getParameter("p_addr");
