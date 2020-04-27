@@ -14,5 +14,5 @@ String p_id = request.getParameter("id");
 PostDTO dto = new PostDTO(dummy_number, p_title, p_context, dummy_time, p_id);
 PostDAO dao = PostDAO.getDAO();
 int cnt = dao.upload(dto);
-
+out.print(cnt);
 %>
