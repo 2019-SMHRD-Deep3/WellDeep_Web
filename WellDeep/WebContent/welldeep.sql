@@ -1,3 +1,12 @@
+--conn system/12345
+--create user welldeep identified by welldeep;
+--GRANT connect, resource, dba to welldeep;
+--GRANT CREATE SESSION TO welldeep;
+--GRANT CREATE TABLE TO welldeep;
+--GRANT DROP ANY TABLE TO welldeep;
+
+
+
 drop table post;
 drop sequence post_seq;
 drop table alarm;
