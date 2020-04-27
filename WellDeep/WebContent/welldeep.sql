@@ -47,7 +47,13 @@ create sequence children_seq start with 1 increment by 1 maxvalue 500 cycle noca
 create table img (
 img_number varchar2(50) PRIMARY key,
 img_time date,
-img_file varchar2(1000)
+img_file varchar2(1000),
+perents_id varchar2(50) not null,
+children_number varchar2(50) not null,
+constraint fk_perents_id_img foreign key(perents_id)
+references parents,
+constraint fk_children_number_img foreign key(children_number)
+references children
 );
 create sequence img_seq start with 1 increment by 1 maxvalue 9999 cycle nocache;
 
@@ -55,7 +61,13 @@ create sequence img_seq start with 1 increment by 1 maxvalue 9999 cycle nocache;
 create table voice (
 voice_number varchar2(50) primary key,
 voice_time varchar2(100) not null,
-voice_file varchar2(1000) not null
+voice_file varchar2(1000) not null,
+perents_id varchar2(50) not null,
+children_number varchar2(50) not null,
+constraint fk_perents_id_voice foreign key(perents_id)
+references parents,
+constraint fk_children_number_voice foreign key(children_number)
+references children
 );
 create sequence voice_seq start with 1 increment by 1 maxvalue 9999 cycle nocache;
 
@@ -121,8 +133,11 @@ create sequence alarm_seq start with 1 increment by 1 maxvalue 9999 cycle nocach
 
 
 insert into parents values ('1111','1111','광주','010-0000-0000','홍길동','남');
+insert into parents values ('2222','2222','서울','010-1111-2222','고길동','남');
 insert into children values (children_seq.nextval,'코난','남',6,'children_photo',1111);
-insert into img values (img_seq.nextval,SYSDATE,'img_file');
+insert into children values (children_seq.nextval,'고난','남',8,'children_photo',2222);
+insert into img values (img_seq.nextval,SYSDATE,'tree.jpg','1111',1);
+insert into img values (img_seq.nextval,SYSDATE,'kb.jpg','2222',2);
 insert into voice values (voice_seq.nextval,SYSDATE,'voice_file');
 insert into record values (record_seq.nextval,'record_file',sysdate,1111,1,1,1);
 insert into alarm values (alarm_seq.nextval,sysdate,1111,1,1,1,1);
@@ -131,4 +146,5 @@ insert into post values (post_seq.nextval,'title','context',sysdate,1111,1,1);
 select * from parents where perents_id='t1t1';
 select * from PARENTS;
 select * from CHILDREN;
+select * from IMG;
 commit
