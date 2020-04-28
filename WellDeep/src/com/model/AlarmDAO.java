@@ -7,28 +7,27 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class RecordingDAO {
+public class AlarmDAO {
 	
 	private Connection conn;
 	private PreparedStatement psmt;
 	private ResultSet rs;
 	
-	private String r_number;
-	private String r_file;
-	private String r_time;
+	private String a_number;
+	private String a_time;
 	private String p_id;
 	private String c_number;
-	private String i_number;
-	private String v_number;
+	private String i_file;
+	private String v_file;
 	
-	RecordingDTO info;
-	ArrayList<RecordingDTO> list;
+	AlarmDTO info;
+	ArrayList<AlarmDTO> list;
 
-	private static RecordingDAO dao;
+	private static AlarmDAO dao;
 
-	public static RecordingDAO getDAO() {
+	public static AlarmDAO getDAO() {
 		if (dao == null) {
-			dao = new RecordingDAO();
+			dao = new AlarmDAO();
 		}
 		return dao;
 	}
@@ -62,15 +61,15 @@ public class RecordingDAO {
 		}
 	}
 	
-	public ArrayList<RecordingDTO> select(String id) {
+	public ArrayList<AlarmDTO> select(String id) {
 		
 		info = null;
-		list = new ArrayList<RecordingDTO>();
+		list = new ArrayList<AlarmDTO>();
 
 		try {
 			getConnection();
 
-			String sql = "select * from record where perents_id=?";
+			String sql = "select * from alarm where perents_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			//System.out.println(sql);
@@ -79,15 +78,14 @@ public class RecordingDAO {
 
 			while (rs.next()) {
 
-				r_number = rs.getString("record_number");
-				r_file = rs.getString("record_file");
-				r_time = rs.getString("record_time");
+				a_number = rs.getString("alarm_number");
+				a_time = rs.getString("alarm_time");
 				p_id = rs.getString("perents_id");
 				c_number = rs.getString("children_number");
-				i_number = rs.getString("img_number");
-				v_number = rs.getString("voice_number");
+				i_file = rs.getString("img_file");
+				v_file = rs.getString("voice_file");
 											
-				info = new RecordingDTO(r_number, r_file, r_time, p_id, c_number, i_number, v_number);
+				info = new AlarmDTO(a_number, a_time, p_id, c_number, i_file, v_file);
 				list.add(info);
 			}
 
