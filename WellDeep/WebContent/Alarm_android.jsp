@@ -1,8 +1,6 @@
 <%@page import="com.model.AlarmDTO"%>
 <%@page import="com.model.AlarmDAO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.model.RecordingDTO"%>
-<%@page import="com.model.RecordingDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="org.json.simple.*"%>
 
