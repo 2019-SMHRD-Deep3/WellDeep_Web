@@ -1,12 +1,3 @@
---conn system/12345
---create user welldeep identified by welldeep;
---GRANT connect, resource, dba to welldeep;
---GRANT CREATE SESSION TO welldeep;
---GRANT CREATE TABLE TO welldeep;
---GRANT DROP ANY TABLE TO welldeep;
-
-
-
 drop table post;
 drop sequence post_seq;
 drop table alarm;
@@ -15,11 +6,13 @@ drop table record;
 drop sequence record_seq;
 drop table voice;
 drop sequence voice_seq;
+drop table img;
+drop sequence img_seq;
 drop table children;
 drop sequence children_seq;
 drop table parents;
-drop table img;
-drop sequence img_seq;
+
+
 
 create table parents (
 perents_id varchar2(50) PRIMARY key,
@@ -132,19 +125,49 @@ references voice
 create sequence alarm_seq start with 1 increment by 1 maxvalue 9999 cycle nocache;
 
 
-insert into parents values ('1111','1111','광주','010-0000-0000','홍길동','남');
-insert into parents values ('2222','2222','서울','010-1111-2222','고길동','남');
+insert into parents values (1111,1111,'광주','010-0000-0000','홍길동','남');
 insert into children values (children_seq.nextval,'코난','남',6,'children_photo',1111);
-insert into children values (children_seq.nextval,'고난','남',8,'children_photo',2222);
-insert into img values (img_seq.nextval,SYSDATE,'tree.jpg','1111',1);
-insert into img values (img_seq.nextval,SYSDATE,'kb.jpg','2222',2);
-insert into voice values (voice_seq.nextval,SYSDATE,'voice_file');
+insert into img values (img_seq.nextval,SYSDATE,'tree.jpg',1111,1);
+insert into voice values (voice_seq.nextval,SYSDATE,'voice_file',1111,1);
 insert into record values (record_seq.nextval,'record_file',sysdate,1111,1,1,1);
-insert into alarm values (alarm_seq.nextval,sysdate,1111,1,1,1,1);
-insert into post values (post_seq.nextval,'title','context',sysdate,1111,1,1);
+insert into alarm values (alarm_seq.nextval,SYSDATE,1111,1,1,1,1);
+insert into post values (post_seq.nextval,'title','context',SYSDATE,1111,1,1);
 
-select * from parents where perents_id='t1t1';
-select * from PARENTS;
-select * from CHILDREN;
-select * from IMG;
-commit
+insert into children values (children_seq.nextval,'장미','여',6,'children_photo',1111);
+insert into img values (img_seq.nextval,SYSDATE,'tree.jpg',1111,2);
+insert into voice values (voice_seq.nextval,SYSDATE,'voice_file',1111,2);
+insert into record values (record_seq.nextval,'record_file',sysdate,1111,2,2,2);
+insert into alarm values (alarm_seq.nextval,SYSDATE,1111,2,2,2,2);
+insert into post values (post_seq.nextval,'title','context',SYSDATE,1111,2,2);
+
+insert into children values (children_seq.nextval,'미란','여',7,'children_photo',1111);
+insert into img values (img_seq.nextval,SYSDATE,'tree.jpg',1111,3);
+insert into voice values (voice_seq.nextval,SYSDATE,'voice_file',1111,3);
+insert into record values (record_seq.nextval,'record_file',sysdate,1111,2,2,3);
+insert into alarm values (alarm_seq.nextval,SYSDATE,1111,3,3,3,3);
+insert into post values (post_seq.nextval,'title','context',SYSDATE,1111,3,3);
+
+insert into parents values (2222,2222,'서울','010-1111-2222','고길동','남');
+insert into children values (children_seq.nextval,'둘리','남',7,'children_photo',2222);
+insert into img values (img_seq.nextval,SYSDATE,'kb.jpg',2222,4);
+insert into voice values (voice_seq.nextval,SYSDATE,'voice_file',2222,4);
+insert into record values (record_seq.nextval,'record_file',sysdate,2222,4,4,4);
+insert into alarm values (alarm_seq.nextval,SYSDATE,2222,4,4,4,4);
+insert into post values (post_seq.nextval,'title','context',SYSDATE,2222,4,4);
+
+insert into children values (children_seq.nextval,'마이콜','남',5,'children_photo',2222);
+insert into img values (img_seq.nextval,SYSDATE,'kb.jpg',2222,5);
+insert into voice values (voice_seq.nextval,SYSDATE,'voice_file',2222,5);
+insert into record values (record_seq.nextval,'record_file',sysdate,2222,5,5,5);
+insert into alarm values (alarm_seq.nextval,SYSDATE,2222,5,5,5,5);
+insert into post values (post_seq.nextval,'title','context',SYSDATE,2222,5,5);
+
+insert into children values (children_seq.nextval,'희동이','남',3,'children_photo',2222);
+insert into img values (img_seq.nextval,SYSDATE,'kb.jpg',2222,6);
+insert into voice values (voice_seq.nextval,SYSDATE,'voice_file',2222,6);
+insert into record values (record_seq.nextval,'record_file',sysdate,2222,6,6,6);
+insert into alarm values (alarm_seq.nextval,SYSDATE,2222,6,6,6,6);
+insert into post values (post_seq.nextval,'title','context',SYSDATE,2222,6,6);
+
+
+commit;
