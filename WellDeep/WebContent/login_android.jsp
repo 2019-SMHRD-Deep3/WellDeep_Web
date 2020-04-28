@@ -15,7 +15,11 @@ MemberDTO dto = new MemberDTO(id, pw);
 MemberDAO dao = MemberDAO.getDAO();
 MemberDTO info = dao.login(dto);
 
-if (info.equals(null)) {
+if (info == null) {
 	returns = "false";
+} else {
+	returns = "true";
 }
+
+out.print(returns);
 %>

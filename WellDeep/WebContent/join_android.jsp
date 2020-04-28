@@ -17,14 +17,15 @@ if (type.equals("join")) {
 	String p_phone = request.getParameter("tel");
 	String p_name = request.getParameter("name");
 	String p_sex = request.getParameter("sex");
-	
-	System.out.print("이름"+p_name);
+
+	System.out.print("이름" + p_name);
 
 	String dumy_child = null;
 
 	MemberDTO dto = new MemberDTO(p_id, p_pw, p_addr, p_phone, p_name, p_sex, dumy_child);
 	MemberDAO dao = MemberDAO.getDAO();
 	int cnt = dao.join(dto);
+	out.print(cnt);
 } else if (type.equals("child_join")) {
 
 	String c_name = request.getParameter("name");
@@ -38,6 +39,7 @@ if (type.equals("join")) {
 	ChildDTO dto = new ChildDTO(p_id, dummy_parents, c_name, c_sex, c_age, c_img);
 	ChildDAO dao = ChildDAO.getDAO();
 	int cnt = dao.join(dto);
+	out.print(cnt);
 
 }
 %>

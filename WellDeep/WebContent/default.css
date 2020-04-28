@@ -15,7 +15,7 @@ body
 	color: #6c6c6c
 }
 
-h1, h2, h3
+h2, h3
 {
 	margin: 0;
 	padding: 0;
@@ -53,11 +53,11 @@ a:hover
 	text-decoration: none;
 }
 
-.container
+/* .container
 {
 	margin: 0px auto;
 	width: 1200px;
-}
+} */
 
 /*********************************************************************************/
 /* Image Style                                                                   */
@@ -366,8 +366,9 @@ ul.contact li a.icon-rss:before
 	#header-wrapper
 	{
 		overflow: hidden;
-		padding: 5em 0em 0em 0em;
+		padding: 50px 0em 0em 0em;
 		background: #FFC000 url(images/overlay.png) repeat;
+		height: 387px;
 	}
 
 	#header
@@ -389,7 +390,7 @@ ul.contact li a.icon-rss:before
 
 	#logo
 	{
-		padding: 5em 0em;
+		padding: 97px 0em;
 		text-align: center;
 	}
 	
@@ -450,12 +451,13 @@ ul.contact li a.icon-rss:before
   		/* width: 100%; */
   		left: 0;
   		right: 0;
-  		background-color: #3D3D3D;
+  		/* background-color: #3D3D3D; */
 	}
 	
 	#menu li
 	{
 		display: inline-block;
+		color: aliceblue;
 	}
 	
 	#menu li a, #menu li span
@@ -464,7 +466,7 @@ ul.contact li a.icon-rss:before
 		margin-left: 0.50em;
 		padding: 2em 1.5em 0em 1.5em;
 		letter-spacing: 0.20em;
-		padding-top: 15px;
+		padding-top: 21px;
 		text-decoration: none;
 		margin-left: 200px;
 		font-weight: 600;
@@ -614,6 +616,7 @@ ul.contact li a.icon-rss:before
 	padding: 5em 0em;
 	border-top: 1px solid rgba(255,255,255,0.08);
 	margin-top: -25px;
+	text-align: center;
 }
 
 #copyright p
@@ -636,28 +639,30 @@ ul.contact li a.icon-rss:before
 	background: #3D3D3D;
 }
 
-#stamp .hexagon:before {
+/* #stamp .hexagon:before {
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
 	border-bottom: 30px solid #3D3D3D;
-}
-#stamp .hexagon:after {
+} */
+/* #stamp .hexagon:after {
 	border-color: #3D3D3D;
 }
-
+ */
 
 /*********************************************************************************/
 /* Featured                                                                      */
 /*********************************************************************************/
 
-#featured-wrapper
+/* #featured-wrapper
 {
 	overflow: hidden;
 	padding: 10em 0em;
 	background: beige;
-	text-align: center;
-}
 
+	height: 1200px;
+	position: relative;
+}
+ */
 #featured
 {
 	overflow: hidden;
@@ -1077,6 +1082,12 @@ $colorC: #8e44ad;
     color: #fff; 
     border-bottom: 2px solid #ccc;
      transition: background 0.12s ease; 
+     padding: 5px;
+    font-size: 13px;
+    background: border-box;
+    
+    
+   
      } 
      
 .btn:active 
@@ -1085,13 +1096,10 @@ $colorC: #8e44ad;
 	top: 2px;
 	margin-bottom: 2px;
 	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.42);
+	background: black;
 	 } 
 
-.btn 
-{ 
-	padding: 5px;
-    font-size: 13px;
-} 
+
 
 .purple:link, .purple:visited 
 { 
@@ -1108,3 +1116,170 @@ $colorC: #8e44ad;
 border-bottom: 0;
  }
 
+
+
+.download-btns a {
+    width: 10rem;
+    padding-bottom: 0.6rem;
+    border-radius: 14px;
+}
+
+
+.btn-outline-light { /* 구글 앱 테두리 */
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+/* 
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+ 
+ */
+/*********************************************************************************/
+/* main상단                                                                      */
+/*********************************************************************************/
+
+
+/* #bg-main
+{
+width: 100%;
+    height: 700px;
+    background: url(../images/bg_main.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+    
+    }
+    
+ .img-logo {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0 auto;
+    height: 10rem;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.title-group {
+    padding: 7rem 0;
+}
+  
+.text-center {
+    text-align: center!important;
+}
+
+ 
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+
+h1 {
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0 auto;
+    font-size: 4rem;
+}
+
+h1, h2 {
+    font-weight: 300;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+h1 strong, h2 strong {
+    font-weight: 600;
+}
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.download-btns {
+    position: absolute;
+    top: 440px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+
+
+.mr-2, .mx-2 {
+    margin-right: .5rem!important;
+}
+
+.btn-outline-light {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+ */
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
