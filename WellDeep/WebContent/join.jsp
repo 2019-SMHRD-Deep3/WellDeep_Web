@@ -402,9 +402,9 @@ form-panel.two.active {
 			<ul>
 
 				<li class="current_page_item"><a href="#" accesskey="1"
-					title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">About Us</a></li>
-				<li><a href="#" accesskey="3" title="">Contact Us</a></li>
+					title=""></a></li>
+				<li><a href="#" accesskey="2" title=""></a></li>
+				<li><a href="#" accesskey="3" title=""></a></li>
 
 
 
@@ -545,6 +545,15 @@ form-panel.two.active {
 			</div>
 		</div>
 
+	<div id="copyright" class="container">
+		<div class="inner">
+			<section class="about">
+				<h4 class="major">Magna Aliquam Feugiat</h4>
+				<p>Etiam finibus pharetra purus, imperdiet sagittis mauris
+					hendrerit vitae.</p>
+				<p>In feugiat ante elementum nulla arcu.</p>
+				<p>Maecenas vulputate faucibus, convallis ligula ipsum dolor
+					feugiat tempus adipiscing.</p>
 
 		<!-- <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

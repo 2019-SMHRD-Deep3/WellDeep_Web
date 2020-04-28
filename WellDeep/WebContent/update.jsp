@@ -13,6 +13,306 @@
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 <title>Insert title here</title>
+
+<style>
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	/*  background: -webkit-linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+  background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%); */
+	color: rgba(0, 0, 0, 0.6);
+	font-family: "Roboto", sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.overlay, .form-panel.one:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* display: none; */
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+}
+
+.form {
+	z-index: 15;
+	position: relative;
+	background: #FFFFFF;
+	width: 600px;
+	border-radius: 4px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	margin: 100px auto 10px;
+	/* overflow: hidden; */
+}
+
+} */
+.form-group { /* 조인  */
+	/* display: -webkit-box; */
+	/* display: -webkit-flex;
+	display: -ms-flexbox; */
+	/* display: flex; */
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	margin: 0 0 20px;
+}
+
+.form-group:last-child { /* 조인  */
+	margin: 0;
+}
+
+.form-group label {
+	/* display: block; */
+    margin: 0 0 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+.two .form-group label {
+	color: #FFFFFF;
+}
+
+.form-group input {
+	outline: none;
+	/* display: block; */
+	background: rgba(0, 0, 0, 0.1);
+	/* width: 100%; */
+	border: 0;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 12px 20px;
+	color: rgba(0, 0, 0, 0.6);
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 500;
+	line-height: inherit;
+	-webkit-transition: 0.3s ease;
+	transition: 0.3s ease;
+}
+
+.form-group input:focus {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.two .form-group input {
+	color: #FFFFFF;
+}
+
+.two .form-group input:focus {
+	color: #FFFFFF;
+}
+
+.form-group button {
+	outline: none;
+	background: #FFC000;
+	width: 100%;
+	border: 0;
+	border-radius: 8px;
+	padding: 9px 20px;
+	color: #FFFFFF;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 500;
+	line-height: inherit;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.two .form-group button {
+	margin-top: 25px;
+	outline: none;
+	background: #FFFFFF;
+	width: 100%;
+	border: 0;
+	border-radius: 8px;
+	padding: 9px 20px;
+	color: #FFC000;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 500;
+	line-height: inherit;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.form-group .form-remember {
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+.form-group .form-remember input[type='checkbox'] {
+	display: inline-block;
+	width: auto;
+	margin: 0 10px 0 0;
+}
+
+.form-group .form-recovery {
+	color: #4285F4;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.form-panel {
+	padding: 30px 30px 30px 30px;
+	box-sizing: border-box;
+	background: beige;
+}
+
+/* .form-panel.one:before {
+	content: '';
+	display: block;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: 0.3s ease;
+	transition: 0.3s ease;
+} */
+
+/* .form-panel.one.hidden:before {
+	display: block;
+	opacity: 1;
+	visibility: visible;
+} */
+.form-panel.two { /* 조인  */
+	z-index: 5;
+	position: static;
+	top: 0;
+	left: 95%;
+	background: #FFC000;
+	width: 100%;
+	/* max-height: 100%; */
+	padding: 60px calc(10% + 60px) 60px 60px;
+	/* -webkit-transition: 0.3s ease; */
+	/* transition: 0.3s ease; */
+	/* cursor: pointer; */
+}
+
+.form-panel.two:before, .form-panel.two:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 60px;
+	left: 1.5%;
+	background: rgba(255, 255, 255, 0.2);
+	height: 30px;
+	width: 2px;
+	/* -webkit-transition: 0.3s ease;
+	transition: 0.3s ease; */
+}
+
+.form-panel.two:after {
+	
+}
+
+left
+:
+ 
+3%;
+}
+.form-panel.two:hover {
+	left: 93%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-panel.two:hover:before, .form-panel.two:hover:after {
+	opacity: 0;
+}
+
+form-panel.two.active {
+	left: 10%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	cursor: default;
+}
+
+.form-panel.two.active:before, .form-panel.two.active:after {
+	opacity: 0;
+}
+
+.form-header { /* 조인  */
+	margin: 0 0 40px;
+}
+
+.form-header h1 {
+	padding: 4px 0;
+	color: #FFC000;
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.two .form-header h1 {
+	position: relative;
+	z-index: 40;
+	color: #FFFFFF;
+}
+
+.pen-footer {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	width: 600px;
+	margin: 20px auto 100px;
+}
+
+.pen-footer a {
+	color: #FFFFFF;
+	font-size: 12px;
+	text-decoration: none;
+	text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.pen-footer a .material-icons {
+	width: 12px;
+	margin: 0 5px;
+	vertical-align: middle;
+	font-size: 12px;
+}
+
+.cp-fab {
+	background: #FFFFFF !important;
+	color: #4285F4 !important;
+}
+
+#header-wrapper {
+	/* overflow: hidden; */
+	padding: 50px 0px 0px 0px;
+	background: #FFC000 url(images/overlay.png) repeat;
+}
+</style>
+</head>
+<body>
+
+
+
+
+
+
 </head>
 <body>
 	<%
@@ -47,9 +347,9 @@
 		<div id="menu">
 			<ul>
 				<li class="current_page_item"><a href="#" accesskey="1"
-					title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">About Us</a></li>
-				<li><a href="#" accesskey="3" title="">Contact Us</a></li>
+					title=""></a></li>
+				<li><a href="#" accesskey="2" title=""></a></li>
+				<li><a href="#" accesskey="3" title=""></a></li>
 				<div
 					style="position: relative; float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
 					<%
@@ -84,12 +384,65 @@
 			</ul>
 		</div>
 	</div>	
-	<div id="wrapper">
-		<div id="featured-wrapper">
-			<div class="title">
+	<!-- <div id="wrapper">
+		<div id="featured-wrapper"> -->
+			<div style = "height: 1500px; background: white;">
 			<% if (info != null) {%>
-				<h2>내 정보</h2>
-				<table align="center" border="1px">
+				<h2 style = "font-size: 24px; text-align: center; padding-top: 130px; ">내 정보</h2>
+
+				
+				
+				<div id="wrapper">
+		<div id="featured-wrapper">
+			<div class="title"></div>
+
+
+
+
+			<!-- Form-->
+			<div class="form"
+				style="position: relative; left: 10px; top: -70px; z-index: 1;">
+
+
+
+				<!-- <div class="form-toggle"></div> -->
+				<div class="form-panel one" style = "padding-top: 10px; padding-left: 78px;">
+					<div class="form-header">
+						<h1 style = "font-sizse: 24px;">회원정보 수정</h1>
+					</div>
+					<div class="form-content">
+						<form action="LoginService.do">
+							<div class="form-group">
+								<label for="username">비밀번호</label> <input style = "margin-bottom: 16px;"type="text"
+									id="pw" name="p_id" required="required" />
+							</div>
+							<div class="form-group">
+								<label for="password">이름</label> <input  style = "margin-left: 29px; margin-bottom: 16px;" type="password"
+									id="name" name="p_pw" required="required" />
+							</div>
+							
+							<div class="form-group">
+								<label for="password">주소</label> <input  style = "margin-left: 29px; margin-bottom: 16px;" type="password"
+									id="addr" name="p_pw" required="required" />
+							</div>
+							
+							<div class="form-group">
+								<label for="password">전화번호</label> <input style = "margin-bottom: 16px;"type="password"
+									id="phone" name="p_pw" required="required" />
+							</div>
+							
+							
+						</form>
+					</div>
+				</div>
+
+
+				
+				
+				
+				
+				
+				<%-- <table align="center" border="1px">
 					<tr><td>비밀번호</td><td id="pw"></td><td id="pw_td"><button onclick="click_pw();" id="pw_modify">수정</button></td></tr>
 					<tr><td>이름</td><td id="name"><%= info.getP_name() %></td><td id="name_td"><button onclick="click_name();" id="name_modify">수정</button></td></tr>
 					<tr><td>주소</td><td id="addr"><%= info.getP_addr() %></td><td id="addr_td"><button onclick="click_addr();" id="addr_modify">수정</button></td></tr>
@@ -101,12 +454,28 @@
 					<tr><td>사진</td><td><% if(info.getC_photo() != null){%> <%= info.getC_photo() %> <%}%></td></tr>
 					<tr><td>이름</td><td><% if(info.getC_name() != null){%> <%= info.getC_name() %> <%}%></td></tr>	
 					<tr><td>나이</td><td><% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%></td></tr>
-				</table>
-			<%} %>	
+				</table> --%>
+			
 			</div>
 			
 		</div>
 		</div>
+		
+		
+		<h2 style = "text-align:center; padding-top: 104px;">아이 정보</h2>
+				<h3 style = "text-align:center; margin-bottom: 26px;">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
+				<table align="center" border="1px">
+							<img style = "display : block;margin : 0 auto; width: 200px;" src="img/childphoto.jpg"><% if(info.getC_photo() != null){%> <%}%>
+					<div style = "text-align:center; font-size: 10px; margin: 35px;">
+					<h2>이름 : <% if(info.getC_name() != null){%> <%= info.getC_name() %> <%}%>	
+					<h2>나이 : <% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%>
+					<h2>성별 : <% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%>
+					</div>		
+				</table> 
+				<%} %>
+				
+				
+		
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -247,5 +616,18 @@
 </script>
 <script type="text/javascript">
 </script>
+
+	<div id="copyright" class="container" style = "overflow: hidden; padding: 5em 0em;
+    border-top: 1px solid rgba(255,255,255,0.08); margin-top: 240px; text-align: center; background: #3D3D3D;">
+    
+		<div class="inner">
+			<section class="about">
+				<h4 class="major">Magna Aliquam Feugiat</h4>
+				<p>Etiam finibus pharetra purus, imperdiet sagittis mauris
+					hendrerit vitae.</p>
+				<p>In feugiat ante elementum nulla arcu.</p>
+				<p>Maecenas vulputate faucibus, convallis ligula ipsum dolor
+					feugiat tempus adipiscing.</p>
+
 </body>
 </html>

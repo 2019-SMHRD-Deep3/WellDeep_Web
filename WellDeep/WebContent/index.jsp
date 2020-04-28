@@ -378,14 +378,6 @@ width: 300px;
 		</div>
 	
 
-
-
-
-
-
-
-
-
 <!-- 
 	<section>
 		<div class="container">
@@ -487,7 +479,7 @@ width: 300px;
 	</div> -->
 
 
-	<div id="copyright" class="container">
+<div id="copyright" class="container">
 		<div class="inner">
 			<section class="about">
 				<h4 class="major">Magna Aliquam Feugiat</h4>
@@ -500,5 +492,7 @@ width: 300px;
 					<li><a class="button">Learn more</a></li>
 				</ul> -->
 			</section>
+
+</div></div>
 </body>
 </html>
