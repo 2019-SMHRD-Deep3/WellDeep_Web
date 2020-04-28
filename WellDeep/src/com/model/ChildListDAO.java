@@ -7,28 +7,27 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class RecordingDAO {
+public class ChildListDAO {
 	
 	private Connection conn;
 	private PreparedStatement psmt;
 	private ResultSet rs;
 	
-	private String r_number;
-	private String r_file;
-	private String r_time;
-	private String p_id;
 	private String c_number;
-	private String i_number;
-	private String v_number;
+	private String c_name;
+	private String c_sex;
+	private String c_age;
+	private String c_photo;
+	private String p_id;
 	
-	RecordingDTO info;
-	ArrayList<RecordingDTO> list;
+	ChildListDTO info;
+	ArrayList<ChildListDTO> list;
 
-	private static RecordingDAO dao;
+	private static ChildListDAO dao;
 
-	public static RecordingDAO getDAO() {
+	public static ChildListDAO getDAO() {
 		if (dao == null) {
-			dao = new RecordingDAO();
+			dao = new ChildListDAO();
 		}
 		return dao;
 	}
@@ -62,15 +61,15 @@ public class RecordingDAO {
 		}
 	}
 	
-	public ArrayList<RecordingDTO> select(String id) {
+	public ArrayList<ChildListDTO> select(String id) {
 		
 		info = null;
-		list = new ArrayList<RecordingDTO>();
+		list = new ArrayList<ChildListDTO>();
 
 		try {
 			getConnection();
 
-			String sql = "select * from record where perents_id=?";
+			String sql = "select * from children where perents_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			//System.out.println(sql);
@@ -79,15 +78,15 @@ public class RecordingDAO {
 
 			while (rs.next()) {
 
-				r_number = rs.getString("record_number");
-				r_file = rs.getString("record_file");
-				r_time = rs.getString("record_time");
-				p_id = rs.getString("perents_id");
 				c_number = rs.getString("children_number");
-				i_number = rs.getString("img_number");
-				v_number = rs.getString("voice_number");
+				c_name = rs.getString("children_name");
+				c_sex = rs.getString("children_sex");
+				c_age = rs.getString("children_age");
+				c_photo = rs.getString("children_photo");
+				p_id = rs.getString("perents_id");
+			
 											
-				info = new RecordingDTO(r_number, r_file, r_time, p_id, c_number, i_number, v_number);
+				info = new ChildListDTO(c_number, c_name, c_sex, c_age, c_photo, p_id);
 				list.add(info);
 			}
 
