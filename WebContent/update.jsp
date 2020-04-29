@@ -24,8 +24,8 @@ body {
    /*  background: -webkit-linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
   background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%); */
    color: rgba(0, 0, 0, 0.6);
-   font-family: "Roboto", sans-serif;
-   font-size: 14px;
+  /*  font-family: "Roboto", sans-serif;
+   font-size: 14px; */
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
@@ -120,7 +120,7 @@ body {
 .form-group button {
    outline: none;
    background: #FFC000;
-   width: 100%;
+  /*  width: 100%; */
    border: 0;
    border-radius: 8px;
    padding: 9px 20px;
@@ -300,10 +300,68 @@ form-panel.two.active {
 }
 
 #header-wrapper {
-   /* overflow: hidden; */
+   overflow: hidden;
    padding: 50px 0px 0px 0px;
    background: #FFC000 url(images/overlay.png) repeat;
+   height: 450px;
 }
+.text-group {
+   width: 100%;
+   text-align: center;
+}
+
+.text-center {
+   width: 100%;
+   text-align: center;;
+}
+
+.test {
+   width: 300px;
+}
+.img{
+   width: 38%; 
+   margin: 0 auto;
+   text-align: center;
+   
+}
+button{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+
+button:hover{
+  background:#fff;
+  color:black;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: beige;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
 </style>
 </head>
 <body>
@@ -318,18 +376,60 @@ form-panel.two.active {
    <%
       MemberDTO info = (MemberDTO) session.getAttribute("info");
    %>
-   <div id="header-wrapper">
-      <div id="header" class="container">
-         <div id="logo">
-            <span class="icon icon-group"></span>
-            <h1>
-               <a href="#">웰딥</a>
-            </h1>
-            <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
-         </div>
-         <!-- <div id="triangle-up"></div> -->
+    <div id="header-wrapper">
+      <div 
+         style=" float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
+         <%
+            if (info == null) {
+         %>
+         <form action="join.jsp">
+            <button type="submit" class="btn purple">로그인 / 회원가입</button>
+         </form>
+         <%
+            } else {
+         %>
+         <form action="LogoutService.do" style='display:inline;'>
+            <li style="color: #fff;"><%=info.getP_id()%> 님 환영합니다.</li>
+            <button type="submit" class="btn purple">로그아웃</button>
+         </form>
+         <form action="update.jsp" style='display:inline;'>
+            <button type="submit" class="btn purple">정보수정</button>
+         </form> 
+         <%
+            }
+         %>
       </div>
+
+      <div id="header" class="container">
+   <p class="img"><img src="img/cctv.png" class="img-logo"></p>
+            <div class="title-group text-center">
+               <h1><font size="30px" color="beige">
+                  엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</font>
+                  <br><br>
+                  </strong>
+               </h1>
+               <h1>
+                  <div class="download-btns" style="margin-top: -34px;">
+                     <a href="https://hbe.kr/l/ddingdongappdownload-android-homepage"
+                        target="_blank" class="btn btn-outline-light mr-2 btn-google">
+                        <img src="img/google.png" class="img-btn-google"
+                        style="width: 19px; height: 20px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
+                        Google Play
+                     </a> <a href="https://hbe.kr/l/ddingdongappdownload-ios-homepage"
+                        target="_blank" class="btn btn-outline-light ml-2 btn-apple">
+                        <img src="img/apple.png" class="img-btn-apple"
+                        style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
+                        App Store
+                     </a>
+                  </div>
+               </h1>
+               <span><font color="beige">Design by <a href="http://templated.co" rel="nofollow" style="color : beige">WellDeep</font></a></span>
+            </div>
+            <div id="triangle-up"></div>
+      </div>
+      
    </div>
+   
    <script language=javascript>
    if (<%= info == null%>){
       alert('로그인이 필요합니다.');
@@ -350,37 +450,7 @@ form-panel.two.active {
                title=""></a></li>
             <li><a href="#" accesskey="2" title=""></a></li>
             <li><a href="#" accesskey="3" title=""></a></li>
-            <div
-               style="position: relative; float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
-               <%
-                  if (info == null) {
-               %>
-               <form action="LoginService.do">
-                  <input style="width: 120px; height: 12px; font-size: 10px;"
-                     type="text" id="loginId" name="p_id" placeholder="ID"> <input
-                     style="width: 120px; height: 12px; font-size: 10px;"
-                     type="password" id="loginPw" name="p_pw" placeholder="Password">
-                  <button type="submit" class="btn btn-primary">로그인</button>
-               </form>
-               <form action="JoinService.do">
-                  <input type="button" value="회원가입">
-               </form>
-               <%
-                  } else {
-               %>
-               <form action="LogoutService.do">
-                  <li><%=info.getP_id()%> 님 환영합니다.</li>
-                  <button type="submit" class="btn btn-primary">로그아웃</button>
-               </form>
-               <form action="update.jsp">
-                  <input type="button" value="정보수정">
-               </form>
-               <%
-                  }
-               %>
-
-            </div>
-
+           
          </ul>
       </div>
    </div>   
@@ -414,21 +484,25 @@ form-panel.two.active {
                   <form action="LoginService.do">
                      <div class="form-group">
                         <label for="username">비밀번호</label> <input style = "margin-bottom: 16px;"type="text"
-                           id="pw" name="p_id" required="required" />
+                           id="pw" name="p_id" required="required" /><td id="pw"></td><td id="pw_td"><button 
+                           style = "height: 37px; width: 63px; font-size: 11px; text-align: left;"onclick="click_pw();" id="pw_modify">수정</button></td>
                      </div>
                      <div class="form-group">
                         <label for="password">이름</label> <input  style = "margin-left: 29px; margin-bottom: 16px;" type="password"
-                           id="name" name="p_pw" required="required" />
+                           id="name" name="p_pw" required="required" /><td id="name"><%= info.getP_name() %></td><td id="name_td"><button 
+                            style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_name();" id="name_modify">수정</button></td>
                      </div>
                      
                      <div class="form-group">
                         <label for="password">주소</label> <input  style = "margin-left: 29px; margin-bottom: 16px;" type="password"
-                           id="addr" name="p_pw" required="required" />
+                           id="addr" name="p_pw" required="required" /></td><td id="addr"><%= info.getP_addr() %></td><td id="addr_td"><button
+                            style = "height: 37px; width: 63px; font-size: 11px; text-align: left;"  onclick="click_addr();" id="addr_modify">수정</button></td>
                      </div>
                      
                      <div class="form-group">
                         <label for="password">전화번호</label> <input style = "margin-bottom: 16px;"type="password"
-                           id="phone" name="p_pw" required="required" />
+                           id="phone" name="p_pw" required="required" /><td id="phone"><%= info.getP_phone() %></td><td id="phone_td"><button
+                            style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_phone();" id="phone_modify">수정</button></td>
                      </div>
                      
                      
