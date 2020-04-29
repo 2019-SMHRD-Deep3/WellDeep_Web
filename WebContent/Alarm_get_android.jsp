@@ -6,13 +6,13 @@
 
 <%
 	request.setCharacterEncoding("UTF-8");
-String id = request.getParameter("id");
+String num = request.getParameter("num");
 
 JSONObject jsonMain = new JSONObject();
 JSONArray jsonArray = new JSONArray();
 
 AlarmDAO dao = AlarmDAO.getDAO();
-ArrayList<AlarmDTO> list = dao.select(id);
+ArrayList<AlarmDTO> list = dao.select_one(num);
 
 for (int i = 0; i < list.size(); i++) {
 
