@@ -1,0 +1,633 @@
+<%@page import="com.model.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+   pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link
+   href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+   rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<title>Insert title here</title>
+
+<style>
+html {
+   width: 100%;
+   height: 100%;
+}
+
+body {
+   /*  background: -webkit-linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+  background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%); */
+   color: rgba(0, 0, 0, 0.6);
+   font-family: "Roboto", sans-serif;
+   font-size: 14px;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.overlay, .form-panel.one:before {
+   position: absolute;
+   top: 0;
+   left: 0;
+   /* display: none; */
+   background: rgba(0, 0, 0, 0.8);
+   width: 100%;
+   height: 100%;
+}
+
+.form {
+   z-index: 15;
+   position: relative;
+   background: #FFFFFF;
+   width: 600px;
+   border-radius: 4px;
+   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+   box-sizing: border-box;
+   margin: 100px auto 10px;
+   /* overflow: hidden; */
+}
+
+} */
+.form-group { /* 조인  */
+   /* display: -webkit-box; */
+   /* display: -webkit-flex;
+   display: -ms-flexbox; */
+   /* display: flex; */
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+   -webkit-box-pack: justify;
+   -webkit-justify-content: space-between;
+   -ms-flex-pack: justify;
+   justify-content: space-between;
+   margin: 0 0 20px;
+}
+
+.form-group:last-child { /* 조인  */
+   margin: 0;
+}
+
+.form-group label {
+   /* display: block; */
+    margin: 0 0 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+.two .form-group label {
+   color: #FFFFFF;
+}
+
+.form-group input {
+   outline: none;
+   /* display: block; */
+   background: rgba(0, 0, 0, 0.1);
+   /* width: 100%; */
+   border: 0;
+   border-radius: 4px;
+   box-sizing: border-box;
+   padding: 12px 20px;
+   color: rgba(0, 0, 0, 0.6);
+   font-family: inherit;
+   font-size: inherit;
+   font-weight: 500;
+   line-height: inherit;
+   -webkit-transition: 0.3s ease;
+   transition: 0.3s ease;
+}
+
+.form-group input:focus {
+   color: rgba(0, 0, 0, 0.8);
+}
+
+.two .form-group input {
+   color: #FFFFFF;
+}
+
+.two .form-group input:focus {
+   color: #FFFFFF;
+}
+
+.form-group button {
+   outline: none;
+   background: #FFC000;
+   width: 100%;
+   border: 0;
+   border-radius: 8px;
+   padding: 9px 20px;
+   color: #FFFFFF;
+   font-family: inherit;
+   font-size: inherit;
+   font-weight: 500;
+   line-height: inherit;
+   text-transform: uppercase;
+   cursor: pointer;
+}
+
+.two .form-group button {
+   margin-top: 25px;
+   outline: none;
+   background: #FFFFFF;
+   width: 100%;
+   border: 0;
+   border-radius: 8px;
+   padding: 9px 20px;
+   color: #FFC000;
+   font-family: inherit;
+   font-size: inherit;
+   font-weight: 500;
+   line-height: inherit;
+   text-transform: uppercase;
+   cursor: pointer;
+}
+
+.form-group .form-remember {
+   font-size: 12px;
+   font-weight: 400;
+   letter-spacing: 0;
+   text-transform: none;
+}
+
+.form-group .form-remember input[type='checkbox'] {
+   display: inline-block;
+   width: auto;
+   margin: 0 10px 0 0;
+}
+
+.form-group .form-recovery {
+   color: #4285F4;
+   font-size: 12px;
+   text-decoration: none;
+}
+
+.form-panel {
+   padding: 30px 30px 30px 30px;
+   box-sizing: border-box;
+   background: beige;
+}
+
+/* .form-panel.one:before {
+   content: '';
+   display: block;
+   opacity: 0;
+   visibility: hidden;
+   -webkit-transition: 0.3s ease;
+   transition: 0.3s ease;
+} */
+
+/* .form-panel.one.hidden:before {
+   display: block;
+   opacity: 1;
+   visibility: visible;
+} */
+.form-panel.two { /* 조인  */
+   z-index: 5;
+   position: static;
+   top: 0;
+   left: 95%;
+   background: #FFC000;
+   width: 100%;
+   /* max-height: 100%; */
+   padding: 60px calc(10% + 60px) 60px 60px;
+   /* -webkit-transition: 0.3s ease; */
+   /* transition: 0.3s ease; */
+   /* cursor: pointer; */
+}
+
+.form-panel.two:before, .form-panel.two:after {
+   content: '';
+   display: block;
+   position: absolute;
+   top: 60px;
+   left: 1.5%;
+   background: rgba(255, 255, 255, 0.2);
+   height: 30px;
+   width: 2px;
+   /* -webkit-transition: 0.3s ease;
+   transition: 0.3s ease; */
+}
+
+.form-panel.two:after {
+   
+}
+
+left
+:
+ 
+3%;
+}
+.form-panel.two:hover {
+   left: 93%;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-panel.two:hover:before, .form-panel.two:hover:after {
+   opacity: 0;
+}
+
+form-panel.two.active {
+   left: 10%;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   cursor: default;
+}
+
+.form-panel.two.active:before, .form-panel.two.active:after {
+   opacity: 0;
+}
+
+.form-header { /* 조인  */
+   margin: 0 0 40px;
+}
+
+.form-header h1 {
+   padding: 4px 0;
+   color: #FFC000;
+   font-size: 24px;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+.two .form-header h1 {
+   position: relative;
+   z-index: 40;
+   color: #FFFFFF;
+}
+
+.pen-footer {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: horizontal;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: row;
+   -ms-flex-direction: row;
+   flex-direction: row;
+   -webkit-box-pack: justify;
+   -webkit-justify-content: space-between;
+   -ms-flex-pack: justify;
+   justify-content: space-between;
+   width: 600px;
+   margin: 20px auto 100px;
+}
+
+.pen-footer a {
+   color: #FFFFFF;
+   font-size: 12px;
+   text-decoration: none;
+   text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.pen-footer a .material-icons {
+   width: 12px;
+   margin: 0 5px;
+   vertical-align: middle;
+   font-size: 12px;
+}
+
+.cp-fab {
+   background: #FFFFFF !important;
+   color: #4285F4 !important;
+}
+
+#header-wrapper {
+   /* overflow: hidden; */
+   padding: 50px 0px 0px 0px;
+   background: #FFC000 url(images/overlay.png) repeat;
+}
+</style>
+</head>
+<body>
+
+
+
+
+
+
+</head>
+<body>
+   <%
+      MemberDTO info = (MemberDTO) session.getAttribute("info");
+   %>
+   <div id="header-wrapper">
+      <div id="header" class="container">
+         <div id="logo">
+            <span class="icon icon-group"></span>
+            <h1>
+               <a href="#">웰딥</a>
+            </h1>
+            <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
+         </div>
+         <!-- <div id="triangle-up"></div> -->
+      </div>
+   </div>
+   <script language=javascript>
+   if (<%= info == null%>){
+      alert('로그인이 필요합니다.');
+      location.href = "index.jsp";
+   }
+    if ("<%=request.getParameter("updatesuccess")%>" == "True") {
+         alert('수정 완료');
+   }
+    if ("<%=request.getParameter("updatesuccess")%>" == "False") {
+      alert('수정 실패');
+   }
+   </script>
+
+   <div id="menu-wrapper">
+      <div id="menu">
+         <ul>
+            <li class="current_page_item"><a href="#" accesskey="1"
+               title=""></a></li>
+            <li><a href="#" accesskey="2" title=""></a></li>
+            <li><a href="#" accesskey="3" title=""></a></li>
+            <div
+               style="position: relative; float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
+               <%
+                  if (info == null) {
+               %>
+               <form action="LoginService.do">
+                  <input style="width: 120px; height: 12px; font-size: 10px;"
+                     type="text" id="loginId" name="p_id" placeholder="ID"> <input
+                     style="width: 120px; height: 12px; font-size: 10px;"
+                     type="password" id="loginPw" name="p_pw" placeholder="Password">
+                  <button type="submit" class="btn btn-primary">로그인</button>
+               </form>
+               <form action="JoinService.do">
+                  <input type="button" value="회원가입">
+               </form>
+               <%
+                  } else {
+               %>
+               <form action="LogoutService.do">
+                  <li><%=info.getP_id()%> 님 환영합니다.</li>
+                  <button type="submit" class="btn btn-primary">로그아웃</button>
+               </form>
+               <form action="update.jsp">
+                  <input type="button" value="정보수정">
+               </form>
+               <%
+                  }
+               %>
+
+            </div>
+
+         </ul>
+      </div>
+   </div>   
+   <!-- <div id="wrapper">
+      <div id="featured-wrapper"> -->
+         <div style = "height: 1500px; background: white;">
+         <% if (info != null) {%>
+            <h2 style = "font-size: 24px; text-align: center; padding-top: 130px; ">내 정보</h2>
+
+            
+            
+            <div id="wrapper">
+      <div id="featured-wrapper">
+         <div class="title"></div>
+
+
+
+
+         <!-- Form-->
+         <div class="form"
+            style="position: relative; left: 10px; top: -70px; z-index: 1;">
+
+
+
+            <!-- <div class="form-toggle"></div> -->
+            <div class="form-panel one" style = "padding-top: 10px; padding-left: 78px;">
+               <div class="form-header">
+                  <h1 style = "font-sizse: 24px;">회원정보 수정</h1>
+               </div>
+               <div class="form-content">
+                  <form action="LoginService.do">
+                     <div class="form-group">
+                        <label for="username">비밀번호</label> <input style = "margin-bottom: 16px;"type="text"
+                           id="pw" name="p_id" required="required" />
+                     </div>
+                     <div class="form-group">
+                        <label for="password">이름</label> <input  style = "margin-left: 29px; margin-bottom: 16px;" type="password"
+                           id="name" name="p_pw" required="required" />
+                     </div>
+                     
+                     <div class="form-group">
+                        <label for="password">주소</label> <input  style = "margin-left: 29px; margin-bottom: 16px;" type="password"
+                           id="addr" name="p_pw" required="required" />
+                     </div>
+                     
+                     <div class="form-group">
+                        <label for="password">전화번호</label> <input style = "margin-bottom: 16px;"type="password"
+                           id="phone" name="p_pw" required="required" />
+                     </div>
+                     
+                     
+                  </form>
+               </div>
+            </div>
+
+
+            
+            
+            
+            
+            
+            <%-- <table align="center" border="1px">
+               <tr><td>비밀번호</td><td id="pw"></td><td id="pw_td"><button onclick="click_pw();" id="pw_modify">수정</button></td></tr>
+               <tr><td>이름</td><td id="name"><%= info.getP_name() %></td><td id="name_td"><button onclick="click_name();" id="name_modify">수정</button></td></tr>
+               <tr><td>주소</td><td id="addr"><%= info.getP_addr() %></td><td id="addr_td"><button onclick="click_addr();" id="addr_modify">수정</button></td></tr>
+               <tr><td>전화번호</td><td id="phone"><%= info.getP_phone() %></td><td id="phone_td"><button onclick="click_phone();" id="phone_modify">수정</button></td></tr>
+            </table>
+            <h2>아이 정보</h2>
+            <h3>- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
+            <table align="center" border="1px">
+               <tr><td>사진</td><td><% if(info.getC_photo() != null){%> <%= info.getC_photo() %> <%}%></td></tr>
+               <tr><td>이름</td><td><% if(info.getC_name() != null){%> <%= info.getC_name() %> <%}%></td></tr>   
+               <tr><td>나이</td><td><% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%></td></tr>
+            </table> --%>
+         
+         </div>
+         
+      </div>
+      </div>
+      
+      
+      <h2 style = "text-align:center; padding-top: 104px;">아이 정보</h2>
+            <h3 style = "text-align:center; margin-bottom: 26px;">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
+            <table align="center" border="1px">
+                     <img style = "display : block;margin : 0 auto; width: 200px;" src="img/childphoto.jpg"><% if(info.getC_photo() != null){%> <%}%>
+               <div style = "text-align:center; font-size: 10px; margin: 35px;">
+               <h2>이름 : <% if(info.getC_name() != null){%> <%= info.getC_name() %> <%}%>   
+               <h2>나이 : <% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%>
+               <h2>성별 : <% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%>
+               </div>      
+            </table> 
+            <%} %>
+            
+            
+      
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script src="js/bootsnav.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+   var name = null;
+   var addr = null;
+   var pw = null;
+   var phone = null;
+   var isCheck = false;
+
+   function click_pw(){
+      $("#pw").html('<input type="text" id="pw_input">');
+      $("#pw_modify").remove();
+      $("#pw_td").append('<button onclick="click_pw_r();" id="pw_modified">변경</button>');
+   }
+   function click_pw_r(){
+      pw = $('#pw_input').val();
+      isCheck = true;
+         if(isCheck && pw !== ""){
+            console.log(pw);
+            $.ajax({
+               url : "UpdateUserService.do",
+               type : "POST",
+               cache : false,
+               dataType : "json",
+               data : "pw=" + pw,
+               success : function(result) {
+                  var re_pw = result.p_pw;
+                  $("#pw").html("변경완료");
+                  $("#pw_modified").remove();
+                  $("#pw_td").append('<button onclick="click_pw();" id="pw_modify">수정</button>');
+                  console.log("성공");
+                  },
+                  error : function() {
+                  console.log("error");
+               }});
+         }
+         if(isCheck && pw == ""){
+            alert('비밀번호를 입력해주세요.');
+         }
+   }
+   function click_name(){
+      $("#name").html('<input type="text" id="name_input">');
+      $("#name_modify").remove();
+      $("#name_td").append('<button onclick="click_name_r();" id="name_modified">변경</button>');
+   }
+   function click_name_r(){
+      name = $('#name_input').val();
+      isCheck = true;
+         if(isCheck && name !== ""){
+            console.log(name);
+            $.ajax({
+               url : "UpdateUserService.do",
+               type : "POST",
+               cache : false,
+               dataType : "json",
+               data : "name=" + name,
+               success : function(result) {
+                  var re_name = result.p_name;
+                  $("#name").html(re_name);
+                  $("#name_modified").remove();
+                  $("#name_td").append('<button onclick="click_name();" id="name_modify">수정</button>');
+                  console.log("성공");
+                  },
+                  error : function() {
+                  console.log("error");
+               }});
+         }
+         if(isCheck && name == ""){
+            alert('이름을 입력해주세요.');
+         }
+   }
+   function click_addr(){
+      $("#addr").html('<input type="text" id="addr_input">');
+      $("#addr_modify").remove();
+      $("#addr_td").append('<button onclick="click_addr_r();" id="addr_modified">변경</button>');
+   }
+   function click_addr_r(){
+      addr = $('#addr_input').val();
+      isCheck = true;
+         if(isCheck && addr !== ""){
+            console.log(addr);
+            $.ajax({
+               url : "UpdateUserService.do",
+               type : "POST",
+               cache : false,
+               dataType : "json",
+               data : "addr=" + addr,
+               success : function(result) {
+                  var re_addr = result.p_addr;
+                  $("#addr").html(re_addr);
+                  $("#addr_modified").remove();
+                  $("#addr_td").append('<button onclick="click_addr();" id="addr_modify">수정</button>');
+                  console.log("성공");
+                  },
+                  error : function() {
+                  console.log("error");
+               }});
+         }
+         if(isCheck && addr == ""){
+            alert('주소를 입력해주세요.');
+         }
+   }
+   function click_phone(){
+      $("#phone").html('<input type="text" id="phone_input">');
+      $("#phone_modify").remove();
+      $("#phone_td").append('<button onclick="click_phone_r();" id="phone_modified">변경</button>');
+   }
+   function click_phone_r(){
+      phone = $('#phone_input').val();
+      isCheck = true;
+         if(isCheck && phone !== ""){
+            console.log(콜);
+            $.ajax({
+               url : "UpdateUserService.do",
+               type : "POST",
+               cache : false,
+               dataType : "json",
+               data : "phone=" + phone,
+               success : function(result) {
+                  var re_phone = result.p_phone;
+                  $("#phone").html(re_phone);
+                  $("#phone_modified").remove();
+                  $("#phone_td").append('<button onclick="click_phone();" id="phone_modify">수정</button>');
+                  console.log("성공");
+                  },
+                  error : function() {
+                  console.log("error");
+               }});
+         }
+         if(isCheck && phone == ""){
+            alert('전화번호를 입력해주세요.');
+         }
+   }
+</script>
+<script type="text/javascript">
+</script>
+
+   <div id="copyright" class="container" style = "overflow: hidden; padding: 5em 0em;
+    border-top: 1px solid rgba(255,255,255,0.08); margin-top: 240px; text-align: center; background: #3D3D3D;">
+    
+      <div class="inner">
+         <section class="about">
+            <h4 class="major">Magna Aliquam Feugiat</h4>
+            <p>Etiam finibus pharetra purus, imperdiet sagittis mauris
+               hendrerit vitae.</p>
+            <p>In feugiat ante elementum nulla arcu.</p>
+            <p>Maecenas vulputate faucibus, convallis ligula ipsum dolor
+               feugiat tempus adipiscing.</p>
+
+</body>
+</html>
