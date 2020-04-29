@@ -1,3 +1,8 @@
+<%@page import="org.json.simple.JSONArray"%>
+<%@page import="org.json.simple.JSONObject"%>
+<%@page import="com.model.AlarmDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.AlarmDAO"%>
 <%@page import="com.model.ChildDAO"%>
 <%@page import="com.model.ChildDTO"%>
 <%@page import="com.model.MemberDAO"%>
@@ -7,6 +12,8 @@
 
 <%
 	request.setCharacterEncoding("UTF-8");
+response.setCharacterEncoding("UTF-8");
+
 String type = request.getParameter("type");
 
 if (type.equals("join")) {
@@ -41,5 +48,30 @@ if (type.equals("join")) {
 	int cnt = dao.join(dto);
 	out.print(cnt);
 
+} else if (type.equals("login")) {
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+
+	MemberDTO dto = new MemberDTO(id, pw);
+	MemberDAO dao = MemberDAO.getDAO();
+	MemberDTO info = dao.login(dto);
+
+	JSONObject jsonMain = new JSONObject();
+	JSONArray jsonArray = new JSONArray();
+
+	JSONObject jsonObject = new JSONObject();
+
+	jsonObject.put("p_id", info.getP_id());
+	jsonObject.put("p_pw", info.getP_pw());
+	jsonObject.put("p_addr", info.getP_addr());
+	jsonObject.put("p_phone", info.getP_phone());
+	jsonObject.put("p_name", info.getP_name());
+
+	jsonArray.add(jsonObject);
+
+	jsonMain.put("dataSet", jsonArray);
+
+	System.out.println(jsonMain);
+	out.print(jsonMain);
 }
 %>
