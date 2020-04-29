@@ -10,7 +10,7 @@ drop table children;
 drop sequence children_seq;
 drop table parents;
 
-
+select * from PARENTS;
 
 create table parents (
 perents_id varchar2(50) PRIMARY key,

@@ -245,4 +245,31 @@ public class MemberDAO {
 		return modify_info;
 	}
 
+	public int updateAndroid(String id, String pw, String addr, String tel, String name, String sex) {
+		int cnt = 0;
+
+		try {
+				getConnection();
+				String sql = "update parents set perents_pw=?, perents_addr=?, perents_phone=?, perents_name = ?, "+
+				"perents_sex = ? where perents_id = ?";
+				
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, pw);
+				psmt.setString(2, addr);
+				psmt.setString(3, tel);
+				psmt.setString(4, name);
+				psmt.setString(5, sex);
+				psmt.setString(6, id);
+				
+				cnt = psmt.executeUpdate();
+				System.out.println(cnt);
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	}
 }

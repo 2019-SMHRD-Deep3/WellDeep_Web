@@ -25,8 +25,6 @@ if (type.equals("join")) {
 	String p_name = request.getParameter("name");
 	String p_sex = request.getParameter("sex");
 
-	System.out.print("ÀÌ¸§" + p_name);
-
 	String dumy_child = null;
 
 	MemberDTO dto = new MemberDTO(p_id, p_pw, p_addr, p_phone, p_name, p_sex, dumy_child);
@@ -66,6 +64,7 @@ if (type.equals("join")) {
 	jsonObject.put("p_addr", info.getP_addr());
 	jsonObject.put("p_phone", info.getP_phone());
 	jsonObject.put("p_name", info.getP_name());
+	jsonObject.put("p_sex", info.getP_sex());
 
 	jsonArray.add(jsonObject);
 
@@ -73,5 +72,17 @@ if (type.equals("join")) {
 
 	System.out.println(jsonMain);
 	out.print(jsonMain);
+}else if (type.equals("update")) {
+
+	String p_id = request.getParameter("id");
+	String p_pw = request.getParameter("pw");
+	String p_addr = request.getParameter("addr");
+	String p_phone = request.getParameter("tel");
+	String p_name = request.getParameter("name");
+	String p_sex = request.getParameter("sex");
+
+	MemberDAO dao = MemberDAO.getDAO();
+	int cnt = dao.updateAndroid(p_id, p_pw, p_addr, p_phone, p_name, p_sex);
+	out.print(cnt);
 }
 %>
