@@ -266,8 +266,41 @@ button:hover:before,button:hover:after{
          </div>
       </div>
    </div>
+   
+ <div id="wrapper" >
+      <div id="featured-wrapper">
+         <div class="extra2 container">
+            <section>
+               <div class="text-group"
+                  style="display: table; height:300px;  text-align: center; opacity:0.5">
+                  <div class="test"></div>
+                  <div
+                     style="display: table-cell; vertical-align: middle; width: 800px">
+                     <img src="img/accs.png"
+                        style="width: 20rem; padding-right: 0px; padding-top: 0px;">
+                  </div>
 
-   <div id="copyright" class="container">
+                  <div
+                     style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
+<h4>출시예정</h4>
+                     <h2 style="display: inline;">
+                        <strong >언제나, 어디서든</strong><br>
+                     </h2>
+                     <p style="display: inline; font-size: 20px;">
+                        CCTV뿐만아니라<br> MomSee액세서리를 통해 <br>
+                        우리아이를 지켜주세요.<br>
+                        
+                     </p>
+                  </div>
+                  <div class="test"></div>
+                  
+               </div>
+            </section>
+         </div>
+      </div>
+   </div>
+   
+<div id="copyright" class="container">
       <div class="inner">
          <section class="about">
             <h4 class="major">스마트 미디어 인재 개발원</h4>
