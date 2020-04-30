@@ -27,6 +27,7 @@ public class UpdateUserCon implements ICommand {
 		String c_photo = info.getC_photo();
 		String c_name = info.getC_name();
 		String c_age = info.getC_age();
+		String c_sex = info.getC_sex();
 		
 		String re_pw = request.getParameter("pw");
 		String re_phone = request.getParameter("phone");
@@ -43,7 +44,7 @@ public class UpdateUserCon implements ICommand {
 			String name = search_info.getP_name();
 			String addr = search_info.getP_addr();
 			String phone = search_info.getP_phone();
-			MemberDTO modify_info = dao.updateUser(id, re_pw, addr, phone, name, c_photo, c_name, c_age);
+			MemberDTO modify_info = dao.updateUser(id, re_pw, addr, phone, name, c_photo, c_name, c_age, c_sex);
 			value = gson.toJson(modify_info);
 			session.setAttribute("info", modify_info);
 		}
@@ -52,7 +53,7 @@ public class UpdateUserCon implements ICommand {
 			String pw = search_info.getP_pw();
 			String addr = search_info.getP_addr();
 			String phone = search_info.getP_phone();
-			MemberDTO modify_info = dao.updateUser(id, pw, addr, phone, re_name, c_photo, c_name, c_age);
+			MemberDTO modify_info = dao.updateUser(id, pw, addr, phone, re_name, c_photo, c_name, c_age, c_sex);
 			value = gson.toJson(modify_info);
 			session.setAttribute("info", modify_info);
 		}
@@ -61,7 +62,7 @@ public class UpdateUserCon implements ICommand {
 			String pw = search_info.getP_pw();
 			String name = search_info.getP_name();
 			String phone = search_info.getP_phone();
-			MemberDTO modify_info = dao.updateUser(id, pw, re_addr, phone, name, c_photo, c_name, c_age);
+			MemberDTO modify_info = dao.updateUser(id, pw, re_addr, phone, name, c_photo, c_name, c_age, c_sex);
 			value = gson.toJson(modify_info);
 			session.setAttribute("info", modify_info);
 		}
@@ -70,7 +71,7 @@ public class UpdateUserCon implements ICommand {
 			String pw = search_info.getP_pw();
 			String name = search_info.getP_name();
 			String addr = search_info.getP_addr();
-			MemberDTO modify_info = dao.updateUser(id, pw, addr, re_phone, name, c_photo, c_name, c_age);
+			MemberDTO modify_info = dao.updateUser(id, pw, addr, re_phone, name, c_photo, c_name, c_age, c_sex);
 			value = gson.toJson(modify_info);
 			session.setAttribute("info", modify_info);
 		}

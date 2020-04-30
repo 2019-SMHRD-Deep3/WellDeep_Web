@@ -129,5 +129,4 @@ insert into voice values (voice_seq.nextval,SYSDATE,'voice_file6',2222,6);
 insert into alarm values (alarm_seq.nextval,SYSDATE,2222,6,'kb3.jpg','voice_file6');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
 
-
 commit;

@@ -26,7 +26,7 @@ public class JoinCon implements ICommand{
 		/*
 		 * String c_cnt = request.getParameter("c_cnt");
 		 */		
-		System.out.println(p_sex);
+//		System.out.println(p_sex);
 		String c_cnt = null;		
 		MemberDTO dto = new MemberDTO(p_id, p_pw, p_addr, p_phone, p_name, p_sex, c_cnt);
 		MemberDAO dao = MemberDAO.getDAO();

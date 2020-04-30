@@ -350,7 +350,15 @@ form-panel.two.active {
       </div>
       
    </div>
-
+<script type="text/javascript">
+if ("<%=request.getParameter("joinsuccess")%>" == "True") {
+    alert('가입 완료, 로그인을 해주세요');
+    location.href = "index.jsp";
+}
+if ("<%=request.getParameter("joinsuccess")%>" == "False") {
+ 	alert('가입 실패');
+}
+</script>
    <div id="wrapper" style = "height: 1500px;">
          <!-- Form-->
          <div class="form"
@@ -411,8 +419,8 @@ form-panel.two.active {
                         </div>
 
 
-                        <input type="radio" name="p_sex" value="남성" checked="checked">남성
-                        <input type="radio" name="p_sex" value="여성">여성
+                        <input type="radio" name="p_sex" value="남" checked="checked">남성
+                        <input type="radio" name="p_sex" value="여">여성
                   </form>
                   </div>
                   <div class="form-group">

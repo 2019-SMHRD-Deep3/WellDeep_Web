@@ -57,7 +57,7 @@ public class MemberDTO {
 	}
 	
 	// 정보 수정
-	public MemberDTO(String p_id, String p_pw, String p_addr, String p_phone, String p_name, String c_photo, String c_name, String c_age) {
+	public MemberDTO(String p_id, String p_pw, String p_addr, String p_phone, String p_name, String c_photo, String c_name, String c_age, String c_sex) {
 		this.p_id = p_id;
 		this.p_pw = p_pw;
 		this.p_addr = p_addr;
@@ -66,6 +66,7 @@ public class MemberDTO {
 		this.c_photo = c_photo;
 		this.c_name = c_name;
 		this.c_age = c_age;
+		this.c_sex = c_sex;
 	}
 	
 	// 아이 정보 등록

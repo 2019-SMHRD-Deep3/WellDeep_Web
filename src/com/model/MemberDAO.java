@@ -178,8 +178,8 @@ public class MemberDAO {
 	}
 
 	// ¼öÁ¤
-	public MemberDTO updateUser(String id, String pw, String addr, String phone, String name, String c_photo, String c_name, String c_age) {
-		MemberDTO modify_info = new MemberDTO(id, pw, addr, phone, name, c_photo, c_name, c_age);
+	public MemberDTO updateUser(String id, String pw, String addr, String phone, String name, String c_photo, String c_name, String c_age, String c_sex) {
+		MemberDTO modify_info = new MemberDTO(id, pw, addr, phone, name, c_photo, c_name, c_age, c_sex);
 		int cnt = 0;
 
 		try {

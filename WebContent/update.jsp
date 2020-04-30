@@ -481,73 +481,44 @@ button:hover:before,button:hover:after{
                   <h1 style = "font-sizse: 24px;">회원정보 수정</h1>
                </div>
                <div class="form-content">
-                  <form action="LoginService.do">
                      <div class="form-group">
-                        <label for="username">비밀번호</label> <input style = "margin-bottom: 16px;"type="text"
-                           id="pw" name="p_id" required="required" /><td id="pw"></td><td id="pw_td"><button 
-                           style = "height: 37px; width: 63px; font-size: 11px; text-align: left;"onclick="click_pw();" id="pw_modify">수정</button></td>
+                        <label>비밀번호</label>
+                        <input style = "margin-bottom: 16px;" type="password" id="pw" placeholder="<% for(int i=0; i< info.getP_pw().length();i++){%>●<%} %>" diasbled/>
+                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_pw();" id="pw_modify">수정</button>
                      </div>
                      <div class="form-group">
-                        <label for="password">이름</label> <input  style = "margin-left: 29px; margin-bottom: 16px;" type="password"
-                           id="name" name="p_pw" required="required" /><td id="name"><%= info.getP_name() %></td><td id="name_td"><button 
-                            style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_name();" id="name_modify">수정</button></td>
-                     </div>
-                     
-                     <div class="form-group">
-                        <label for="password">주소</label> <input  style = "margin-left: 29px; margin-bottom: 16px;" type="password"
-                           id="addr" name="p_pw" required="required" /></td><td id="addr"><%= info.getP_addr() %></td><td id="addr_td"><button
-                            style = "height: 37px; width: 63px; font-size: 11px; text-align: left;"  onclick="click_addr();" id="addr_modify">수정</button></td>
+                        <label>이름</label>
+                        <input style = "margin-bottom: 16px;" type="text" id="name" placeholder="<%= info.getP_name() %>" diasbled/>
+                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_name();" id="name_modify">수정</button>
                      </div>
                      
                      <div class="form-group">
-                        <label for="password">전화번호</label> <input style = "margin-bottom: 16px;"type="password"
-                           id="phone" name="p_pw" required="required" /><td id="phone"><%= info.getP_phone() %></td><td id="phone_td"><button
-                            style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_phone();" id="phone_modify">수정</button></td>
+                        <label>주소</label>
+                        <input style = "margin-bottom: 16px;" type="text" id="addr" placeholder="<%= info.getP_addr() %>" diasbled/>
+                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_addr();" id="addr_modify">수정</button>
                      </div>
                      
-                     
-                  </form>
+                     <div class="form-group">
+                        <label>전화번호</label>
+                        <input style = "margin-bottom: 16px;" type="text" id="phone" placeholder="<%= info.getP_phone() %>" diasbled/>
+                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_phone();" id="phone_modify">수정</button>
+                     </div>
                </div>
             </div>
-
-
-            
-            
-            
-            
-            
-            <%-- <table align="center" border="1px">
-               <tr><td>비밀번호</td><td id="pw"></td><td id="pw_td"><button onclick="click_pw();" id="pw_modify">수정</button></td></tr>
-               <tr><td>이름</td><td id="name"><%= info.getP_name() %></td><td id="name_td"><button onclick="click_name();" id="name_modify">수정</button></td></tr>
-               <tr><td>주소</td><td id="addr"><%= info.getP_addr() %></td><td id="addr_td"><button onclick="click_addr();" id="addr_modify">수정</button></td></tr>
-               <tr><td>전화번호</td><td id="phone"><%= info.getP_phone() %></td><td id="phone_td"><button onclick="click_phone();" id="phone_modify">수정</button></td></tr>
-            </table>
-            <h2>아이 정보</h2>
-            <h3>- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
-            <table align="center" border="1px">
-               <tr><td>사진</td><td><% if(info.getC_photo() != null){%> <%= info.getC_photo() %> <%}%></td></tr>
-               <tr><td>이름</td><td><% if(info.getC_name() != null){%> <%= info.getC_name() %> <%}%></td></tr>   
-               <tr><td>나이</td><td><% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%></td></tr>
-            </table> --%>
-         
          </div>
-         
       </div>
       </div>
       
       
       <h2 style = "text-align:center; padding-top: 104px;">아이 정보</h2>
             <h3 style = "text-align:center; margin-bottom: 26px;">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
-            <table align="center" border="1px">
-                     <img style = "display : block;margin : 0 auto; width: 200px;" src="img/childphoto.jpg"><% if(info.getC_photo() != null){%> <%}%>
+               <% if(info.getC_photo() != null){%><img style = "display : block;margin : 0 auto; width: 200px;" src="img/childphoto.jpg"> <%}%>
                <div style = "text-align:center; font-size: 10px; margin: 35px;">
-               <h2>이름 : <% if(info.getC_name() != null){%> <%= info.getC_name() %> <%}%>   
-               <h2>나이 : <% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%>
-               <h2>성별 : <% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%>
-               </div>      
-            </table> 
+               <h2>이름 : <% if(info.getC_name() != null){%> <%= info.getC_name() %> <%}%></h2> 
+               <h2>나이 : <% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%></h2>
+               <h2>성별 : <% if(info.getC_sex() != null){%> <%= info.getC_sex() %> <%}%></h2>
             <%} %>
-            
+            </div>
             
       
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -564,12 +535,7 @@ button:hover:before,button:hover:after{
    var isCheck = false;
 
    function click_pw(){
-      $("#pw").html('<input type="text" id="pw_input">');
-      $("#pw_modify").remove();
-      $("#pw_td").append('<button onclick="click_pw_r();" id="pw_modified">변경</button>');
-   }
-   function click_pw_r(){
-      pw = $('#pw_input').val();
+      pw = $('#pw').val();
       isCheck = true;
          if(isCheck && pw !== ""){
             console.log(pw);
@@ -581,10 +547,14 @@ button:hover:before,button:hover:after{
                data : "pw=" + pw,
                success : function(result) {
                   var re_pw = result.p_pw;
-                  $("#pw").html("변경완료");
-                  $("#pw_modified").remove();
-                  $("#pw_td").append('<button onclick="click_pw();" id="pw_modify">수정</button>');
-                  console.log("성공");
+                  console.log(re_pw);
+               	  var dot_pw;
+               	  for(var i=0;i<re_pw.length;i++){
+               		  dot_pw += '●';
+               	  }                  
+                  $("#pw").html(dot_pw);
+                  $("#pw").append('<button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_pw();" id="pw_modify">수정</button>');
+                  alert("완료");
                   },
                   error : function() {
                   console.log("error");
@@ -594,13 +564,9 @@ button:hover:before,button:hover:after{
             alert('비밀번호를 입력해주세요.');
          }
    }
+   
    function click_name(){
-      $("#name").html('<input type="text" id="name_input">');
-      $("#name_modify").remove();
-      $("#name_td").append('<button onclick="click_name_r();" id="name_modified">변경</button>');
-   }
-   function click_name_r(){
-      name = $('#name_input').val();
+      name = $('#name').val();
       isCheck = true;
          if(isCheck && name !== ""){
             console.log(name);
@@ -613,9 +579,8 @@ button:hover:before,button:hover:after{
                success : function(result) {
                   var re_name = result.p_name;
                   $("#name").html(re_name);
-                  $("#name_modified").remove();
-                  $("#name_td").append('<button onclick="click_name();" id="name_modify">수정</button>');
-                  console.log("성공");
+                  $("#name").append('<button <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_name();" id="name_modify">수정</button>');
+                  alert("완료");
                   },
                   error : function() {
                   console.log("error");
@@ -625,13 +590,9 @@ button:hover:before,button:hover:after{
             alert('이름을 입력해주세요.');
          }
    }
+   
    function click_addr(){
-      $("#addr").html('<input type="text" id="addr_input">');
-      $("#addr_modify").remove();
-      $("#addr_td").append('<button onclick="click_addr_r();" id="addr_modified">변경</button>');
-   }
-   function click_addr_r(){
-      addr = $('#addr_input').val();
+      addr = $('#addr').val();
       isCheck = true;
          if(isCheck && addr !== ""){
             console.log(addr);
@@ -644,9 +605,8 @@ button:hover:before,button:hover:after{
                success : function(result) {
                   var re_addr = result.p_addr;
                   $("#addr").html(re_addr);
-                  $("#addr_modified").remove();
-                  $("#addr_td").append('<button onclick="click_addr();" id="addr_modify">수정</button>');
-                  console.log("성공");
+                  $("#addr").append('<button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_addr();" id="addr_modify">수정</button>');
+                  alert("완료");
                   },
                   error : function() {
                   console.log("error");
@@ -656,16 +616,12 @@ button:hover:before,button:hover:after{
             alert('주소를 입력해주세요.');
          }
    }
+   
    function click_phone(){
-      $("#phone").html('<input type="text" id="phone_input">');
-      $("#phone_modify").remove();
-      $("#phone_td").append('<button onclick="click_phone_r();" id="phone_modified">변경</button>');
-   }
-   function click_phone_r(){
-      phone = $('#phone_input').val();
+      phone = $('#phone').val();
       isCheck = true;
          if(isCheck && phone !== ""){
-            console.log(콜);
+            console.log(phone);
             $.ajax({
                url : "UpdateUserService.do",
                type : "POST",
@@ -675,9 +631,8 @@ button:hover:before,button:hover:after{
                success : function(result) {
                   var re_phone = result.p_phone;
                   $("#phone").html(re_phone);
-                  $("#phone_modified").remove();
-                  $("#phone_td").append('<button onclick="click_phone();" id="phone_modify">수정</button>');
-                  console.log("성공");
+                  $("#phone").append('<button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_phone();" id="phone_modify">수정</button>');
+                  alert("완료");
                   },
                   error : function() {
                   console.log("error");
