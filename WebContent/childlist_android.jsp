@@ -33,7 +33,7 @@ for (int i = 0; i < list.size(); i++) {
 
 	jsonArray.add(jsonObject); }
 
-jsonMain.put("dataSet2", jsonArray);
+jsonMain.put("dataSet", jsonArray);
 
 
 	System.out.println(jsonMain);
