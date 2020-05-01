@@ -404,9 +404,8 @@ button:hover:before,button:hover:after{
    <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
             <div class="title-group text-center">
                <h1><font size="30px" color="beige">
-                  엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</font>
+                  엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
-                  </strong>
                </h1>
                <h1>
                   <div class="download-btns" style="margin-top: -34px;">
@@ -511,13 +510,13 @@ button:hover:before,button:hover:after{
       </div>
       </div>
 <div class="inner">
-         <section style = "text-align:center; class="about">
-            <h4 class="major">Magna Aliquam Feugiat</h4>
-            <p>Etiam finibus pharetra purus, imperdiet sagittis mauris
-               hendrerit vitae.</p>
-            <p>In feugiat ante elementum nulla arcu.</p>
-            <p>Maecenas vulputate faucibus, convallis ligula ipsum dolor
-               feugiat tempus adipiscing.</p></section></div>      
+         <section style = "text-align:center; color: rgb(245, 245, 220);" class="about">
+            <h4 class="major">스마트 미디어 인재 개발원</h4>
+            <p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
+            <p>Team Well-Deep.</p>
+            <p>광주 CGI센터 교육실4
+               광주 송암로60.</p>
+         </section></div> 
             
       
 <script type="text/javascript" src="js/jquery.min.js"></script>
