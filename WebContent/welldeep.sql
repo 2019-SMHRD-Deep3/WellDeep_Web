@@ -92,41 +92,42 @@ create sequence alarm_seq start with 1 increment by 1 maxvalue 9999 cycle nocach
 
 
 insert into parents values (1111,1111,'광주','010-0000-0000','홍길동','남');
-insert into children values (children_seq.nextval,'코난','남',6,'tree.jpg',1111);
-insert into img values (img_seq.nextval,SYSDATE,'tree.jpg',1111,1);
-insert into voice values (voice_seq.nextval,SYSDATE,'sib.wav',1111,1);
-insert into alarm values (alarm_seq.nextval,SYSDATE,1111,1,'tree.jpg','sib.wav');
+
+insert into children values (children_seq.nextval,'코난','남',6,'children_photo',1111);
+insert into img values (img_seq.nextval,SYSDATE,'alarm_1.png',1111,1);
+insert into voice values (voice_seq.nextval,SYSDATE,'alarm_1.wav',1111,1);
+insert into alarm values (alarm_seq.nextval,SYSDATE,1111,1,'alarm_1.png','alarm_1.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,1111);
 
 insert into children values (children_seq.nextval,'장미','여',6,'children_photo',1111);
-insert into img values (img_seq.nextval,SYSDATE,'tree2.jpg',1111,2);
-insert into voice values (voice_seq.nextval,SYSDATE,'voice_file2',1111,2);
-insert into alarm values (alarm_seq.nextval,SYSDATE,1111,2,'tree2.jpg','voice_file2');
+insert into img values (img_seq.nextval,SYSDATE,'alarm_2.jpg',1111,2);
+insert into voice values (voice_seq.nextval,SYSDATE,'alarm_2.wav',1111,2);
+insert into alarm values (alarm_seq.nextval,SYSDATE,1111,2,'alarm_2.jpg','alarm_2.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,1111);
 
 insert into children values (children_seq.nextval,'미란','여',7,'children_photo',1111);
-insert into img values (img_seq.nextval,SYSDATE,'tree3.jpg',1111,3);
-insert into voice values (voice_seq.nextval,SYSDATE,'voice_file3',1111,3);
-insert into alarm values (alarm_seq.nextval,SYSDATE,1111,3,'tree3.jpg','voice_file3');
+insert into img values (img_seq.nextval,SYSDATE,'alarm_3.png',1111,3);
+insert into voice values (voice_seq.nextval,SYSDATE,'alarm_3.wav',1111,3);
+insert into alarm values (alarm_seq.nextval,SYSDATE,1111,3,'alarm_3.png','alarm_3.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,1111);
 
 insert into parents values (2222,2222,'서울','010-1111-2222','고길동','남');
 insert into children values (children_seq.nextval,'둘리','남',7,'children_photo',2222);
-insert into img values (img_seq.nextval,SYSDATE,'kb.jpg',2222,4);
-insert into voice values (voice_seq.nextval,SYSDATE,'voice_file4',2222,4);
-insert into alarm values (alarm_seq.nextval,SYSDATE,2222,4,'kb.jpg','voice_file4');
+insert into img values (img_seq.nextval,SYSDATE,'alarm_4.png',2222,4);
+insert into voice values (voice_seq.nextval,SYSDATE,'alarm_4.wav',2222,4);
+insert into alarm values (alarm_seq.nextval,SYSDATE,2222,4,'alarm_4.png','alarm_4.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
 
 insert into children values (children_seq.nextval,'마이콜','남',5,'children_photo',2222);
-insert into img values (img_seq.nextval,SYSDATE,'kb2.jpg',2222,5);
-insert into voice values (voice_seq.nextval,SYSDATE,'voice_file5',2222,5);
-insert into alarm values (alarm_seq.nextval,SYSDATE,2222,4,'kb2.jpg','voice_file5');
+insert into img values (img_seq.nextval,SYSDATE,'alarm_5.jpg',2222,5);
+insert into voice values (voice_seq.nextval,SYSDATE,'alarm_5.wav',2222,5);
+insert into alarm values (alarm_seq.nextval,SYSDATE,2222,4,'alarm_5.jpg','alarm_5.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
 
 insert into children values (children_seq.nextval,'희동이','남',3,'children_photo',2222);
-insert into img values (img_seq.nextval,SYSDATE,'kb3.jpg',2222,6);
-insert into voice values (voice_seq.nextval,SYSDATE,'voice_file6',2222,6);
-insert into alarm values (alarm_seq.nextval,SYSDATE,2222,6,'kb3.jpg','voice_file6');
+insert into img values (img_seq.nextval,SYSDATE,'alarm_6.jpg',2222,6);
+insert into voice values (voice_seq.nextval,SYSDATE,'alarm_6.wav',2222,6);
+insert into alarm values (alarm_seq.nextval,SYSDATE,2222,6,'alarm_6.jpg','alarm_6.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
 
 select * from ALARM where alarm_number='1';

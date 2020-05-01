@@ -7,38 +7,19 @@
 
 <%
 	request.setCharacterEncoding("UTF-8");
-
-String num = request.getParameter("num");
-System.out.println("이값은? " + num);
 JSONObject jsonMain = new JSONObject();
 JSONArray jsonArray = new JSONArray();
 
+String name = request.getParameter("name");
+System.out.println("넘어온이름은? " + name);
 
-ChildListDAO dao = ChildListDAO.getDAO();
-ArrayList<ChildListDTO> list = dao.selectchild(num);
+ChildListDAO dao = new ChildListDAO();
+String child_photo =dao.selectchild(name);
+System.out.println("넘어온파일 이름은? " + child_photo);
 
-for (int i = 0; i < list.size(); i++) {
+jsonMain.put("dataSet3", jsonArray);
 
-	//jsonObject.put("학번", result.getString("학번"));
-	//jsonObject.put("이름", result.getString("이름"));
-	//jsonObject.put("학과", result.getString("학과"));
-	
-	JSONObject jsonObject = new JSONObject();
-	jsonObject.put("c_number", list.get(i).getC_number());
-	jsonObject.put("c_name", list.get(i).getC_name());
-	jsonObject.put("c_sex", list.get(i).getC_sex());
-	jsonObject.put("c_age", list.get(i).getC_age());
-	jsonObject.put("c_photo", list.get(i).getC_photo());
-	jsonObject.put("p_id", list.get(i).getP_id());
-	
-
-	jsonArray.add(jsonObject); }
-
-jsonMain.put("dataSet2", jsonArray);
-
-
-	System.out.println("tetttt1" + jsonMain);
-	out.print(jsonMain);
+out.print(child_photo);
 
 
 %>

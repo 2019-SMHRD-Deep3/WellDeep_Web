@@ -9,7 +9,7 @@
 	request.setCharacterEncoding("UTF-8");
 String id = request.getParameter("id");
 
-System.out.println("이값은? " + id);
+System.out.println("이값은?noget " + id);
 JSONObject jsonMain = new JSONObject();
 JSONArray jsonArray = new JSONArray();
 

@@ -98,33 +98,24 @@ public class ChildListDAO {
 
 		return list;
 	}
-	public ArrayList<ChildListDTO> selectchild(String num) {
-		
+	
+	public String selectchild(String name) {
+		System.out.println("dao에서 받은name:"+name);
 		info = null;
 		list = new ArrayList<ChildListDTO>();
 
 		try {
 			getConnection();
 
-			String sql = "select * from children where children_number=?";
+			String sql = "select * from children where children_name=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, num);
+			psmt.setString(1, name);
 			//System.out.println(sql);
 
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-
-				c_number = rs.getString("children_number");
-				c_name = rs.getString("children_name");
-				c_sex = rs.getString("children_sex");
-				c_age = rs.getString("children_age");
 				c_photo = rs.getString("children_photo");
-				p_id = rs.getString("perents_id");
-			
-											
-				info = new ChildListDTO(c_number, c_name, c_sex, c_age, c_photo, p_id);
-				list.add(info);
 			}
 
 		} catch (SQLException e) {
@@ -133,7 +124,7 @@ public class ChildListDAO {
 			close();
 		}
 
-		return list;
+		return c_photo;
 	}
 
 }
