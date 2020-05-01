@@ -98,5 +98,34 @@ public class ChildListDAO {
 
 		return list;
 	}
+	
+	public String selectchild(String name) {
+		System.out.println("dao에서 받은name:"+name);
+		info = null;
+		list = new ArrayList<ChildListDTO>();
+
+		try {
+			getConnection();
+
+			String sql = "select * from children where children_name=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, name);
+			//System.out.println(sql);
+
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				c_photo = rs.getString("children_photo");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return c_photo;
+	}
+	
 
 }
