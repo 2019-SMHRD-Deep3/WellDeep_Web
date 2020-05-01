@@ -311,18 +311,14 @@ form-panel.two.active {
 }
 </style>
 </head>
-<body>
-
-
-
-
+<body onload="document.login.p_id.focus();">
 
    <%
       MemberDTO info = (MemberDTO) session.getAttribute("info");
    %>
    <div id="header-wrapper">
       <div id="header" class="container">
-   <p class="img"><img src="img/cctv.png" class="img-logo"></p>
+   <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
             <div class="title-group text-center">
                <h1><font size="30px" color="beige">
                   엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</font>
@@ -370,7 +366,7 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
                   <h1>LOGIN</h1>
                </div>
                <div class="form-content">
-                  <form action="LoginService.do">
+                  <form name="login" action="LoginService.do">
                      <div class="form-group">
                         <label for="username">ID</label> <input type="text"
                            id="username" name="p_id" required="required" />

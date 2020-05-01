@@ -401,7 +401,7 @@ button:hover:before,button:hover:after{
       </div>
 
       <div id="header" class="container">
-   <p class="img"><img src="img/cctv.png" class="img-logo"></p>
+   <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
             <div class="title-group text-center">
                <h1><font size="30px" color="beige">
                   엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</font>
