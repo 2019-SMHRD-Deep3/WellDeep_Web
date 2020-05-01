@@ -14,14 +14,11 @@
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 <title>Insert title here</title>
 
-
-<!doctype html>
-<html lang="kr">
 <head>
 <meta charset="UTF-8">
 <title>http://www.blueb.co.kr</title>
 
-<style rel="stylesheet">
+<style>
 html {
    width: 100%;
    height: 100%;
@@ -140,6 +137,10 @@ body {
    text-transform: uppercase;
    cursor: pointer;
 }
+.form-group button:hover{
+   background:#fff;
+   color:black;
+}
 
 .two .form-group button {
    margin-top: 25px;
@@ -156,6 +157,10 @@ body {
    line-height: inherit;
    text-transform: uppercase;
    cursor: pointer;
+}
+.two .form-group button:hover{
+   background:beige;
+   color:black;
 }
 
 .form-group .form-remember {
@@ -183,6 +188,10 @@ body {
    background: beige;
 }
 
+.form-panel:hover {
+    left: 93%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+}
 .form-panel.two { /* 조인  */
    z-index: 5;
    position: static;
@@ -191,7 +200,6 @@ body {
    background: #FFC000;
    width: 100%;
    /* max-height: 100%; */
-   padding: 60px calc(10% + 60px) 60px 60px;
    /* -webkit-transition: 0.3s ease; */
    /* transition: 0.3s ease; */
    /* cursor: pointer; */
@@ -210,15 +218,6 @@ body {
    transition: 0.3s ease; */
 }
 
-.form-panel.two:after {
-   
-}
-
-left
-:
- 
-3%;
-}
 .form-panel.two:hover {
    left: 93%;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -324,8 +323,8 @@ form-panel.two.active {
                   엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
                </h1>
-               <h1>
                   <div class="download-btns" style="margin-top: -34px;">
+               <h1>
                      <a href="https://hbe.kr/l/ddingdongappdownload-android-homepage"
                         target="_blank" class="btn btn-outline-light mr-2 btn-google">
                         <img src="img/google.png" class="img-btn-google"
@@ -337,9 +336,9 @@ form-panel.two.active {
                         style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
                         App Store
                      </a>
-                  </div>
                </h1>
-               <span><font color="beige">Design by <a href="http://templated.co" rel="nofollow" style="color : beige">WellDeep</font></a></span>
+                  </div>
+               <span><font color="beige">Design by <a href="index.jsp" rel="nofollow" style="color : beige;">WellDeep</a></font></span>
             </div>
             
       </div>
@@ -354,10 +353,10 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
  	alert('가입 실패');
 }
 </script>
-   <div id="wrapper" style = "height: 1500px;">
+   <div id="wrapper" style = "height: 1100px;">
          <!-- Form-->
          <div class="form"
-            style="position: relative; left: 10px; top: 200px; z-index: 1;">
+            style="position: relative; left: 10px; z-index: 1;">
 
             <!-- <div class="form-toggle"></div> -->
             <div class="form-panel one">
@@ -374,9 +373,9 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
                         <label for="password">Password</label> <input type="password"
                            id="password" name="p_pw" required="required" />
                      </div>
-                     <div class="form-group">
-                        <label class="form-remember"> <input type="checkbox" />Remember
-                           Me 
+                     <div style = "text-align:center;" class="form-group">
+                        <label class="form-remember"><input type="checkbox" />Remember
+                           Me </label> 
                      </div>
                      <div class="form-group">
                         <button type="submit">Log In</button>
@@ -385,13 +384,12 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
                </div>
             </div>
 
-            <form action="JoinService.do">
                <div class="form-panel two">
                   <div class="form-header">
                      <h1>JOIN</h1>
                   </div>
                   <div class="form-content">
-                     <form>
+                     <form action="JoinService.do">
                         <div class="form-group">
                            <label for="username">ID</label> <input name="p_id" type="text"
                               class="form-control input-lg"><br>
@@ -412,14 +410,12 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
                            <label for="name">Name</label> <input name="p_name" type="text"
                               class="form-control input-lg"><br>
                         </div>
-
-
-                        <input type="radio" name="p_sex" value="남" checked="checked">남성
-                        <input type="radio" name="p_sex" value="여">여성
-                  </form>
-                  </div>
+                        <label><input type="radio" name="p_sex" value="남" checked="checked">남성</label>
+                        <label><input type="radio" name="p_sex" value="여">여성</label>
                   <div class="form-group">
                      <button type="submit">Join</button>
+                  </div>
+                  </form>
                   </div>
          </div>
       </div>
@@ -432,6 +428,8 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
             <p>광주 CGI센터 교육실4
                광주 송암로60.</p>
          </section></div>
-
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+</script>
 </body>
 </html>

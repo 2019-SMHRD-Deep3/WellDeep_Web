@@ -96,7 +96,7 @@ button:hover:before,button:hover:after{
             } else {
          %>
          <form action="LogoutService.do" style='display:inline;'>
-            <li style="color: #fff;"><%=info.getP_id()%> 님 환영합니다.</li>
+            <h3 style="color: #fff;"><%=info.getP_id()%> 님 환영합니다.</h3>
             <button type="submit" class="btn purple">로그아웃</button>
          </form>
          <form action="update.jsp" style='display:inline;'>
@@ -114,8 +114,8 @@ button:hover:before,button:hover:after{
                   엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
                </h1>
-               <h1>
                   <div class="download-btns" style="margin-top: -34px;">
+               <h1>
                      <a href="https://hbe.kr/l/ddingdongappdownload-android-homepage"
                         target="_blank" class="btn btn-outline-light mr-2 btn-google">
                         <img src="img/google.png" class="img-btn-google"
@@ -127,9 +127,9 @@ button:hover:before,button:hover:after{
                         style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
                         App Store
                      </a>
-                  </div>
                </h1>
-               <span><font color="beige">Design by <a href="http://templated.co" rel="nofollow" style="color : beige">WellDeep</font></a></span>
+                  </div>
+               <span><font color="beige">Design by <a href="index.jsp" rel="nofollow" style="color : beige;">WellDeep</a></font></span>
             </div>
             <div id="triangle-up"></div>
       </div>

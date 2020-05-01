@@ -170,25 +170,11 @@ body {
 }
 
 .form-panel {
-   padding: 30px 30px 30px 30px;
+   padding: 10px 10px 10px 10px;
    box-sizing: border-box;
    background: beige;
 }
 
-/* .form-panel.one:before {
-   content: '';
-   display: block;
-   opacity: 0;
-   visibility: hidden;
-   -webkit-transition: 0.3s ease;
-   transition: 0.3s ease;
-} */
-
-/* .form-panel.one.hidden:before {
-   display: block;
-   opacity: 1;
-   visibility: visible;
-} */
 .form-panel.two { /* 조인  */
    z-index: 5;
    position: static;
@@ -216,15 +202,6 @@ body {
    transition: 0.3s ease; */
 }
 
-.form-panel.two:after {
-   
-}
-
-left
-:
- 
-3%;
-}
 .form-panel.two:hover {
    left: 93%;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -389,7 +366,7 @@ button:hover:before,button:hover:after{
             } else {
          %>
          <form action="LogoutService.do" style='display:inline;'>
-            <li style="color: #fff;"><%=info.getP_id()%> 님 환영합니다.</li>
+            <h3 style="color: #fff;"><%=info.getP_id()%> 님 환영합니다.</h3>
             <button type="submit" class="btn purple">로그아웃</button>
          </form>
          <form action="update.jsp" style='display:inline;'>
@@ -407,8 +384,8 @@ button:hover:before,button:hover:after{
                   엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
                </h1>
-               <h1>
                   <div class="download-btns" style="margin-top: -34px;">
+               <h1>
                      <a href="https://hbe.kr/l/ddingdongappdownload-android-homepage"
                         target="_blank" class="btn btn-outline-light mr-2 btn-google">
                         <img src="img/google.png" class="img-btn-google"
@@ -420,16 +397,16 @@ button:hover:before,button:hover:after{
                         style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
                         App Store
                      </a>
-                  </div>
                </h1>
-               <span><font color="beige">Design by <a href="http://templated.co" rel="nofollow" style="color : beige">WellDeep</font></a></span>
+                  </div>
+               <span><font color="beige">Design by <a href="index.jsp" rel="nofollow" style="color : beige;">WellDeep</a></font></span>
             </div>
             <div id="triangle-up"></div>
       </div>
       
    </div>
    
-   <script language=javascript>
+   <script type="text/javascript">
    if (<%= info == null%>){
       alert('로그인이 필요합니다.');
       location.href = "index.jsp";
@@ -442,24 +419,10 @@ button:hover:before,button:hover:after{
    }
    </script>
 
-   <div id="menu-wrapper">
-      <div id="menu">
-         <ul>
-            <li class="current_page_item"><a href="#" accesskey="1"
-               title=""></a></li>
-            <li><a href="#" accesskey="2" title=""></a></li>
-            <li><a href="#" accesskey="3" title=""></a></li>
-           
-         </ul>
-      </div>
-   </div>   
-
-         <div style = "height: 1200px; background: white;">
+         <div style = "height: 910px; background: white;">
          <% if (info != null) {%>
-            <h2 style = "font-size: 24px; text-align: center; padding-top: 130px; ">회원정보 수정</h2>
-            <div id="wrapper">
-      <div id="featured-wrapper">
-
+            <h2 style = "font-size: 24px; text-align: center; padding-top: 10px; ">회원정보 수정</h2>
+            
          <!-- Form-->
          <div class="form"
             style="position: relative; left: 10px; top: -70px; z-index: 1;">
@@ -496,9 +459,9 @@ button:hover:before,button:hover:after{
                <div class="form-header">
                   <h1 style = "font-sizse: 24px;">아이 정보</h1>
                </div>
-            <h3 style = "text-align:center; margin-bottom: 26px;">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
+            <h3 style = "text-align:center; margin-bottom: 10px;">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
                <% if(info.getC_photo() != null){%><img style = "display : block;margin : 0 auto; width: 200px;" src="img/childphoto.jpg"> <%}%>
-               <div style = "text-align:center; font-size: 10px; margin: 35px;">
+               <div style = "text-align:center; font-size: 10px; margin: 10px;">
                <h2>이름 : <% if(info.getC_name() != null){%> <%= info.getC_name() %> <%}%></h2> 
                <h2>나이 : <% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%></h2>
                <h2>성별 : <% if(info.getC_sex() != null){%> <%= info.getC_sex() %> <%}%></h2>
@@ -507,8 +470,7 @@ button:hover:before,button:hover:after{
             </div>
          </div>
       </div>
-      </div>
-      </div>
+
 <div class="inner">
          <section style = "text-align:center; color: rgb(245, 245, 220);" class="about">
             <h4 class="major">스마트 미디어 인재 개발원</h4>
