@@ -93,38 +93,38 @@ create sequence alarm_seq start with 1 increment by 1 maxvalue 9999 cycle nocach
 
 insert into parents values (1111,1111,'광주','010-0000-0000','홍길동','남');
 
-insert into children values (children_seq.nextval,'코난','남',6,'children_photo',1111);
+insert into children values (children_seq.nextval,'코난','남',6,'conan.jpg',1111);
 insert into img values (img_seq.nextval,SYSDATE,'alarm_1.png',1111,1);
 insert into voice values (voice_seq.nextval,SYSDATE,'alarm_1.wav',1111,1);
 insert into alarm values (alarm_seq.nextval,SYSDATE,1111,1,'alarm_1.png','alarm_1.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,1111);
 
-insert into children values (children_seq.nextval,'장미','여',6,'children_photo',1111);
+insert into children values (children_seq.nextval,'장미','여',6,'rose.jpg',1111);
 insert into img values (img_seq.nextval,SYSDATE,'alarm_2.jpg',1111,2);
 insert into voice values (voice_seq.nextval,SYSDATE,'alarm_2.wav',1111,2);
 insert into alarm values (alarm_seq.nextval,SYSDATE,1111,2,'alarm_2.jpg','alarm_2.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,1111);
 
-insert into children values (children_seq.nextval,'미란','여',7,'children_photo',1111);
+insert into children values (children_seq.nextval,'미란','여',7,'miran.jpg',1111);
 insert into img values (img_seq.nextval,SYSDATE,'alarm_3.png',1111,3);
 insert into voice values (voice_seq.nextval,SYSDATE,'alarm_3.wav',1111,3);
 insert into alarm values (alarm_seq.nextval,SYSDATE,1111,3,'alarm_3.png','alarm_3.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,1111);
 
 insert into parents values (2222,2222,'서울','010-1111-2222','고길동','남');
-insert into children values (children_seq.nextval,'둘리','남',7,'children_photo',2222);
+insert into children values (children_seq.nextval,'둘리','남',7,'dl.jpg',2222);
 insert into img values (img_seq.nextval,SYSDATE,'alarm_4.png',2222,4);
 insert into voice values (voice_seq.nextval,SYSDATE,'alarm_4.wav',2222,4);
 insert into alarm values (alarm_seq.nextval,SYSDATE,2222,4,'alarm_4.png','alarm_4.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
 
-insert into children values (children_seq.nextval,'마이콜','남',5,'children_photo',2222);
+insert into children values (children_seq.nextval,'마이콜','남',5,'mycol.jpg',2222);
 insert into img values (img_seq.nextval,SYSDATE,'alarm_5.jpg',2222,5);
 insert into voice values (voice_seq.nextval,SYSDATE,'alarm_5.wav',2222,5);
 insert into alarm values (alarm_seq.nextval,SYSDATE,2222,4,'alarm_5.jpg','alarm_5.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
 
-insert into children values (children_seq.nextval,'희동이','남',3,'children_photo',2222);
+insert into children values (children_seq.nextval,'희동이','남',3,'gml.jpg',2222);
 insert into img values (img_seq.nextval,SYSDATE,'alarm_6.jpg',2222,6);
 insert into voice values (voice_seq.nextval,SYSDATE,'alarm_6.wav',2222,6);
 insert into alarm values (alarm_seq.nextval,SYSDATE,2222,6,'alarm_6.jpg','alarm_6.wav');
