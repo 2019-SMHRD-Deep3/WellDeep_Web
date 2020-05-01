@@ -401,12 +401,11 @@ button:hover:before,button:hover:after{
       </div>
 
       <div id="header" class="container">
-   <p class="img"><img src="img/cctv.png" class="img-logo"></p>
+   <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
             <div class="title-group text-center">
                <h1><font size="30px" color="beige">
-                  엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</font>
+                  엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
-                  </strong>
                </h1>
                <h1>
                   <div class="download-btns" style="margin-top: -34px;">
@@ -454,63 +453,49 @@ button:hover:before,button:hover:after{
          </ul>
       </div>
    </div>   
-   <!-- <div id="wrapper">
-      <div id="featured-wrapper"> -->
-         <div style = "height: 1500px; background: white;">
-         <% if (info != null) {%>
-            <h2 style = "font-size: 24px; text-align: center; padding-top: 130px; ">내 정보</h2>
 
-            
-            
+         <div style = "height: 1200px; background: white;">
+         <% if (info != null) {%>
+            <h2 style = "font-size: 24px; text-align: center; padding-top: 130px; ">회원정보 수정</h2>
             <div id="wrapper">
       <div id="featured-wrapper">
-         <div class="title"></div>
-
-
-
 
          <!-- Form-->
          <div class="form"
             style="position: relative; left: 10px; top: -70px; z-index: 1;">
 
-
-
             <!-- <div class="form-toggle"></div> -->
             <div class="form-panel one" style = "padding-top: 10px; padding-left: 78px;">
                <div class="form-header">
-                  <h1 style = "font-sizse: 24px;">회원정보 수정</h1>
+                  <h1 style = "font-sizse: 24px;">내 정보</h1>
                </div>
                <div class="form-content">
                      <div class="form-group">
                         <label>비밀번호</label>
-                        <input style = "margin-bottom: 16px;" type="password" id="pw" placeholder="<% for(int i=0; i< info.getP_pw().length();i++){%>●<%} %>" diasbled/>
+                        <input style = "margin-bottom: 16px; margin-left: 1px;" type="password" id="pw" placeholder="<% for(int i=0; i< info.getP_pw().length();i++){%>●<%} %>">
                         <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_pw();" id="pw_modify">수정</button>
                      </div>
                      <div class="form-group">
                         <label>이름</label>
-                        <input style = "margin-bottom: 16px;" type="text" id="name" placeholder="<%= info.getP_name() %>" diasbled/>
+                        <input style = "margin-bottom: 16px; margin-left: 30px;" type="text" id="name" placeholder="<%= info.getP_name() %>">
                         <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_name();" id="name_modify">수정</button>
                      </div>
                      
                      <div class="form-group">
                         <label>주소</label>
-                        <input style = "margin-bottom: 16px;" type="text" id="addr" placeholder="<%= info.getP_addr() %>" diasbled/>
+                        <input style = "margin-bottom: 16px; margin-left: 30px;" type="text" id="addr" placeholder="<%= info.getP_addr() %>">
                         <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_addr();" id="addr_modify">수정</button>
                      </div>
                      
                      <div class="form-group">
                         <label>전화번호</label>
-                        <input style = "margin-bottom: 16px;" type="text" id="phone" placeholder="<%= info.getP_phone() %>" diasbled/>
+                        <input style = "margin-bottom: 16px; margin-left: 1px;" type="text" id="phone" placeholder="<%= info.getP_phone() %>">
                         <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_phone();" id="phone_modify">수정</button>
                      </div>
                </div>
-            </div>
-         </div>
-      </div>
-      </div>
-      
-      
-      <h2 style = "text-align:center; padding-top: 104px;">아이 정보</h2>
+               <div class="form-header">
+                  <h1 style = "font-sizse: 24px;">아이 정보</h1>
+               </div>
             <h3 style = "text-align:center; margin-bottom: 26px;">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
                <% if(info.getC_photo() != null){%><img style = "display : block;margin : 0 auto; width: 200px;" src="img/childphoto.jpg"> <%}%>
                <div style = "text-align:center; font-size: 10px; margin: 35px;">
@@ -519,6 +504,19 @@ button:hover:before,button:hover:after{
                <h2>성별 : <% if(info.getC_sex() != null){%> <%= info.getC_sex() %> <%}%></h2>
             <%} %>
             </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      </div>
+<div class="inner">
+         <section style = "text-align:center; color: rgb(245, 245, 220);" class="about">
+            <h4 class="major">스마트 미디어 인재 개발원</h4>
+            <p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
+            <p>Team Well-Deep.</p>
+            <p>광주 CGI센터 교육실4
+               광주 송암로60.</p>
+         </section></div> 
             
       
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -533,7 +531,7 @@ button:hover:before,button:hover:after{
    var pw = null;
    var phone = null;
    var isCheck = false;
-
+   
    function click_pw(){
       pw = $('#pw').val();
       isCheck = true;
@@ -643,20 +641,5 @@ button:hover:before,button:hover:after{
          }
    }
 </script>
-<script type="text/javascript">
-</script>
-
-   <div id="copyright" class="container" style = "overflow: hidden; padding: 5em 0em;
-    border-top: 1px solid rgba(255,255,255,0.08); margin-top: 240px; text-align: center; background: #3D3D3D;">
-    
-      <div class="inner">
-         <section class="about">
-            <h4 class="major">Magna Aliquam Feugiat</h4>
-            <p>Etiam finibus pharetra purus, imperdiet sagittis mauris
-               hendrerit vitae.</p>
-            <p>In feugiat ante elementum nulla arcu.</p>
-            <p>Maecenas vulputate faucibus, convallis ligula ipsum dolor
-               feugiat tempus adipiscing.</p>
-
 </body>
 </html>

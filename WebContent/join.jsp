@@ -311,23 +311,18 @@ form-panel.two.active {
 }
 </style>
 </head>
-<body>
-
-
-
-
+<body onload="document.login.p_id.focus();">
 
    <%
       MemberDTO info = (MemberDTO) session.getAttribute("info");
    %>
    <div id="header-wrapper">
       <div id="header" class="container">
-   <p class="img"><img src="img/cctv.png" class="img-logo"></p>
+   <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
             <div class="title-group text-center">
                <h1><font size="30px" color="beige">
-                  엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</font>
+                  엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
-                  </strong>
                </h1>
                <h1>
                   <div class="download-btns" style="margin-top: -34px;">
@@ -370,7 +365,7 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
                   <h1>LOGIN</h1>
                </div>
                <div class="form-content">
-                  <form action="LoginService.do">
+                  <form name="login" action="LoginService.do">
                      <div class="form-group">
                         <label for="username">ID</label> <input type="text"
                            id="username" name="p_id" required="required" />
@@ -429,15 +424,14 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
          </div>
       </div>
 </div>
-   <div id="copyright" class="container">
-      <div class="inner">
-         <section class="about">
-            <h4 class="major">Magna Aliquam Feugiat</h4>
-            <p>Etiam finibus pharetra purus, imperdiet sagittis mauris
-               hendrerit vitae.</p>
-            <p>In feugiat ante elementum nulla arcu.</p>
-            <p>Maecenas vulputate faucibus, convallis ligula ipsum dolor
-               feugiat tempus adipiscing.</p>
+<div class="inner">
+         <section style = "text-align:center; color: rgb(245, 245, 220);" class="about">
+            <h4 class="major">스마트 미디어 인재 개발원</h4>
+            <p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
+            <p>Team Well-Deep.</p>
+            <p>광주 CGI센터 교육실4
+               광주 송암로60.</p>
+         </section></div>
 
 </body>
 </html>
