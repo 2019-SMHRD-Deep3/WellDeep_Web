@@ -94,8 +94,8 @@ create sequence alarm_seq start with 1 increment by 1 maxvalue 9999 cycle nocach
 insert into parents values (1111,1111,'광주','010-0000-0000','홍길동','남');
 insert into children values (children_seq.nextval,'코난','남',6,'children_photo',1111);
 insert into img values (img_seq.nextval,SYSDATE,'tree.jpg',1111,1);
-insert into voice values (voice_seq.nextval,SYSDATE,'voice_file',1111,1);
-insert into alarm values (alarm_seq.nextval,SYSDATE,1111,1,'tree.jpg','voice_file');
+insert into voice values (voice_seq.nextval,SYSDATE,'sib.wav',1111,1);
+insert into alarm values (alarm_seq.nextval,SYSDATE,1111,1,'tree.jpg','sib.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,1111);
 
 insert into children values (children_seq.nextval,'장미','여',6,'children_photo',1111);
@@ -128,5 +128,7 @@ insert into img values (img_seq.nextval,SYSDATE,'kb3.jpg',2222,6);
 insert into voice values (voice_seq.nextval,SYSDATE,'voice_file6',2222,6);
 insert into alarm values (alarm_seq.nextval,SYSDATE,2222,6,'kb3.jpg','voice_file6');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
+
+select * from ALARM where alarm_number='1';
 
 commit;

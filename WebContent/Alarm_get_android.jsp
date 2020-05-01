@@ -7,18 +7,17 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 String num = request.getParameter("num");
-
+System.out.println("jsp에서 받은 num:"+num);
+num = num.trim();
 JSONObject jsonMain = new JSONObject();
 JSONArray jsonArray = new JSONArray();
 
 AlarmDAO dao = AlarmDAO.getDAO();
 ArrayList<AlarmDTO> list = dao.select_one(num);
+System.out.println("리스트사이즈"+list.size());
 
 for (int i = 0; i < list.size(); i++) {
 
-	//jsonObject.put("학번", result.getString("학번"));
-	//jsonObject.put("이름", result.getString("이름"));
-	//jsonObject.put("학과", result.getString("학과"));
 	JSONObject jsonObject = new JSONObject();
 
 	jsonObject.put("a_number", list.get(i).getA_number());
@@ -33,8 +32,7 @@ for (int i = 0; i < list.size(); i++) {
 
 	jsonMain.put("dataSet", jsonArray);
 
-
-	System.out.println(jsonMain);
+	System.out.println("123"+jsonArray);
 	out.print(jsonMain);
 
 
