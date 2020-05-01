@@ -98,23 +98,24 @@ public class AlarmDAO {
 		return list;
 	}
 	
-public ArrayList<AlarmDTO> select_one(String num) {
-		
+	public ArrayList<AlarmDTO> select_one(String num) {
+		System.out.println("dao에서 받은 num:"+num);
 		info = null;
 		list = new ArrayList<AlarmDTO>();
 
 		try {
 			getConnection();
 
-			String sql = "select * from alarm where alarm_number=?";
+			String sql = "select * from ALARM where alarm_number=?";
 			psmt = conn.prepareStatement(sql);
+			System.out.println(num.length());
 			psmt.setString(1, num);
-			//System.out.println(sql);
-
 			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-
+			
+			System.out.println("체크"+rs.next());
+			
+			if (num.length()>0) {
+				System.out.println("반복문 입장");
 				a_number = rs.getString("alarm_number");
 				a_time = rs.getString("alarm_time");
 				p_id = rs.getString("perents_id");
@@ -124,8 +125,10 @@ public ArrayList<AlarmDTO> select_one(String num) {
 											
 				info = new AlarmDTO(a_number, a_time, p_id, c_number, i_file, v_file);
 				list.add(info);
+			}else {
+				System.out.println("에러");
 			}
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
