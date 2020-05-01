@@ -7,16 +7,15 @@
 
 <%
 	request.setCharacterEncoding("UTF-8");
-String id = request.getParameter("id");
 
-System.out.println("이값은? " + id);
+String num = request.getParameter("num");
+System.out.println("이값은? " + num);
 JSONObject jsonMain = new JSONObject();
 JSONArray jsonArray = new JSONArray();
 
 
 ChildListDAO dao = ChildListDAO.getDAO();
-ArrayList<ChildListDTO> list = dao.select(id);
-
+ArrayList<ChildListDTO> list = dao.selectchild(num);
 
 for (int i = 0; i < list.size(); i++) {
 
@@ -35,10 +34,10 @@ for (int i = 0; i < list.size(); i++) {
 
 	jsonArray.add(jsonObject); }
 
-jsonMain.put("dataSet3", jsonArray);
+jsonMain.put("dataSet2", jsonArray);
 
 
-	System.out.println("tetttt" + jsonMain);
+	System.out.println("tetttt1" + jsonMain);
 	out.print(jsonMain);
 
 

@@ -92,7 +92,7 @@ create sequence alarm_seq start with 1 increment by 1 maxvalue 9999 cycle nocach
 
 
 insert into parents values (1111,1111,'광주','010-0000-0000','홍길동','남');
-insert into children values (children_seq.nextval,'코난','남',6,'children_photo',1111);
+insert into children values (children_seq.nextval,'코난','남',6,'tree.jpg',1111);
 insert into img values (img_seq.nextval,SYSDATE,'tree.jpg',1111,1);
 insert into voice values (voice_seq.nextval,SYSDATE,'sib.wav',1111,1);
 insert into alarm values (alarm_seq.nextval,SYSDATE,1111,1,'tree.jpg','sib.wav');

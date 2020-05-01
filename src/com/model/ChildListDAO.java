@@ -98,5 +98,42 @@ public class ChildListDAO {
 
 		return list;
 	}
+	public ArrayList<ChildListDTO> selectchild(String num) {
+		
+		info = null;
+		list = new ArrayList<ChildListDTO>();
+
+		try {
+			getConnection();
+
+			String sql = "select * from children where children_number=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, num);
+			//System.out.println(sql);
+
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+
+				c_number = rs.getString("children_number");
+				c_name = rs.getString("children_name");
+				c_sex = rs.getString("children_sex");
+				c_age = rs.getString("children_age");
+				c_photo = rs.getString("children_photo");
+				p_id = rs.getString("perents_id");
+			
+											
+				info = new ChildListDTO(c_number, c_name, c_sex, c_age, c_photo, p_id);
+				list.add(info);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return list;
+	}
 
 }
