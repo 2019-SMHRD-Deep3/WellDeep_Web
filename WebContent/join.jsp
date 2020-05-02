@@ -316,10 +316,10 @@ form-panel.two.active {
       MemberDTO info = (MemberDTO) session.getAttribute("info");
    %>
    <div id="header-wrapper">
-      <div id="header" class="container">
+      <div id="header" class="container" style="margin-top: -9px;">
    <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
             <div class="title-group text-center">
-               <h1><font size="30px" color="beige">
+               <h1 style ="margin-top: 12px;"><font size="30px" color="beige">
                   엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
                </h1>

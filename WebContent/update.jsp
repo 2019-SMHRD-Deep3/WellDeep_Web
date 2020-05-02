@@ -366,7 +366,7 @@ button:hover:before,button:hover:after{
             } else {
          %>
          <form action="LogoutService.do" style='display:inline;'>
-            <h3 style="color: #fff;"><%=info.getP_id()%> 님 환영합니다.</h3>
+            <h3 style="color: #fff; margin-bottom: 10px;"><%=info.getP_id()%> 님 환영합니다.</h3>
             <button type="submit" class="btn purple">로그아웃</button>
          </form>
          <form action="update.jsp" style='display:inline;'>
@@ -377,10 +377,10 @@ button:hover:before,button:hover:after{
          %>
       </div>
 
-      <div id="header" class="container">
+      <div id="header" class="container" style = "margin-top: -9px;">
    <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
             <div class="title-group text-center">
-               <h1><font size="30px" color="beige">
+               <h1 style="margin-top: 12px;"><font size="30px" color="beige">
                   엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
                </h1>
