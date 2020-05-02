@@ -55,7 +55,7 @@ public class LoginCon implements ICommand {
 //			moveURL = "login.jsp?success=False";
 		else {
 //			System.out.println("로그인실패");
-			moveURL = "index.jsp?success=False";
+			moveURL = "join.jsp?success=False";
 		}
 
 		return moveURL;

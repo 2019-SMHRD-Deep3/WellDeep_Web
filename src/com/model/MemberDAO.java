@@ -53,6 +53,31 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public boolean idCheck(String id) {
+		boolean result = false;
+		
+		try {
+				getConnection();
+				String sql = "select * from parents where perents_id=?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, id);
+				rs = psmt.executeQuery();
+				if(rs.next()) {
+					
+				}
+				else{
+					result = true;
+				}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return result;
+		
+	}
 
 	public int join(MemberDTO dto) {
 		int cnt = 0;

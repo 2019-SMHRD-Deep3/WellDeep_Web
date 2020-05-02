@@ -419,5 +419,6 @@ button:hover:before, button:hover:after {
 			plusSlides(1);
 		}, 3000);
 	</script>
+
 </body>
 </html>
