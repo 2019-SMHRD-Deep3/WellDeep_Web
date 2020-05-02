@@ -53,7 +53,6 @@ body {
    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
    box-sizing: border-box;
    margin-right: auto;
-   margin-bottom: 10px;
    margin-left: auto;
    /* overflow: hidden; */
 }
@@ -139,18 +138,18 @@ body {
 }
 .form-group button:hover{
    background:#fff;
-   color:black;
+   color:#FFC000;
 }
 
 .two .form-group button {
    margin-top: 25px;
    outline: none;
-   background: #FFFFFF;
+   background:beige;
+   color:black;
    width: 100%;
    border: 0;
    border-radius: 8px;
    padding: 9px 20px;
-   color: #FFC000;
    font-family: inherit;
    font-size: inherit;
    font-weight: 500;
@@ -158,9 +157,10 @@ body {
    text-transform: uppercase;
    cursor: pointer;
 }
+
 .two .form-group button:hover{
-   background:beige;
-   color:black;
+   background: #FFFFFF;
+   color: #FFC000;
 }
 
 .form-group .form-remember {
@@ -345,21 +345,25 @@ form-panel.two.active {
       
    </div>
 <script type="text/javascript">
+if ("<%=request.getParameter("success")%>" == "False") {
+    alert('아이디와 비밀번호를 확인해주세요.');
+}
 if ("<%=request.getParameter("joinsuccess")%>" == "True") {
     alert('가입 완료, 로그인을 해주세요');
     location.href = "index.jsp";
 }
 if ("<%=request.getParameter("joinsuccess")%>" == "False") {
- 	alert('가입 실패');
+ 	alert('가입 실패, 이미 존재하는 아이디입니다.');
 }
 </script>
-   <div id="wrapper" style = "height: 1100px;">
+<div id="wall" style="height:100px; background: #FFF;"></div>
+   <div id="wrapper" style = "height: 700px;">
          <!-- Form-->
          <div class="form"
-            style="position: relative; left: 10px; z-index: 1;">
+            style="width:50%; position: relative; z-index: 1;">
 
             <!-- <div class="form-toggle"></div> -->
-            <div class="form-panel one">
+            <div style="width:35%; float:left;" class="form-panel one">
                <div class="form-header">
                   <h1>LOGIN</h1>
                </div>
@@ -383,37 +387,36 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
                   </form>
                </div>
             </div>
-
-               <div class="form-panel two">
+               <div style="width:50%; float:right;" class="form-panel two">
                   <div class="form-header">
                      <h1>JOIN</h1>
                   </div>
                   <div class="form-content">
                      <form action="JoinService.do">
                         <div class="form-group">
-                           <label for="username">ID</label> <input name="p_id" type="text"
-                              class="form-control input-lg"><br>
+                           <label for="username">ID</label> <input id="p_id" name="p_id" type="text"
+                              class="form-control input-lg" required="required"><br>
                         </div>
                         <div class="form-group">
-                           <label for="password">Password</label> <input name="p_pw"
-                              type="password" class="form-control input-lg"><br>
+                           <label for="password">Password</label> <input id="p_pw" name="p_pw"
+                              type="password" class="form-control input-lg" required="required"><br>
                         </div>
                         <div class="form-group">
                            <label for="cpassword">Address</label> <input name="p_addr"
-                              type="text" class="form-control input-lg"><br>
+                              type="text" class="form-control input-lg" required="required"><br>
                         </div>
                         <div class="form-group">
                            <label for="email">PhoneNumber</label> <input name="p_phone"
-                              type="text" class="form-control input-lg"><br>
+                              type="text" class="form-control input-lg" required="required"><br>
                         </div>
                         <div class="form-group">
                            <label for="name">Name</label> <input name="p_name" type="text"
-                              class="form-control input-lg"><br>
+                              class="form-control input-lg" required="required"><br>
                         </div>
                         <label><input type="radio" name="p_sex" value="남" checked="checked">남성</label>
                         <label><input type="radio" name="p_sex" value="여">여성</label>
-                  <div class="form-group">
-                     <button type="submit">Join</button>
+                  <div id="join" class="form-group">
+                     <button id="join_btn" type="submit">Join</button>
                   </div>
                   </form>
                   </div>

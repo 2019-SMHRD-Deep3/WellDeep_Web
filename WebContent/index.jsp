@@ -307,5 +307,10 @@ button:hover:before,button:hover:after{
             <p>±§¡÷ CGIºæ≈Õ ±≥¿∞Ω«4
                ±§¡÷ º€æœ∑Œ60.</p>
          </section></div>
+<script type="text/javascript">
+function next_page(){
+	
+}
+</script>
 </body>
 </html>
