@@ -3,7 +3,7 @@
 
 /*GLOBALS*/
 * {
-    margin: 0;
+    
     padding: 0;
     list-style: none;
 }
@@ -122,16 +122,16 @@
     top: 0;
 }
 
-/* #slider-pagination-wrap ul li.active {
+#slider-pagination-wrap ul li.active {
     width: 12px;
     height: 12px;
     top: 3px;
     opacity: 1;
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
-} */
+}
 
-/* 
+/* /*ANIMATION*/
 #slider-wrap ul,
 #slider-pagination-wrap ul li {
     -webkit-transition: all 0.3s cubic-bezier(1, .01, .32, 1);

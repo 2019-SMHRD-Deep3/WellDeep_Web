@@ -58,7 +58,6 @@ button {
 
 button:hover {
 	background: #fff;
-	color: black;
 }
 
 button:before, button:after {
@@ -105,7 +104,7 @@ button:hover:before, button:hover:after {
 				} else {
 			%>
 			<form action="LogoutService.do" style='display: inline;'>
-				<h3 style="color: #fff;"><%=info.getP_id()%>
+				<h3 style="color: #fff; margin-bottom: 10px;"><%=info.getP_id()%>
 					님 환영합니다.
 				</h3>
 				<button type="submit" class="btn purple">로그아웃</button>
@@ -118,12 +117,12 @@ button:hover:before, button:hover:after {
 			%>
 		</div>
 
-		<div id="header" class="container">
+		<div id="header" class="container" style="margin-top: -9px;">
 			<p class="img">
 				<a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a>
 			</p>
 			<div class="title-group text-center">
-				<h1>
+				<h1 style="margin-top: 12px;">
 					<font size="30px" color="beige"> 엄마를 부르는 소리, <br> <strong>위험할땐
 							MomSee하세요.</strong></font> <br> <br>
 				</h1>
@@ -160,8 +159,7 @@ button:hover:before, button:hover:after {
 						<div id="slider-wrap">
 							<ul id="slider">
 								<li>
-									<div></div> <img src="img/test1.png"
-									>
+									<div></div> <img src="img/test1.png">
 								</li>
 
 								<li>
@@ -188,41 +186,6 @@ button:hover:before, button:hover:after {
 							</div>
 						</div>
 					</div>
-
-
-				</section>
-			</div>
-		</div>
-	</div>
-
-
-	<div id="wrapper">
-		<div id="featured-wrapper">
-			<div class="extra2 container">
-				<section>
-					<div class="text-group"
-						style="display: table; height: 300px; background: floralwhite; text-align: center;">
-						<div class="test"></div>
-						<div
-							style="display: table-cell; vertical-align: middle; width: 800px">
-							<img src="img/app2.png"
-								style="width: 20rem; padding-right: 0px; padding-top: 0px;">
-						</div>
-
-						<div
-							style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
-
-							<h2 style="display: inline;">
-								<strong>주요기능 소개</strong><br>
-							</h2>
-							<p style="display: inline; font-size: 20px;">
-								실시간 영상확인 및 알림서비스<br> 영상&음성 녹화 및 삭제 <br> 위험상황시 즉각대응<br>
-								빠른고객대응
-							</p>
-						</div>
-						<div class="test"></div>
-
-					</div>
 				</section>
 			</div>
 		</div>
@@ -230,195 +193,229 @@ button:hover:before, button:hover:after {
 
 
 
-	<div id="wrapper">
-		<div id="featured-wrapper">
-			<div class="extra2 container">
-				<section>
-					<div class="text-group"
-						style="display: table; height: 300px; text-align: center;">
-						<div class="test"></div>
+   <div id="wrapper">
+      <div id="featured-wrapper">
+         <div class="extra2 container">
+            <section>
+               <div class="text-group"
+                  style="display: table; height: 300px; background: floralwhite; text-align: center;">
+                  <div class="test"></div>
+                  <div
+                     style="display: table-cell; vertical-align: middle; width: 800px">
+                     <img src="img/app2.png"
+                        style="width: 20rem; padding-right: 0px; padding-top: 0px;">
+                  </div>
 
-						<div
-							style="display: table-cell; vertical-align: middle; width: 800px">
-							<img src="img/app2.png"
-								style="width: 20rem; padding-right: 0px; padding-top: 0px;">
-						</div>
+                  <div
+                     style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
 
-						<div
-							style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
+                     <h2 style="display: inline;">
+                        <strong>주요기능 소개</strong><br>
+                     </h2>
+                     <p style="display: inline; font-size: 20px;">
+                        실시간 영상확인 및 알림서비스<br> 영상&음성 녹화 및 삭제 <br> 위험상황시 즉각대응<br>
+                        빠른고객대응
+                     </p>
+                  </div>
+                  <div class="test"></div>
 
-							<h2 style="display: inline;">
-								<br>딥러닝을 이용한<br> <strong>우리 아이 지킴이</strong><br>
-							</h2>
-							<p style="display: inline; font-size: 20px;">
-								위험한 움직임이 생길 때<br> 경보와 동시에 빠른조치로<br>우리아이를 안전하게
-							</p>
-						</div>
-						<div class="test"></div>
-
-					</div>
-				</section>
-			</div>
-		</div>
-	</div>
-
-	<div id="wrapper">
-		<div id="featured-wrapper">
-			<div class="extra2 container">
-				<section>
-					<div class="text-group"
-						style="display: table; height: 300px; background: floralwhite; text-align: center;">
-						<div class="test"></div>
-						<div
-							style="display: table-cell; vertical-align: middle; width: 800px">
-							<img src="img/app2.png"
-								style="width: 20rem; padding-right: 0px; padding-top: 0px;">
-						</div>
-
-						<div
-							style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
-
-							<h2 style="display: inline;">
-
-								<strong>무제한 저장소</strong><br>
-							</h2>
-							<p style="display: inline; font-size: 20px;">
-								안전한 라이브러리에<br> 영상&음성을 저장하세요
-							</p>
-						</div>
-						<div class="test"></div>
-
-					</div>
-				</section>
-			</div>
-		</div>
-	</div>
-
-	<div id="wrapper">
-		<div id="featured-wrapper">
-			<div class="extra2 container">
-				<section>
-					<div class="text-group"
-						style="display: table; height: 300px; text-align: center; opacity: 0.5">
-						<div class="test"></div>
-						<div
-							style="display: table-cell; vertical-align: middle; width: 800px">
-							<img src="img/accs.png"
-								style="width: 20rem; padding-right: 0px; padding-top: 0px;">
-						</div>
-
-						<div
-							style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
-							<h4>출시예정</h4>
-							<h2 style="display: inline;">
-								<strong>언제나, 어디서든</strong><br>
-							</h2>
-							<p style="display: inline; font-size: 20px;">
-								CCTV뿐만아니라<br> MomSee액세서리를 통해 <br> 우리아이를 지켜주세요.<br>
-
-							</p>
-						</div>
-						<div class="test"></div>
-
-					</div>
-				</section>
-			</div>
-		</div>
-	</div>
-
-	<div class="inner">
-		<section style="text-align: center; color: rgb(245, 245, 220);"
-			class="about">
-			<h4 class="major">스마트 미디어 인재 개발원</h4>
-			<p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
-			<p>Team Well-Deep.</p>
-			<p>광주 CGI센터 교육실4 광주 송암로60.</p>
-		</section>
-	</div>
+               </div>
+            </section>
+         </div>
+      </div>
+   </div>
 
 
-	<script>
-		//slide-wrap
-		var slideWrapper = document.getElementById('slider-wrap');
-		//current slideIndexition
-		var slideIndex = 0;
-		//items
-		var slides = document.querySelectorAll('#slider-wrap ul li');
-		//number of slides
-		var totalSlides = slides.length;
-		//get the slide width
-		var sliderWidth = slideWrapper.clientWidth;
-		//set width of items
-		slides.forEach(function(element) {
-			element.style.width = sliderWidth + 'px';
-		})
-		//set width to be 'x' times the number of slides
-		var slider = document.querySelector('#slider-wrap ul#slider');
-		slider.style.width = sliderWidth * totalSlides + 'px';
 
-		// next, prev
-		var nextBtn = document.getElementById('next');
-		var prevBtn = document.getElementById('previous');
-		nextBtn.addEventListener('click', function() {
-			plusSlides(1);
-		});
-		prevBtn.addEventListener('click', function() {
-			plusSlides(-1);
-		});
+   <div id="wrapper">
+      <div id="featured-wrapper">
+         <div class="extra2 container">
+            <section>
+               <div class="text-group"
+                  style="display: table; height: 300px; text-align: center;">
+                  <div class="test"></div>
 
-		// hover
-		slideWrapper.addEventListener('mouseover', function() {
-			this.classList.add('active');
-			clearInterval(autoSlider);
-		});
-		slideWrapper.addEventListener('mouseleave', function() {
-			this.classList.remove('active');
-			autoSlider = setInterval(function() {
-				plusSlides(1);
-			}, 3000);
-		});
+                  <div
+                     style="display: table-cell; vertical-align: middle; width: 800px">
+                     <img src="img/app2.png"
+                        style="width: 20rem; padding-right: 0px; padding-top: 0px;">
+                  </div>
 
-		function plusSlides(n) {
-			showSlides(slideIndex += n);
-		}
+                  <div
+                     style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
 
-		function currentSlides(n) {
-			showSlides(slideIndex = n);
-		}
+                     <h2 style="display: inline;">
+                        <br>딥러닝을 이용한<br> <strong>우리 아이 지킴이</strong><br>
+                     </h2>
+                     <p style="display: inline; font-size: 20px;">
+                        위험한 움직임이 생길 때<br> 경보와 동시에 빠른조치로<br>우리아이를 안전하게
+                     </p>
+                  </div>
+                  <div class="test"></div>
 
-		function showSlides(n) {
-			slideIndex = n;
-			if (slideIndex == -1) {
-				slideIndex = totalSlides - 1;
-			} else if (slideIndex === totalSlides) {
-				slideIndex = 0;
-			}
+               </div>
+            </section>
+         </div>
+      </div>
+   </div>
 
-			slider.style.left = -(sliderWidth * slideIndex) + 'px';
-			pagination();
-		}
+   <div id="wrapper">
+      <div id="featured-wrapper">
+         <div class="extra2 container">
+            <section>
+               <div class="text-group"
+                  style="display: table; height: 300px; background: floralwhite; text-align: center;">
+                  <div class="test"></div>
+                  <div
+                     style="display: table-cell; vertical-align: middle; width: 800px">
+                     <img src="img/app2.png"
+                        style="width: 20rem; padding-right: 0px; padding-top: 0px;">
+                  </div>
 
-		//pagination
-		slides.forEach(function() {
-			var li = document.createElement('li');
-			document.querySelector('#slider-pagination-wrap ul')
-					.appendChild(li);
-		})
+                  <div
+                     style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
 
-		function pagination() {
-			var dots = document
-					.querySelectorAll('#slider-pagination-wrap ul li');
-			dots.forEach(function(element) {
-				element.classList.remove('active');
-			});
-			dots[slideIndex].classList.add('active');
-		}
+                     <h2 style="display: inline;">
 
-		pagination();
-		var autoSlider = setInterval(function() {
-			plusSlides(1);
-		}, 3000);
-	</script>
+                        <strong>무제한 저장소</strong><br>
+                     </h2>
+                     <p style="display: inline; font-size: 20px;">
+                        안전한 라이브러리에<br> 영상&음성을 저장하세요
+                     </p>
+                  </div>
+                  <div class="test"></div>
+
+               </div>
+            </section>
+         </div>
+      </div>
+   </div>
+
+   <div id="wrapper">
+      <div id="featured-wrapper">
+         <div class="extra2 container">
+            <section>
+               <div class="text-group"
+                  style="display: table; height: 300px; text-align: center; opacity: 0.5">
+                  <div class="test"></div>
+                  <div
+                     style="display: table-cell; vertical-align: middle; width: 800px">
+                     <img src="img/accs.png"
+                        style="width: 20rem; padding-right: 0px; padding-top: 0px;">
+                  </div>
+
+                  <div
+                     style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
+                     <h4>출시예정</h4>
+                     <h2 style="display: inline;">
+                        <strong>언제나, 어디서든</strong><br>
+                     </h2>
+                     <p style="display: inline; font-size: 20px;">
+                        CCTV뿐만아니라<br> MomSee액세서리를 통해 <br> 우리아이를 지켜주세요.<br>
+
+                     </p>
+                  </div>
+                  <div class="test"></div>
+
+               </div>
+            </section>
+         </div>
+      </div>
+   </div>
+
+   <div class="inner">
+      <section style="text-align: center; color: rgb(245, 245, 220);"
+         class="about">
+         <h4 class="major">스마트 미디어 인재 개발원</h4>
+         <p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
+         <p>Team Well-Deep.</p>
+         <p>광주 CGI센터 교육실4 광주 송암로60.</p>
+      </section>
+   </div>
+
+
+   <script>
+      //slide-wrap
+      var slideWrapper = document.getElementById('slider-wrap');
+      //current slideIndexition
+      var slideIndex = 0;
+      //items
+      var slides = document.querySelectorAll('#slider-wrap ul li');
+      //number of slides
+      var totalSlides = slides.length;
+      //get the slide width
+      var sliderWidth = slideWrapper.clientWidth;
+      //set width of items
+      slides.forEach(function(element) {
+         element.style.width = sliderWidth + 'px';
+      })
+      //set width to be 'x' times the number of slides
+      var slider = document.querySelector('#slider-wrap ul#slider');
+      slider.style.width = sliderWidth * totalSlides + 'px';
+
+      // next, prev
+      var nextBtn = document.getElementById('next');
+      var prevBtn = document.getElementById('previous');
+      nextBtn.addEventListener('click', function() {
+         plusSlides(1);
+      });
+      prevBtn.addEventListener('click', function() {
+         plusSlides(-1);
+      });
+
+      // hover
+      slideWrapper.addEventListener('mouseover', function() {
+         this.classList.add('active');
+         clearInterval(autoSlider);
+      });
+      slideWrapper.addEventListener('mouseleave', function() {
+         this.classList.remove('active');
+         autoSlider = setInterval(function() {
+            plusSlides(1);
+         }, 3000);
+      });
+
+      function plusSlides(n) {
+         showSlides(slideIndex += n);
+      }
+
+      function currentSlides(n) {
+         showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+         slideIndex = n;
+         if (slideIndex == -1) {
+            slideIndex = totalSlides - 1;
+         } else if (slideIndex === totalSlides) {
+            slideIndex = 0;
+         }
+
+         slider.style.left = -(sliderWidth * slideIndex) + 'px';
+         pagination();
+      }
+
+      //pagination
+      slides.forEach(function() {
+         var li = document.createElement('li');
+         document.querySelector('#slider-pagination-wrap ul')
+               .appendChild(li);
+      })
+
+      function pagination() {
+         var dots = document
+               .querySelectorAll('#slider-pagination-wrap ul li');
+         dots.forEach(function(element) {
+            element.classList.remove('active');
+         });
+         dots[slideIndex].classList.add('active');
+      }
+
+      pagination();
+      var autoSlider = setInterval(function() {
+         plusSlides(1);
+      }, 3000);
+   </script>
 
 </body>
 </html>
