@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import com.controller.JoinCon;
 import com.controller.LoginCon;
 import com.controller.LogoutCon;
@@ -29,7 +28,6 @@ private static final long serialVersionUID = 1L;
 		map.put("LoginService.do", new LoginCon());
 		map.put("LogoutService.do", new LogoutCon());
 		map.put("UpdateUserService.do", new UpdateUserCon());
-		
 		//map.put("UpdateManagerService.do", new UpdateManagerCon());
 		//map.put("InsertPostService.do", new InsertPostCon());
 	}

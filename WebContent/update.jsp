@@ -1,4 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.MemberDAO"%>
 <%@page import="com.model.MemberDTO"%>
+<%@page import="com.model.ChildListDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -296,7 +299,7 @@ form-panel.two.active {
    width: 300px;
 }
 .img{
-   width: 38%; 
+   width: fit-content; 
    margin: 0 auto;
    text-align: center;
    
@@ -366,7 +369,7 @@ button:hover:before,button:hover:after{
             } else {
          %>
          <form action="LogoutService.do" style='display:inline;'>
-            <h3 style="color: #fff;"><%=info.getP_id()%> 님 환영합니다.</h3>
+            <h3 style="color: #fff; margin-bottom: 10px;"><%=info.getP_id()%> 님 환영합니다.</h3>
             <button type="submit" class="btn purple">로그아웃</button>
          </form>
          <form action="update.jsp" style='display:inline;'>
@@ -377,10 +380,10 @@ button:hover:before,button:hover:after{
          %>
       </div>
 
-      <div id="header" class="container">
+      <div id="header" class="container" style = "margin-top: -9px;">
    <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
             <div class="title-group text-center">
-               <h1><font size="30px" color="beige">
+               <h1 style="margin-top: 12px;"><font size="30px" color="beige">
                   엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
                </h1>
@@ -409,7 +412,7 @@ button:hover:before,button:hover:after{
    <script type="text/javascript">
    if (<%= info == null%>){
       alert('로그인이 필요합니다.');
-      location.href = "index.jsp";
+      location.href = "join.jsp";
    }
     if ("<%=request.getParameter("updatesuccess")%>" == "True") {
          alert('수정 완료');
@@ -419,16 +422,16 @@ button:hover:before,button:hover:after{
    }
    </script>
 
-         <div style = "height: 910px; background: white;">
+         <div style = "height: 50%; background: white;">
          <% if (info != null) {%>
-            <h2 style = "font-size: 24px; text-align: center; padding-top: 10px; ">회원정보 수정</h2>
+            <h2 style = "font-size: 24px; text-align: center; padding-top: 30px; ">회원정보 수정</h2>
             
          <!-- Form-->
          <div class="form"
-            style="position: relative; left: 10px; top: -70px; z-index: 1;">
+            style="position: relative; top: -70px; z-index: 1;">
 
             <!-- <div class="form-toggle"></div> -->
-            <div class="form-panel one" style = "padding-top: 10px; padding-left: 78px;">
+            <div align="center" class="form-panel one" style = "width:auto; padding-top: 10px;">
                <div class="form-header">
                   <h1 style = "font-sizse: 24px;">내 정보</h1>
                </div>
@@ -456,21 +459,29 @@ button:hover:before,button:hover:after{
                         <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_phone();" id="phone_modify">수정</button>
                      </div>
                </div>
-               <div class="form-header">
-                  <h1 style = "font-sizse: 24px;">아이 정보</h1>
-               </div>
-            <h3 style = "text-align:center; margin-bottom: 10px;">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
-               <% if(info.getC_photo() != null){%><img style = "display : block;margin : 0 auto; width: 200px;" src="img/childphoto.jpg"> <%}%>
-               <div style = "text-align:center; font-size: 10px; margin: 10px;">
-               <h2>이름 : <% if(info.getC_name() != null){%> <%= info.getC_name() %> <%}%></h2> 
-               <h2>나이 : <% if(info.getC_age() != null){%> <%= info.getC_age() %> <%}%></h2>
-               <h2>성별 : <% if(info.getC_sex() != null){%> <%= info.getC_sex() %> <%}%></h2>
-            <%} %>
-            </div>
-            </div>
          </div>
       </div>
-
+      <div align="center" class="form-panel one" style = "position: relative; top: -40px; z-index: 1; border-radius: 4px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); margin:0 auto; width:max-content; padding-top: 10px;">
+               <div class="form-header">
+                  <h1 style = "text-align:center; font-sizse: 24px;">아이 정보</h1>
+               </div>
+            <h3 style = "text-align:center; margin-bottom: 10px;">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
+               <% if(info.getC_photo() != null){
+            	   MemberDAO dao = new MemberDAO();
+				   ArrayList<ChildListDTO> list = dao.child_list(info.getP_id());
+				   for(int i=list.size()-1; i>=0; i--){%>
+				   <div align="center" style="display:inline-block;">
+				   <table>
+				   	<tr><td width="300px" colspan="2"><img style = "display : block;margin : 0 auto; width: 200px;" src="img/<%= list.get(i).getC_photo() %>"></td></tr>
+					<tr><td width="150px" style="text-align:right;"><h2>이름: </h2></td><td><h2><%= list.get(i).getC_name() %></h2></td></tr>
+					<tr><td width="150px" style="text-align:right;"><h2>나이: </h2></td><td><h2><%= list.get(i).getC_age() %></h2></td></tr>
+					<tr><td width="150px" style="text-align:right;"><h2>성별: </h2></td><td><h2><%= list.get(i).getC_sex() %></h2></td></tr>
+					</table>
+					</div>
+					<%}}} %>
+            </div>
+</div>
+<div class="wall" style="height:10px; background:white"></div>
 <div class="inner">
          <section style = "text-align:center; color: rgb(245, 245, 220);" class="about">
             <h4 class="major">스마트 미디어 인재 개발원</h4>

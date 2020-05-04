@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MemberDAO {
 	private Connection conn;
@@ -52,6 +53,31 @@ public class MemberDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public boolean idCheck(String id) {
+		boolean result = false;
+		
+		try {
+				getConnection();
+				String sql = "select * from parents where perents_id=?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, id);
+				rs = psmt.executeQuery();
+				if(rs.next()) {
+					
+				}
+				else{
+					result = true;
+				}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return result;
+		
 	}
 
 	public int join(MemberDTO dto) {
@@ -141,6 +167,38 @@ public class MemberDAO {
 		}
 
 		return info;
+	}
+	
+	// 자녀 리스트
+	public ArrayList<ChildListDTO> child_list(String id) {
+		ArrayList<ChildListDTO> list = new ArrayList<ChildListDTO>();
+
+		try {
+			getConnection();
+			String sql = "select * from children where perents_id=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				String c_number = rs.getString(1);
+				String c_name = rs.getString(2);
+				String c_sex = rs.getString(3);
+				String c_age = rs.getString(4);
+				String c_photo = rs.getString(5);
+				String p_id = rs.getString(6);
+
+				ChildListDTO dto = new ChildListDTO(c_number, c_name, c_sex, c_age, c_photo, p_id);
+				list.add(dto);
+			}
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return list;
 	}
 
 	// 수정할 이름 찾기
