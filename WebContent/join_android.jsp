@@ -40,7 +40,7 @@ if (type.equals("join")) {
 	String p_id = request.getParameter("id");
 
 	String dummy_parents = "98";
-
+	System.out.println(c_img);
 	ChildDTO dto = new ChildDTO(p_id, dummy_parents, c_name, c_sex, c_age, c_img);
 	ChildDAO dao = ChildDAO.getDAO();
 	int cnt = dao.join(dto);
