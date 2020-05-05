@@ -69,7 +69,7 @@ public class ChildListDAO {
 		try {
 			getConnection();
 
-			String sql = "select * from children where perents_id=?";
+			String sql = "select * from children where parents_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			//System.out.println(sql);
@@ -83,7 +83,7 @@ public class ChildListDAO {
 				c_sex = rs.getString("children_sex");
 				c_age = rs.getString("children_age");
 				c_photo = rs.getString("children_photo");
-				p_id = rs.getString("perents_id");
+				p_id = rs.getString("parents_id");
 			
 											
 				info = new ChildListDTO(c_number, c_name, c_sex, c_age, c_photo, p_id);
