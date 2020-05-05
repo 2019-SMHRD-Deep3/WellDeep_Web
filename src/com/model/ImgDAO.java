@@ -3,20 +3,19 @@ package com.model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ChildDAO {
+public class ImgDAO {
 	private Connection conn;
 	private PreparedStatement psmt;
+	private ResultSet rs;
 	
-	private static ChildDAO dao;
-	private ChildDAO() {
-		
-	}
-	
-	public static ChildDAO getDAO() {
-		if(dao == null) {
-			dao = new ChildDAO();
+	private static ImgDAO dao;
+
+	public static ImgDAO getDAO() {
+		if (dao == null) {
+			dao = new ImgDAO();
 		}
 		return dao;
 	}
@@ -50,22 +49,15 @@ public class ChildDAO {
 		}
 	}
 	
-	public int join(ChildDTO dto) {
-
+	public int insertImg(ImgDTO dto) {
 		int cnt = 0;
-
 		try {
-
 			getConnection();
-			String sql = "insert into children values(children_seq.nextval,?,?,?,?,?)";
+			String sql = "insert into img values(img_seq.nextval,SYSDATE,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			
-			psmt.setString(1, dto.getC_name());
-			psmt.setString(2, dto.getC_sex());
-			psmt.setString(3, dto.getC_age());
-			psmt.setString(4, dto.getC_photo());
-			psmt.setString(5, dto.getP_id());
-			
+			psmt.setString(1,dto.getImg_file());
+			psmt.setString(2,dto.getPerents_id());
+			psmt.setString(3,dto.getChildren_number());
 			cnt = psmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -75,30 +67,4 @@ public class ChildDAO {
 		}
 		return cnt;
 	}
-	
-	public int updateChild(ChildDTO dto) {
-		int cnt = 0;
-		
-		
-		try {
-			getConnection();
-			String sql = "update children set children_number=?,children_name=?,children_sex=?,children_age=?,children_photo=? where parents_id=?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getC_num());
-			psmt.setString(2, dto.getC_name());
-			psmt.setString(3, dto.getC_sex());
-			psmt.setString(4, dto.getC_age());
-			psmt.setString(5, dto.getC_photo());
-			psmt.setString(6, dto.getP_id());
-			
-			cnt = psmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-				
-		return cnt;
-	}
-
 }

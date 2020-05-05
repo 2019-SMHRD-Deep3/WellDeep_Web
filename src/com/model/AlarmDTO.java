@@ -18,6 +18,14 @@ public class AlarmDTO {
 		this.v_file = v_file;
 	}
 
+	public AlarmDTO(String p_id, String c_number, String i_file, String v_file) {
+		super();
+		this.p_id = p_id;
+		this.c_number = c_number;
+		this.i_file = i_file;
+		this.v_file = v_file;
+	}
+
 	public String getA_number() {
 		return a_number;
 	}

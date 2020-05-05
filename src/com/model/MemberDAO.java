@@ -60,7 +60,7 @@ public class MemberDAO {
 		
 		try {
 				getConnection();
-				String sql = "select * from parents where perents_id=?";
+				String sql = "select * from parents where parents_id=?";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, id);
 				rs = psmt.executeQuery();
@@ -122,7 +122,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 
-			String sql = "select * from parents where perents_id=? and perents_pw=?";
+			String sql = "select * from parents where parents_id=? and parents_pw=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getP_id());
 			psmt.setString(2, dto.getP_pw());
@@ -132,14 +132,14 @@ public class MemberDAO {
 				// rs.getString(1);
 				// rs.getString(2);
 				// rs.getString(3);
-				p_id = rs.getString("perents_id");
-				p_pw = rs.getString("perents_pw");
-				p_addr = rs.getString("perents_addr");
-				p_phone = rs.getString("perents_phone");
-				p_name = rs.getString("perents_name");
-				p_sex = rs.getString("perents_sex");
+				p_id = rs.getString("parents_id");
+				p_pw = rs.getString("parents_pw");
+				p_addr = rs.getString("parents_addr");
+				p_phone = rs.getString("parents_phone");
+				p_name = rs.getString("parents_name");
+				p_sex = rs.getString("parents_sex");
 
-				sql = "select * from children where perents_id=?";
+				sql = "select * from children where parents_id=?";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, dto.getP_id());
 				rs = psmt.executeQuery();
@@ -175,7 +175,7 @@ public class MemberDAO {
 
 		try {
 			getConnection();
-			String sql = "select * from children where perents_id=?";
+			String sql = "select * from children where parents_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			rs = psmt.executeQuery();
@@ -208,7 +208,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 
-			String sql = "select * from parents where perents_id=?";
+			String sql = "select * from parents where parents_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 
@@ -216,11 +216,11 @@ public class MemberDAO {
 
 			if (rs.next()) {
 
-				p_id = rs.getString("perents_id");
-				p_pw = rs.getString("perents_pw");
-				p_addr = rs.getString("perents_addr");
-				p_phone = rs.getString("perents_phone");
-				p_name = rs.getString("perents_name");
+				p_id = rs.getString("parents_id");
+				p_pw = rs.getString("parents_pw");
+				p_addr = rs.getString("parents_addr");
+				p_phone = rs.getString("parents_phone");
+				p_name = rs.getString("parents_name");
 								
 				info = new MemberDTO(p_id, p_pw, p_addr, p_phone, p_name);
 
@@ -243,7 +243,7 @@ public class MemberDAO {
 		try {
 			if (pw != null) {
 				getConnection();
-				String sql = "update parents set perents_pw=? where perents_id = ?";
+				String sql = "update parents set parents_pw=? where parents_id = ?";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, pw);
 				psmt.setString(2, id);
@@ -256,7 +256,7 @@ public class MemberDAO {
 			}
 			if (name != null) {
 				getConnection();
-				String sql = "update parents set perents_name=? where perents_id = ?";
+				String sql = "update parents set parents_name=? where parents_id = ?";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, name);
 				psmt.setString(2, id);
@@ -269,7 +269,7 @@ public class MemberDAO {
 			}
 			if (addr != null) {
 				getConnection();
-				String sql = "update parents set perents_addr=? where perents_id = ?";
+				String sql = "update parents set parents_addr=? where parents_id = ?";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, addr);
 				psmt.setString(2, id);
@@ -282,7 +282,7 @@ public class MemberDAO {
 			}
 			if (phone != null) {
 				getConnection();
-				String sql = "update parents set perents_phone=? where perents_id = ?";
+				String sql = "update parents set parents_phone=? where parents_id = ?";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, phone);
 				psmt.setString(2, id);
@@ -308,8 +308,8 @@ public class MemberDAO {
 
 		try {
 				getConnection();
-				String sql = "update parents set perents_pw=?, perents_addr=?, perents_phone=?, perents_name = ?, "+
-				"perents_sex = ? where perents_id = ?";
+				String sql = "update parents set parents_pw=?, parents_addr=?, parents_phone=?, parents_name = ?, "+
+				"parents_sex = ? where parents_id = ?";
 				
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, pw);

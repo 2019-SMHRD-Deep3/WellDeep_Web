@@ -11,12 +11,12 @@ drop sequence children_seq;
 drop table parents;
 
 create table parents (
-perents_id varchar2(50) PRIMARY key,
-perents_pw varchar2(50) not null,
-perents_addr varchar2(300) not null,
-perents_phone varchar2(100) not null,
-perents_name varchar2(50) not null,
-perents_sex varchar2(20) not null
+parents_id varchar2(50) PRIMARY key,
+parents_pw varchar2(50) not null,
+parents_addr varchar2(300) not null,
+parents_phone varchar2(100) not null,
+parents_name varchar2(50) not null,
+parents_sex varchar2(20) not null
 );
 
 create table children (
@@ -25,8 +25,8 @@ children_name varchar2(50) not null,
 children_sex varchar2(20) not null,
 children_age varchar2(20) not null,
 children_photo varchar2(1000),
-perents_id varchar2(50) not null,
-constraint fk_perents_id_chil foreign key(perents_id)
+parents_id varchar2(50) not null,
+constraint fk_parents_id_chil foreign key(parents_id)
 references parents
 );
 create sequence children_seq start with 1 increment by 1 maxvalue 500 cycle nocache;
@@ -35,9 +35,9 @@ create table img (
 img_number varchar2(50) PRIMARY key,
 img_time date,
 img_file varchar2(1000) UNIQUE not null,
-perents_id varchar2(50) not null,
+parents_id varchar2(50) not null,
 children_number varchar2(50) not null,
-constraint fk_perents_id_img foreign key(perents_id)
+constraint fk_parents_id_img foreign key(parents_id)
 references parents,
 constraint fk_children_number_img foreign key(children_number)
 references children
@@ -49,9 +49,9 @@ create table voice (
 voice_number varchar2(50) primary key,
 voice_time varchar2(100) not null,
 voice_file varchar2(1000) UNIQUE not null,
-perents_id varchar2(50) not null,
+parents_id varchar2(50) not null,
 children_number varchar2(50) not null,
-constraint fk_perents_id_voice foreign key(perents_id)
+constraint fk_parents_id_voice foreign key(parents_id)
 references parents,
 constraint fk_children_number_voice foreign key(children_number)
 references children
@@ -63,8 +63,8 @@ post_number varchar2(50) primary key,
 post_title varchar2(500) not null,
 post_context varchar2(2000) not null,
 post_time date,
-perents_id varchar2(50) not null,
-constraint fk_perents_id_post foreign key(perents_id)
+parents_id varchar2(50) not null,
+constraint fk_parents_id_post foreign key(parents_id)
 references parents
 );
 create sequence post_seq start with 1 increment by 1 maxvalue 9999 cycle nocache;
@@ -73,11 +73,11 @@ create sequence post_seq start with 1 increment by 1 maxvalue 9999 cycle nocache
 create table alarm (
 alarm_number varchar2(50) primary key,
 alarm_time date,
-perents_id varchar2(50) not null,
+parents_id varchar2(50) not null,
 children_number varchar2(50) not null,
 img_file varchar2(50) not null,
 voice_file varchar2(50) not null,
-constraint fk_perents_id_alarm foreign key(perents_id)
+constraint fk_parents_id_alarm foreign key(parents_id)
 references parents,
 constraint fk_children_number_alarm foreign key(children_number)
 references children,
@@ -127,5 +127,12 @@ insert into img values (img_seq.nextval,SYSDATE,'alarm_6.jpg',2222,6);
 insert into voice values (voice_seq.nextval,SYSDATE,'alarm_6.wav',2222,6);
 insert into alarm values (alarm_seq.nextval,SYSDATE,2222,6,'alarm_6.jpg','alarm_6.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
+
+select * from ALARM;
+select * from PARENTS;
+select * from CHILDREN;
+select * from IMG;
+select * from POST;
+select * from VOICE;
 
 commit;
