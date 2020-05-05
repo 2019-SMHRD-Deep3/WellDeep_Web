@@ -170,20 +170,9 @@ button:hover:before, button:hover:after {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide">
+			<div class="swiper-slide" style = "width:fit-content;">
 				<img src="img/app1one.PNG">
 			</div>
 			<div class="swiper-slide">
