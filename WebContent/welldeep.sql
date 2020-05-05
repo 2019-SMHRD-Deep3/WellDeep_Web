@@ -10,8 +10,6 @@ drop table children;
 drop sequence children_seq;
 drop table parents;
 
-
-
 create table parents (
 perents_id varchar2(50) PRIMARY key,
 perents_pw varchar2(50) not null,
@@ -129,7 +127,5 @@ insert into img values (img_seq.nextval,SYSDATE,'alarm_6.jpg',2222,6);
 insert into voice values (voice_seq.nextval,SYSDATE,'alarm_6.wav',2222,6);
 insert into alarm values (alarm_seq.nextval,SYSDATE,2222,6,'alarm_6.jpg','alarm_6.wav');
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
-
-select * from ALARM where alarm_number='1';
 
 commit;
