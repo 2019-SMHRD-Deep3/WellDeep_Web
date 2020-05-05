@@ -131,5 +131,6 @@ insert into alarm values (alarm_seq.nextval,SYSDATE,2222,6,'alarm_6.jpg','alarm_
 insert into post values (post_seq.nextval,'title','context',SYSDATE,2222);
 
 select * from ALARM where alarm_number='1';
+select * from post;
 
 commit;
