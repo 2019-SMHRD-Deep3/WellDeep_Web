@@ -69,7 +69,7 @@ public class AlarmDAO {
 		try {
 			getConnection();
 
-			String sql = "select * from alarm where perents_id=?";
+			String sql = "select * from alarm where parents_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			//System.out.println(sql);
@@ -80,7 +80,7 @@ public class AlarmDAO {
 
 				a_number = rs.getString("alarm_number");
 				a_time = rs.getString("alarm_time");
-				p_id = rs.getString("perents_id");
+				p_id = rs.getString("parents_id");
 				c_number = rs.getString("children_number");
 				i_file = rs.getString("img_file");
 				v_file = rs.getString("voice_file");
@@ -118,7 +118,7 @@ public class AlarmDAO {
 				System.out.println("반복문 입장");
 				a_number = rs.getString("alarm_number");
 				a_time = rs.getString("alarm_time");
-				p_id = rs.getString("perents_id");
+				p_id = rs.getString("parents_id");
 				c_number = rs.getString("children_number");
 				i_file = rs.getString("img_file");
 				v_file = rs.getString("voice_file");
@@ -136,6 +136,27 @@ public class AlarmDAO {
 		}
 
 		return list;
+	}
+	
+	public int insert_one(AlarmDTO dto) {
+		int cnt = 0;
+		try {
+			getConnection();
+			String sql = "insert into alarm values(alarm_seq.nextval,SYSDATE,?,?,?,?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getP_id());
+			psmt.setString(2, dto.getC_number());
+			psmt.setString(3, dto.getI_file());
+			psmt.setString(4, dto.getV_file());
+		
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
 	}
 
 }
