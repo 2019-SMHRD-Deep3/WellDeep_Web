@@ -25,6 +25,11 @@ public class AlarmDTO {
 		this.i_file = i_file;
 		this.v_file = v_file;
 	}
+	// 알람 삭제
+	public AlarmDTO(String a_number) {
+		this.a_number = a_number;
+	}
+	
 
 	public String getA_number() {
 		return a_number;
