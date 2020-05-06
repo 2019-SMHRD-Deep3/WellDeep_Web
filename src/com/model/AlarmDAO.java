@@ -158,5 +158,25 @@ public class AlarmDAO {
 		}
 		return cnt;
 	}
+	public int delete(AlarmDTO dto) {
+		
+		int cnt = 0;
+		try {
+			getConnection();
+			String sql = "delete from alarm where alarm_number=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getA_number());
+			
+		
+			cnt = psmt.executeUpdate();
+			System.out.println("¹¹´Ï"+cnt);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 
 }
