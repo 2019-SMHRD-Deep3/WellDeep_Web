@@ -99,40 +99,43 @@ public class AlarmDAO {
 	}
 
 	public ArrayList<AlarmDTO> select_one(String num) {
-      info = null;
-      list = new ArrayList<AlarmDTO>();
+
+		info = null;
+		list = new ArrayList<AlarmDTO>();
 
       try {
          getConnection();
 
-         String sql = "select * from ALARM where alarm_number=?";
-         psmt = conn.prepareStatement(sql);
-         System.out.println(num.length());
-         psmt.setString(1, num);
-         rs = psmt.executeQuery();
-         System.out.println(rs);
-         while (rs.next()) {
-         if (num.length()>0) {
-            System.out.println("조건문입장");
-            a_number = rs.getString("alarm_number");
-            a_time = rs.getString("alarm_time");
-            p_id = rs.getString("parents_id");
-            c_number = rs.getString("children_number");
-            i_file = rs.getString("img_file");
-            v_file = rs.getString("voice_file");
-                                 
-            info = new AlarmDTO(a_number, a_time, p_id, c_number, i_file, v_file);
-            list.add(info);
-         }else {
-            System.out.println("에러");
-         }
-         }
-      } catch (SQLException e) {
-         e.printStackTrace();
-      } finally {
-         close();
-      }
-
+			String sql = "select * from ALARM where alarm_number=?";
+			psmt = conn.prepareStatement(sql);
+			System.out.println(num.length());
+			psmt.setString(1, num);
+			rs = psmt.executeQuery();
+			System.out.println(rs);
+			while(rs.next()) {
+				
+				if (num.length()>0) {
+					System.out.println("조건문입장");
+					a_number = rs.getString("alarm_number");
+					a_time = rs.getString("alarm_time");
+					p_id = rs.getString("parents_id");
+					c_number = rs.getString("children_number");
+					i_file = rs.getString("img_file");
+					v_file = rs.getString("voice_file");
+					
+					info = new AlarmDTO(a_number, a_time, p_id, c_number, i_file, v_file);
+					list.add(info);
+					System.out.println(info);
+				}else {
+					System.out.println("에러");
+				}
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
       return list;
    }
 
@@ -158,7 +161,7 @@ public class AlarmDAO {
 	}
 
 	public int delete(String num) {
-
+		
 		int cnt = 0;
 		try {
 			getConnection();
@@ -167,7 +170,7 @@ public class AlarmDAO {
 			psmt.setString(1, num);
 
 			cnt = psmt.executeUpdate();
-			System.out.println("cnt:" + cnt);
+			System.out.println("cnt:"+cnt);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
