@@ -5,35 +5,51 @@
 	pageEncoding="UTF-8" import="org.json.simple.*"%>
 
 <%
-	request.setCharacterEncoding("UTF-8");
-String num = request.getParameter("num");
-System.out.println("jsp에서 받은 num:"+num);
-num = num.trim();
-JSONObject jsonMain = new JSONObject();
-JSONArray jsonArray = new JSONArray();
+request.setCharacterEncoding("UTF-8");
+response.setCharacterEncoding("UTF-8");
 
-AlarmDAO dao = AlarmDAO.getDAO();
-ArrayList<AlarmDTO> list = dao.select_one(num);
-System.out.println("리스트사이즈"+list.size());
+String type = request.getParameter("type");
+type = type.trim();
+System.out.println("app에서 받아온 타입:"+type);
 
-for (int i = 0; i < list.size(); i++) {
+if (type.equals("child_list")) {
 
-	JSONObject jsonObject = new JSONObject();
-
-	jsonObject.put("a_number", list.get(i).getA_number());
-	jsonObject.put("a_time", list.get(i).getA_time());
-	jsonObject.put("p_id", list.get(i).getP_id());
-	jsonObject.put("c_number", list.get(i).getC_number());
-	jsonObject.put("i_file", list.get(i).getI_file());
-	jsonObject.put("v_file", list.get(i).getV_file());
+	String num = request.getParameter("num");
+	num = num.trim();
+	System.out.println("jsp에서 받은 num:"+num);
+	JSONObject jsonMain = new JSONObject();
+	JSONArray jsonArray = new JSONArray();
 	
+	AlarmDAO dao = AlarmDAO.getDAO();
+	ArrayList<AlarmDTO> list = dao.select_one(num);
+	System.out.println("리스트사이즈"+list.size());
 
-	jsonArray.add(jsonObject); }
+	for (int i = 0; i < list.size(); i++) {
 
-	jsonMain.put("dataSet", jsonArray);
+		JSONObject jsonObject = new JSONObject();
 
-	System.out.println("123"+jsonArray);
-	out.print(jsonMain);
+		jsonObject.put("a_number", list.get(i).getA_number());
+		jsonObject.put("a_time", list.get(i).getA_time());
+		jsonObject.put("p_id", list.get(i).getP_id());
+		jsonObject.put("c_number", list.get(i).getC_number());
+		jsonObject.put("i_file", list.get(i).getI_file());
+		jsonObject.put("v_file", list.get(i).getV_file());
 
+		jsonArray.add(jsonObject); }
 
+		jsonMain.put("dataSet", jsonArray);
+
+		System.out.println("123"+jsonArray);
+		out.print(jsonMain);
+}
+else if (type.equals("delete")) {
+	
+	String num = request.getParameter("num");
+	num = num.trim();
+	System.out.println("받아온 번호:"+num);
+	AlarmDTO dto = new AlarmDTO(num);
+	AlarmDAO dao = AlarmDAO.getDAO();
+	int cnt = dao.delete(num);
+	out.print(cnt);
+}
 %>
