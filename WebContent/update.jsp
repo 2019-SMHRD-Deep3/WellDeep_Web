@@ -472,7 +472,7 @@ button:hover:before,button:hover:after{
 				   for(int i=list.size()-1; i>=0; i--){%>
 				   <div align="center" style="display:inline-block;">
 				   <table>
-				   	<tr><td width="300px" colspan="2"><img style = "display : block;margin : 0 auto; width: 200px;" src="img/<%= list.get(i).getC_photo() %>"></td></tr>
+				   	<tr><td width="300px" colspan="2"><img style = "display : block;margin : 0 auto; width: 200px;" src="child/<%= list.get(i).getC_photo() %>"></td></tr>
 					<tr><td width="150px" style="text-align:right;"><h2>이름: </h2></td><td><h2><%= list.get(i).getC_name() %></h2></td></tr>
 					<tr><td width="150px" style="text-align:right;"><h2>나이: </h2></td><td><h2><%= list.get(i).getC_age() %></h2></td></tr>
 					<tr><td width="150px" style="text-align:right;"><h2>성별: </h2></td><td><h2><%= list.get(i).getC_sex() %></h2></td></tr>

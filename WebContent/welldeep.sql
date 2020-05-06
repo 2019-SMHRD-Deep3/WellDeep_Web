@@ -10,8 +10,6 @@ drop table children;
 drop sequence children_seq;
 drop table parents;
 
-
-
 create table parents (
 parents_id varchar2(50) PRIMARY key,
 parents_pw varchar2(50) not null,
