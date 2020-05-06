@@ -23,7 +23,7 @@ public class ImgUpload extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		//이미지를 저장할 경로 입력.
-        String folderTypePath = "C:/Users/SM007/git/WellDeep_Web/WebContent/img";
+        String folderTypePath = "C:/Users/SM007/git/WellDeep_Web/WebContent/child";
  
         String name = new String();
         String fileName = new String();
