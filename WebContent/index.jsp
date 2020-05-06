@@ -54,7 +54,7 @@
 }
 
 .img {
-	width: 38%;
+	width: fit-content;
 	margin: 0 auto;
 	text-align: center;
 }

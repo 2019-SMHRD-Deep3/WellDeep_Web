@@ -472,7 +472,7 @@ button:hover:before,button:hover:after{
 				   for(int i=list.size()-1; i>=0; i--){%>
 				   <div align="center" style="display:inline-block;">
 				   <table>
-				   	<tr><td width="300px" colspan="2"><img style = "display : block;margin : 0 auto; width: 200px;" src="img/<%= list.get(i).getC_photo() %>"></td></tr>
+				   	<tr><td width="300px" colspan="2"><img style = "display : block;margin : 0 auto; width: 200px;" src="child/<%= list.get(i).getC_photo() %>"></td></tr>
 					<tr><td width="150px" style="text-align:right;"><h2>이름: </h2></td><td><h2><%= list.get(i).getC_name() %></h2></td></tr>
 					<tr><td width="150px" style="text-align:right;"><h2>나이: </h2></td><td><h2><%= list.get(i).getC_age() %></h2></td></tr>
 					<tr><td width="150px" style="text-align:right;"><h2>성별: </h2></td><td><h2><%= list.get(i).getC_sex() %></h2></td></tr>
@@ -483,7 +483,7 @@ button:hover:before,button:hover:after{
 </div>
 <div class="wall" style="height:10px; background:white"></div>
 <div class="inner">
-         <section style = "text-align:center; color: rgb(245, 245, 220);" class="about">
+         <section style = "background:#3D3D3D; text-align:center; color: rgb(245, 245, 220);" class="about">
             <h4 class="major">스마트 미디어 인재 개발원</h4>
             <p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
             <p>Team Well-Deep.</p>
