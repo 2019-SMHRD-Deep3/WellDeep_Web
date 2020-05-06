@@ -8,18 +8,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AlarmDAO {
-	
+
 	private Connection conn;
 	private PreparedStatement psmt;
 	private ResultSet rs;
-	
+
 	private String a_number;
 	private String a_time;
 	private String p_id;
 	private String c_number;
 	private String i_file;
 	private String v_file;
-	
+
 	AlarmDTO info;
 	ArrayList<AlarmDTO> list;
 
@@ -31,7 +31,7 @@ public class AlarmDAO {
 		}
 		return dao;
 	}
-	
+
 	private void getConnection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -60,9 +60,9 @@ public class AlarmDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public ArrayList<AlarmDTO> select(String id) {
-		
+
 		info = null;
 		list = new ArrayList<AlarmDTO>();
 
@@ -72,7 +72,7 @@ public class AlarmDAO {
 			String sql = "select * from alarm where parents_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
-			//System.out.println(sql);
+			// System.out.println(sql);
 
 			rs = psmt.executeQuery();
 
@@ -84,7 +84,7 @@ public class AlarmDAO {
 				c_number = rs.getString("children_number");
 				i_file = rs.getString("img_file");
 				v_file = rs.getString("voice_file");
-											
+
 				info = new AlarmDTO(a_number, a_time, p_id, c_number, i_file, v_file);
 				list.add(info);
 			}
@@ -97,47 +97,45 @@ public class AlarmDAO {
 
 		return list;
 	}
-	
+
 	public ArrayList<AlarmDTO> select_one(String num) {
-		System.out.println("dao에서 받은 num:"+num);
-		info = null;
-		list = new ArrayList<AlarmDTO>();
+      info = null;
+      list = new ArrayList<AlarmDTO>();
 
-		try {
-			getConnection();
+      try {
+         getConnection();
 
-			String sql = "select * from ALARM where alarm_number=?";
-			psmt = conn.prepareStatement(sql);
-			System.out.println(num.length());
-			psmt.setString(1, num);
-			rs = psmt.executeQuery();
-			
-			System.out.println("체크"+rs.next());
-			
-			if (num.length()>0) {
-				System.out.println("반복문 입장");
-				a_number = rs.getString("alarm_number");
-				a_time = rs.getString("alarm_time");
-				p_id = rs.getString("parents_id");
-				c_number = rs.getString("children_number");
-				i_file = rs.getString("img_file");
-				v_file = rs.getString("voice_file");
-											
-				info = new AlarmDTO(a_number, a_time, p_id, c_number, i_file, v_file);
-				list.add(info);
-			}else {
-				System.out.println("에러");
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
+         String sql = "select * from ALARM where alarm_number=?";
+         psmt = conn.prepareStatement(sql);
+         System.out.println(num.length());
+         psmt.setString(1, num);
+         rs = psmt.executeQuery();
+         System.out.println(rs);
+         while (rs.next()) {
+         if (num.length()>0) {
+            System.out.println("조건문입장");
+            a_number = rs.getString("alarm_number");
+            a_time = rs.getString("alarm_time");
+            p_id = rs.getString("parents_id");
+            c_number = rs.getString("children_number");
+            i_file = rs.getString("img_file");
+            v_file = rs.getString("voice_file");
+                                 
+            info = new AlarmDTO(a_number, a_time, p_id, c_number, i_file, v_file);
+            list.add(info);
+         }else {
+            System.out.println("에러");
+         }
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close();
+      }
 
-		return list;
-	}
-	
+      return list;
+   }
+
 	public int insert_one(AlarmDTO dto) {
 		int cnt = 0;
 		try {
@@ -148,7 +146,7 @@ public class AlarmDAO {
 			psmt.setString(2, dto.getC_number());
 			psmt.setString(3, dto.getI_file());
 			psmt.setString(4, dto.getV_file());
-		
+
 			cnt = psmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -158,18 +156,18 @@ public class AlarmDAO {
 		}
 		return cnt;
 	}
-	public int delete(AlarmDTO dto) {
-		
+
+	public int delete(String num) {
+
 		int cnt = 0;
 		try {
 			getConnection();
 			String sql = "delete from alarm where alarm_number=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getA_number());
-			
-		
+			psmt.setString(1, num);
+
 			cnt = psmt.executeUpdate();
-			System.out.println("뭐니"+cnt);
+			System.out.println("cnt:" + cnt);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
