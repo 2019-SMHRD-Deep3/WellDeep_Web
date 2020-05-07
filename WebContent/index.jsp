@@ -141,7 +141,7 @@ button:hover:before, button:hover:after {
 					if (info == null) {
 				%>
 				<form action="join.jsp">
-					<button type="submit" class="btn purple">로그인 / 회원가입</button>
+					<button type="submit" class="btn purple" style="font-family: 'GmarketSansMedium';">로그인 / 회원가입</button>
 				</form>
 				<%
 					} else {
@@ -171,12 +171,12 @@ button:hover:before, button:hover:after {
 					</h1>
 					<div class="download-btns" style="margin-top: -34px;">
 						<h1>
-							<a href="https://hbe.kr/l/ddingdongappdownload-android-homepage"
+							<a href=""
 								target="_blank" class="btn btn-outline-light mr-2 btn-google">
 								<img src="img/google.png" class="img-btn-google"
 								style="width: 19px; height: 20px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
 								Google Play
-							</a> <a href="https://hbe.kr/l/ddingdongappdownload-ios-homepage"
+							</a> <a href=""
 								target="_blank" class="btn btn-outline-light ml-2 btn-apple">
 								<img src="img/apple.png" class="img-btn-apple"
 								style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
