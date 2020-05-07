@@ -129,6 +129,7 @@ button:hover:before, button:hover:after {
 </head>
 <body>
 
+
 	<div id=alltest style="width: 100%; align: center;">
 		<%
 			MemberDTO info = (MemberDTO) session.getAttribute("info");
@@ -164,6 +165,8 @@ button:hover:before, button:hover:after {
 					%>
 				</div>
 
+
+
 				<div id="header" class="container" style="margin-top: -9px;">
 					<p class="img">
 						<a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a>
@@ -172,6 +175,7 @@ button:hover:before, button:hover:after {
 						<h1 style="margin-top: 12px; font-family: 'GmarketSansMedium';">
 							<font size="30px" color="beige"> 엄마를 부르는 소리, <br> <strong>위험할땐
 									'MomSee' 하세요.</strong></font> <br> <br>
+
 						</h1>
 						<div class="download-btns" style="margin-top: -34px;">
 							<h1>
