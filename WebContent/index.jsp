@@ -22,9 +22,12 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900?ver=4"
 	rel="stylesheet" />
-<link href="default.css?ver=1" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css?ver=2" rel="stylesheet" type="text/css" media="all" />
-<link href="slideshow.css?ver=3" rel="stylesheet" type="text/css" media="all" /> 
+<link href="default.css?ver=1" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="fonts.css?ver=2" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="slideshow.css?ver=3" rel="stylesheet" type="text/css"
+	media="all" />
 
 
 
@@ -98,84 +101,97 @@ button:hover:before, button:hover:after {
 	width: 100%;
 	transition: 800ms ease all;
 }
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansLight';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 </style>
+
+
 
 
 <script type="text/javascript" src="js/slideshow.js"></script>
 </head>
 <body>
+
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-	<div id="header-wrapper">
-		<div
-			style="float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
-			<%
-				if (info == null) {
-			%>
-			<form action="join.jsp">
-				<button type="submit" class="btn purple">로그인 / 회원가입</button>
-			</form>
-			<%
-				} else {
-			%>
-			<form action="LogoutService.do" style='display: inline;'>
-				<h3 style="color: #fff; margin-bottom: 10px;"><%=info.getP_id()%>
-					님 환영합니다.
-				</h3>
-				<button type="submit" class="btn purple">로그아웃</button>
-			</form>
-			<form action="update.jsp" style='display: inline;'>
-				<button type="submit" class="btn purple">정보수정</button>
-			</form>
-			<%
-				}
-			%>
-		</div>
-
-		<div id="header" class="container" style="margin-top: -9px;">
-			<p class="img">
-				<a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a>
-			</p>
-			<div class="title-group text-center">
-				<h1 style="margin-top: 12px;">
-					<font size="30px" color="beige"> 엄마를 부르는 소리, <br> <strong>위험할땐
-							MomSee하세요.</strong></font> <br> <br>
-				</h1>
-				<div class="download-btns" style="margin-top: -34px;">
-					<h1>
-						<a href="https://hbe.kr/l/ddingdongappdownload-android-homepage"
-							target="_blank" class="btn btn-outline-light mr-2 btn-google">
-							<img src="img/google.png" class="img-btn-google"
-							style="width: 19px; height: 20px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
-							Google Play
-						</a> <a href="https://hbe.kr/l/ddingdongappdownload-ios-homepage"
-							target="_blank" class="btn btn-outline-light ml-2 btn-apple">
-							<img src="img/apple.png" class="img-btn-apple"
-							style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
-							App Store
-						</a>
-					</h1>
-				</div>
-				<span><font color="beige">Design by <a
-						href="index.jsp" rel="nofollow" style="color: beige;">WellDeep</a></font></span>
+	<div style="width: 1903px; align: center;">
+		<div id="header-wrapper">
+			<div
+				style="float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
+				<%
+					if (info == null) {
+				%>
+				<form action="join.jsp">
+					<button type="submit" class="btn purple" style="font-family: 'GmarketSansMedium';">로그인 / 회원가입</button>
+				</form>
+				<%
+					} else {
+				%>
+				<form action="LogoutService.do" style='display: inline;'>
+					<h3 style="color: #fff; margin-bottom: 10px;"><%=info.getP_id()%>
+						님 환영합니다.
+					</h3>
+					<button type="submit" class="btn purple">로그아웃</button>
+				</form>
+				<form action="update.jsp" style='display: inline;'>
+					<button type="submit" class="btn purple">정보수정</button>
+				</form>
+				<%
+					}
+				%>
 			</div>
-			<div id="triangle-up"></div>
+
+			<div id="header" class="container" style="margin-top: -9px;">
+				<p class="img">
+					<a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a>
+				</p>
+				<div class="title-group text-center">
+					<h1 style="margin-top: 12px; font-family: 'GmarketSansMedium';">
+						<font size="30px" color="beige"> 엄마를 부르는 소리, <br> <strong>위험할땐
+								MomSee하세요.</strong></font> <br> <br>
+					</h1>
+					<div class="download-btns" style="margin-top: -34px;">
+						<h1>
+							<a href=""
+								target="_blank" class="btn btn-outline-light mr-2 btn-google">
+								<img src="img/google.png" class="img-btn-google"
+								style="width: 19px; height: 20px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
+								Google Play
+							</a> <a href=""
+								target="_blank" class="btn btn-outline-light ml-2 btn-apple">
+								<img src="img/apple.png" class="img-btn-apple"
+								style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
+								App Store
+							</a>
+						</h1>
+					</div>
+					<span><font color="beige">Design by <a
+							href="index.jsp" rel="nofollow" style="color: beige;">WellDeep</a></font></span>
+				</div>
+				<div id="triangle-up"></div>
+			</div>
+
 		</div>
-
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -183,26 +199,152 @@ button:hover:before, button:hover:after {
 
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<img src="img/app1one.PNG">
-			</div>
-			<div class="swiper-slide">
-				<img src="img/app2two.jpg">
-			</div>
-			<div class="swiper-slide">
-				<img src="img/app3three.png">
+			<div class="swiper-slide" style="width: fit-content;">
+				<!-- <img src="img/onepage.jpg" style = "width: 35rem; padding: 150px; margin-left: 150px;"> -->
+				<div id="wrapper">
+					<div id="featured-wrapper">
+						<div class="extra2 container">
+							<section>
+								<div class="text-group"
+									style="display: table; height: 300px; text-align: center;">
+									<div class="test"></div>
 
+									<div
+										style="display: table-cell; vertical-align: middle; width: 900px;">
+										<img src="img/onepage11.jpg"
+											style="width: 30rem; padding-right: 0px; padding-top: 0px;">
+									</div>
+
+									<div
+										style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
+
+										<h2 style="display: inline; font-family: 'GmarketSansMedium';">
+
+											<strong>'MomSee'는</strong><br>
+
+
+										</h2>
+
+										<p style="display: inline; font-size: 20px; font-family: 'GmarketSansLight';">
+
+
+											촬영뿐만 아니라<br> 위급상황 시 도움을 요청해<br> 혹시 모를 안전 사고 및 범죄를
+											예방해주는<br> 스마트한 제품입니다.<br>
+										</p>
+									</div>
+									<div class="test"></div>
+
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+
+			<div class="swiper-slide">
+				<div id="wrapper">
+					<div id="featured-wrapper">
+						<div class="extra2 container">
+							<section>
+								<div class="text-group"
+									style="display: table; height: 300px; text-align: center;">
+									<div class="test"></div>
+
+									<div
+										style="display: table-cell; vertical-align: middle; width: 900px;">
+										<img src="img/onepage22.jpg"
+											style="width: 30rem; padding-right: 0px; padding-top: 0px;">
+									</div>
+
+									<div
+										style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
+
+										<h2 style="display: inline; font-family: 'GmarketSansMedium';">
+
+											<strong>'맘씨' 앱은</strong><br>
+
+
+										</h2>
+
+										<p style="display: inline; font-size: 20px; font-family: 'GmarketSansLight';">
+
+
+											도움을 요청할 수 없는<br> 상황이 발생했을 때를 대비하여<br> 기능을 설정할 수
+											있습니다.<br> 설정해 놓은 값(위험시)에 도달하면<br> 자동으로 인지하여 이벤트가
+											발생합니다.
+										</p>
+									</div>
+									<div class="test"></div>
+
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+			<div class="swiper-slide">
+				<div id="wrapper">
+					<div id="featured-wrapper">
+						<div class="extra2 container">
+							<section>
+								<div class="text-group"
+									style="display: table; height: 300px; text-align: center;">
+									<div class="test"></div>
+
+									<div
+										style="display: table-cell; vertical-align: middle; width: 900px;">
+										<img src="img/onepage33.jpg"
+											style="width: 30rem; padding-right: 0px; padding-top: 0px;">
+									</div>
+
+									<div
+										style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
+
+										<h2 style="display: inline; font-family: 'GmarketSansMedium';">
+
+
+
+
+										</h2>
+
+										<p style="display: inline; font-size: 20px; font-family: 'GmarketSansLight';">
+
+
+											발생한 이벤트는 지정된 보호자에게 <br> 자동으로 메세지를 전송하게 되는 데 <br>
+											메세지를 받은 보호자는 음성과 영상을 확인하여<br> 위험 상황에 빠르게 대처할 수 있습니다.
+										</p>
+									</div>
+									<div class="test"></div>
+
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			...
 
 		</div>
+
+
+
 		<!-- If we need pagination -->
+
 		<div class="swiper-pagination"></div>
 
 		<!-- If we need navigation buttons -->
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev" style="padding-left: 60px;"></div>
+		<div class="swiper-button-next" style="padding-right: 60px;"></div>
 
 		<div class="swiper-scrollbar"></div>
 	</div>
@@ -220,7 +362,7 @@ button:hover:before, button:hover:after {
 
 
 
-	<div class="swiper-container">
+	<!-- <div class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				<img src="img/appone.PNG">
@@ -235,21 +377,21 @@ button:hover:before, button:hover:after {
 			...
 
 		</div>
-		<!-- If we need pagination -->
+		If we need pagination
 		<div class="swiper-pagination"></div>
 
-		<!-- If we need navigation buttons -->
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
+		If we need navigation buttons
+		<div class="swiper-button-prev" style="padding-left: 60px;"></div>
+		<div class="swiper-button-next" style="padding-right: 60px;"></div>
 
 		<div class="swiper-scrollbar"></div>
 	</div>
 
-	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script> -->
 
 
 
-<!-- 
+
 
 
 	<div id="wrapper">
@@ -257,23 +399,30 @@ button:hover:before, button:hover:after {
 			<div class="extra2 container">
 				<section>
 					<div class="text-group"
-						style="display: table; height: 300px; background: floralwhite; text-align: center;">
+						style="display: table; height: 300px; text-align: center; background: floralwhite;">
 						<div class="test"></div>
+
 						<div
-							style="display: table-cell; vertical-align: middle; width: 800px">
-							<img src="img/app1one.jpg"
-								style="width: 20rem; padding-right: 0px; padding-top: 0px;">
+							style="display: table-cell; vertical-align: middle; width: 900px;">
+							<img src="img/appmain.png"
+								style="width: 18rem; padding-right: 0px; padding-top: 0px;">
 						</div>
 
 						<div
 							style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
 
-							<h2 style="display: inline;">
+							<h2 style="display: inline; font-family: 'GmarketSansMedium';">
 
-								<strong>자녀 정보 입력</strong><br>
+								<strong>주요기능 소개</strong><br>
+
+
 							</h2>
-							<p style="display: inline; font-size: 20px;">
-								우리 아이의 정보를 입력하고<br> 편하게 이용해보세요
+
+							<p style="display: inline; font-size: 20px; font-family: 'GmarketSansLight';">
+
+
+								1. 실시간 영상 확인 및 알림 서비스<br> 2. 영상 & 음성 녹화 및 삭제<br> 3.
+								위험상황 시 즉각 대응<br> 4. 빠른 고객 대응<br> 다양한 서비스를 만나보세요 <br>
 							</p>
 						</div>
 						<div class="test"></div>
@@ -283,6 +432,8 @@ button:hover:before, button:hover:after {
 			</div>
 		</div>
 	</div>
+
+
 
 
 
@@ -293,28 +444,23 @@ button:hover:before, button:hover:after {
 					<div class="text-group"
 						style="display: table; height: 300px; text-align: center;">
 						<div class="test"></div>
-
 						<div
-							style="display: table-cell; vertical-align: middle; width: 800px">
-							<img src="img/app3three.png"
-								style="width: 500px; height: 250px; padding-right: 0px; padding-top: 0px;">
+							style="display: table-cell; vertical-align: middle; width: 900px">
+							<img src="img/alarm.png"
+								style="width: 18rem; padding-right: 0px; padding-top: 0px;">
 						</div>
 
 						<div
 							style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
 
-							<h2 style="display: inline;">
-								
-							
-								
-						
+							<h2 style="display: inline; font-family: 'GmarketSansMedium';">
+
+								<strong>딥러닝을 이용한 <br> 우리 아이 지킴이
+								</strong><br>
 							</h2>
-							<p style="display: inline; font-size: 20px;">
-								 
-								발생한 이벤트는 지정된 보호자에게 자동으로 <br>
-								메세지를 전송하게 되는데 메세지를 받은 보호자는<br>
-								음성과 영상을 확인하여 위험상황에 빠르게 대처할 수 있습니다.<br>
-								
+							<p style="display: inline; font-size: 20px; font-family: 'GmarketSansLight';">
+								위험한 움직임이 감지될 때<br> 경보와 동시에 알림.<br>
+
 							</p>
 						</div>
 						<div class="test"></div>
@@ -324,6 +470,8 @@ button:hover:before, button:hover:after {
 			</div>
 		</div>
 	</div>
+
+
 
 
 	<div id="wrapper">
@@ -334,19 +482,19 @@ button:hover:before, button:hover:after {
 						style="display: table; height: 300px; background: floralwhite; text-align: center;">
 						<div class="test"></div>
 						<div
-							style="display: table-cell; vertical-align: middle; width: 800px">
+							style="display: table-cell; vertical-align: middle; width: 900px">
 							<img src="img/childmain.png"
-								style="width: 20rem; padding-right: 0px; padding-top: 0px;">
+								style="width: 18rem; padding-right: 0px; padding-top: 0px;">
 						</div>
 
 						<div
 							style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
 
-							<h2 style="display: inline;">
+							<h2 style="display: inline; font-family: 'GmarketSansMedium';">
 
 								<strong>자녀 정보 입력</strong><br>
 							</h2>
-							<p style="display: inline; font-size: 20px;">
+							<p style="display: inline; font-size: 20px; font-family: 'GmarketSansLight';">
 								우리 아이의 정보를 입력하고<br> 편하게 이용해보세요
 							</p>
 						</div>
@@ -357,12 +505,12 @@ button:hover:before, button:hover:after {
 			</div>
 		</div>
 	</div>
- 
- 
-  -->
- 
- 
- 
+
+
+
+
+
+
 	<div id="wrapper">
 		<div id="featured-wrapper">
 			<div class="extra2 container">
@@ -378,12 +526,12 @@ button:hover:before, button:hover:after {
 
 						<div
 							style="padding-top: 0px; font-size: 30px; width: 800px; display: table-cell; vertical-align: middle; height: 515px;">
-							<h4>출시예정</h4>
-							<h2 style="display: inline;">
-								<strong>언제나, 어디서든</strong><br>
+							<h4>출시 예정</h4>
+							<h2 style="display: inline; font-family: 'GmarketSansMedium';">
+								<strong>언제, 어디서든</strong><br>
 							</h2>
-							<p style="display: inline; font-size: 20px;">
-								CCTV뿐만아니라<br> MomSee액세서리를 통해 <br> 우리아이를 지켜주세요.<br>
+							<p style="display: inline; font-size: 20px; font-family: 'GmarketSansLight';">
+								CCTV뿐만 아니라<br> MomSee액세서리를 통해 <br> 우리아이를 지켜주세요.<br>
 
 							</p>
 						</div>
@@ -395,13 +543,13 @@ button:hover:before, button:hover:after {
 		</div>
 	</div>
 
-	<div class="inner" style = "background: #3D3D3D; color: rgb(245, 245, 220); padding-top: 10px; padding-bottom: 10px;">
-		<section
-			style="text-align: center;">
-			<h4 class="major">스마트 미디어 인재 개발원</h4>
+	<div class="inner"
+		style="background: #3D3D3D; color: rgb(245, 245, 220); padding-top: 10px; padding-bottom: 10px;">
+		<section style="text-align: center; font-family: 'GmarketSansMedium';">
+			<h4 class="major" style="color: #FFC000; ">스마트 미디어 인재 개발원</h4>
 			<p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
-			<p>Team Well-Deep.</p>
 			<p>광주 CGI센터 교육실4 광주 송암로60.</p>
+			<p>Design by Team Well-Deep.</p>
 		</section>
 	</div>
 
