@@ -308,6 +308,27 @@ form-panel.two.active {
    width: 100%;
    text-align: center;;
 }
+
+@font-face {
+	font-family: 'GmarketSansLight';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-weight: normal;
+}
+
+
 </style>
 </head>
 <body onload="document.login.p_id.focus();">
@@ -318,8 +339,8 @@ form-panel.two.active {
    <div id="header-wrapper">
       <div id="header" class="container" style="margin-top: -9px;">
    <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
-            <div class="title-group text-center">
-               <h1 style ="margin-top: 12px;"><font size="30px" color="beige">
+            <div class="title-group text-center" style = "font-family: 'GmarketSansMedium';">
+               <h1 style ="margin-top: 12px; font-family: 'GmarketSansMedium';"><font size="30px" color="beige" >
                   엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
                   <br><br>
                </h1>
@@ -328,17 +349,17 @@ form-panel.two.active {
                      <a href="https://hbe.kr/l/ddingdongappdownload-android-homepage"
                         target="_blank" class="btn btn-outline-light mr-2 btn-google">
                         <img src="img/google.png" class="img-btn-google"
-                        style="width: 19px; height: 20px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
+                        style="width: 19px; height: 20px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px; font-family: 'GmarketSansMedium';">
                         Google Play
                      </a> <a href="https://hbe.kr/l/ddingdongappdownload-ios-homepage"
                         target="_blank" class="btn btn-outline-light ml-2 btn-apple">
                         <img src="img/apple.png" class="img-btn-apple"
-                        style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
+                        style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px; font-family: 'GmarketSansMedium';">
                         App Store
                      </a>
                </h1>
                   </div>
-               <span><font color="beige">Design by <a href="index.jsp" rel="nofollow" style="color : beige;">WellDeep</a></font></span>
+               <span><font color="beige">Design by <a href="index.jsp" rel="nofollow" style="color : beige; font-family: 'GmarketSansMedium';">WellDeep</a></font></span>
             </div>
             
       </div>
@@ -360,77 +381,78 @@ if ("<%=request.getParameter("joinsuccess")%>" == "False") {
    <div id="wrapper" style = "height: 700px;">
          <!-- Form-->
          <div class="form"
-            style="width:50%; position: relative; z-index: 1;">
+            style="width:50%; position: relative; z-index: 1; font-family: 'GmarketSansMedium';">
 
             <!-- <div class="form-toggle"></div> -->
-            <div style="width:35%; float:left;" class="form-panel one">
+            <div style="width:35%; float:left; font-family: GmarketSansMedium;" class="form-panel one">
                <div class="form-header">
                   <h1>LOGIN</h1>
                </div>
                <div class="form-content">
                   <form name="login" action="LoginService.do">
-                     <div class="form-group">
-                        <label for="username">ID</label> <input type="text"
+                     <div class="form-group" style = "font-family: 'GmarketSansMedium';">
+                        <label for="username" style = "font-family: 'GmarketSansMedium';">ID</label> <input type="text"
                            id="username" name="p_id" required="required" />
                      </div>
                      <div class="form-group">
-                        <label for="password">Password</label> <input type="password"
+                        <label for="password" style = "font-family: 'GmarketSansMedium';">Password</label> <input type="password"
                            id="password" name="p_pw" required="required" />
                      </div>
-                     <div style = "text-align:center;" class="form-group">
-                        <label class="form-remember"><input type="checkbox" />Remember
+                     <div style = "text-align:center; font-family: 'GmarketSansMedium';" class="form-group">
+                        <label class="form-remember"><input type="checkbox" style = "font-family: 'GmarketSansMedium';"/>Remember
                            Me </label> 
                      </div>
                      <div class="form-group">
-                        <button type="submit">Log In</button>
+                        <button type="submit" style = "font-family: 'GmarketSansMedium';">Log In</button>
                      </div>
                   </form>
                </div>
             </div>
-               <div style="width:50%; float:right;" class="form-panel two">
-                  <div class="form-header">
-                     <h1>JOIN</h1>
+               <div style="width:50%; float:right; font-family: 'GmarketSansMedium';" class="form-panel two">
+                  <div class="form-header" style = "font-family: 'GmarketSansMedium';">
+                     <h1 style = "font-family: 'GmarketSansMedium';">JOIN</h1>
                   </div>
                   <div class="form-content">
                      <form action="JoinService.do">
                         <div class="form-group">
-                           <label for="username">ID</label> <input id="p_id" name="p_id" type="text"
+                           <label for="username" style = "font-family: 'GmarketSansMedium';">ID</label> <input id="p_id" name="p_id" type="text"
                               class="form-control input-lg" required="required"><br>
                         </div>
                         <div class="form-group">
-                           <label for="password">Password</label> <input id="p_pw" name="p_pw"
+                           <label for="password" style = "font-family: 'GmarketSansMedium';">Password</label> <input id="p_pw" name="p_pw"
                               type="password" class="form-control input-lg" required="required"><br>
                         </div>
                         <div class="form-group">
-                           <label for="cpassword">Address</label> <input name="p_addr"
+                           <label for="cpassword" style = "font-family: 'GmarketSansMedium';">Address</label> <input name="p_addr"
                               type="text" class="form-control input-lg" required="required"><br>
                         </div>
                         <div class="form-group">
-                           <label for="email">PhoneNumber</label> <input name="p_phone"
+                           <label for="email" style = "font-family: 'GmarketSansMedium';">PhoneNumber</label> <input name="p_phone"
                               type="text" class="form-control input-lg" required="required"><br>
                         </div>
                         <div class="form-group">
-                           <label for="name">Name</label> <input name="p_name" type="text"
+                           <label for="name" style = "font-family: 'GmarketSansMedium';">Name</label> <input name="p_name" type="text"
                               class="form-control input-lg" required="required"><br>
                         </div>
-                        <label><input type="radio" name="p_sex" value="남" checked="checked">남성</label>
-                        <label><input type="radio" name="p_sex" value="여">여성</label>
+                        <label><input type="radio" name="p_sex" value="남" checked="checked" style = "font-family: 'GmarketSansMedium';">남성</label>
+                        <label><input type="radio" name="p_sex" value="여" style = "font-family: 'GmarketSansMedium';">여성</label>
                   <div id="join" class="form-group">
-                     <button id="join_btn" type="submit">Join</button>
+                     <button id="join_btn" type="submit" style = "font-family: 'GmarketSansMedium';">Join</button>
                   </div>
                   </form>
                   </div>
          </div>
       </div>
 </div>
-<div class="inner">
-         <section style = "background:#3D3D3D; text-align:center; color: rgb(245, 245, 220);" class="about">
-            <h4 class="major">스마트 미디어 인재 개발원</h4>
-            <p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
-            <p>Team Well-Deep.</p>
-            <p>광주 CGI센터 교육실4
-               광주 송암로60.</p>
-         </section></div>
+<div class="inner"
+		style="background: #3D3D3D; color: rgb(245, 245, 220); padding-top: 10px; padding-bottom: 10px;">
+		<section style="text-align: center; font-family: 'GmarketSansMedium';">
+			<h4 class="major" style="color: #FFC000; ">스마트 미디어 인재 개발원</h4>
+			<p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
+			<p>광주 CGI센터 교육실4 광주 송암로60.</p>
+			<p>Design by Team Well-Deep.</p>
+		</section>
+	</div>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
 </script>

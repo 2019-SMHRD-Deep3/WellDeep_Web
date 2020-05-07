@@ -319,7 +319,7 @@ button{
 
 button:hover{
   background:#fff;
-  color:black;
+  
 }
 button:before,button:after{
   content:'';
@@ -336,10 +336,31 @@ button:after{
   top:inherit;
   left:0;
   bottom:0;
+  color:white;
 }
 button:hover:before,button:hover:after{
   width:100%;
   transition:800ms ease all;
+  color:white;
+}
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansLight';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 </style>
@@ -356,53 +377,54 @@ button:hover:before,button:hover:after{
    <%
       MemberDTO info = (MemberDTO) session.getAttribute("info");
    %>
-    <div id="header-wrapper">
+    <div id="header-wrapper" style = "font-family: 'GmarketSansMedium';">
       <div 
-         style=" float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px;">
+         style=" float: right; width: 310px; text-align: right; margin-top: 10px; margin-right: 120px; font-family: 'GmarketSansMedium';">
          <%
             if (info == null) {
          %>
          <form action="join.jsp">
-            <button type="submit" class="btn purple">로그인 / 회원가입</button>
+            <button type="submit" class="btn purple" style = "font-family: 'GmarketSansMedium';">로그인 / 회원가입</button>
          </form>
          <%
             } else {
          %>
-         <form action="LogoutService.do" style='display:inline;'>
-            <h3 style="color: #fff; margin-bottom: 10px;"><%=info.getP_id()%> 님 환영합니다.</h3>
-            <button type="submit" class="btn purple">로그아웃</button>
+         <form action="LogoutService.do" style="display:inline; font-family: 'GmarketSansMedium';">
+            <h3 style="color: #fff; margin-bottom: 10px; font-family: 'GmarketSansMedium';"><%=info.getP_id()%> 님 환영합니다.</h3>
+            <button type="submit" class="btn purple" style = "font-family: 'GmarketSansMedium';">로그아웃</button>
          </form>
-         <form action="update.jsp" style='display:inline;'>
-            <button type="submit" class="btn purple">정보수정</button>
+         <form action="update.jsp" style="display:inline; font-family: 'GmarketSansMedium';">
+         
+            <button type="submit" class="btn purple" style = "font-family: 'GmarketSansMedium';">정보수정</button>
          </form> 
          <%
             }
          %>
       </div>
 
-      <div id="header" class="container" style = "margin-top: -9px;">
+      <div id="header" class="container" style = "margin-top: -9px; font-family: 'GmarketSansMedium';">
    <p class="img"><a href="index.jsp"><img src="img/cctv.png" class="img-logo"></a></p>
             <div class="title-group text-center">
-               <h1 style="margin-top: 12px;"><font size="30px" color="beige">
-                  엄마를 부르는 소리, <br> <strong>위험할땐  MomSee하세요.</strong></font>
+               <h1 style="margin-top: 12px; font-family: 'GmarketSansMedium';"><font size="30px" color="beige">
+                  엄마를 부르는 소리, <br> <strong style = "font-family: 'GmarketSansMedium';">위험할땐  MomSee하세요.</strong></font>
                   <br><br>
                </h1>
-                  <div class="download-btns" style="margin-top: -34px;">
+                  <div class="download-btns" style="margin-top: -34px; font-family: 'GmarketSansMedium';">
                <h1>
                      <a href="https://hbe.kr/l/ddingdongappdownload-android-homepage"
                         target="_blank" class="btn btn-outline-light mr-2 btn-google">
                         <img src="img/google.png" class="img-btn-google"
-                        style="width: 19px; height: 20px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
+                        style="width: 19px; height: 20px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px; font-family: 'GmarketSansMedium';">
                         Google Play
                      </a> <a href="https://hbe.kr/l/ddingdongappdownload-ios-homepage"
                         target="_blank" class="btn btn-outline-light ml-2 btn-apple">
                         <img src="img/apple.png" class="img-btn-apple"
-                        style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px;">
+                        style="width: 20px; height: 22px; margin: 0px 4.8px 0px 0px; margin-bottom: -5px; font-family: 'GmarketSansMedium';">
                         App Store
                      </a>
                </h1>
                   </div>
-               <span><font color="beige">Design by <a href="index.jsp" rel="nofollow" style="color : beige;">WellDeep</a></font></span>
+               <span><font color="beige" style = "font-family: 'GmarketSansMedium';">Design by <a href="index.jsp" rel="nofollow" style="color : beige; font-family: 'GmarketSansMedium';">WellDeep</a></font></span>
             </div>
             <div id="triangle-up"></div>
       </div>
@@ -422,9 +444,9 @@ button:hover:before,button:hover:after{
    }
    </script>
 
-         <div style = "height: 50%; background: white;">
+         <div style = "height: 50%; background: white; font-family: 'GmarketSansMedium';">
          <% if (info != null) {%>
-            <h2 style = "font-size: 24px; text-align: center; padding-top: 30px; ">회원정보 수정</h2>
+            <h2 style = "font-size: 24px; text-align: center; padding-top: 30px; font-family: 'GmarketSansMedium';">회원정보 수정</h2>
             
          <!-- Form-->
          <div class="form"
@@ -433,63 +455,64 @@ button:hover:before,button:hover:after{
             <!-- <div class="form-toggle"></div> -->
             <div align="center" class="form-panel one" style = "width:auto; padding-top: 10px;">
                <div class="form-header">
-                  <h1 style = "font-sizse: 24px;">내 정보</h1>
+                  <h1 style = "font-sizse: 24px; font-family: 'GmarketSansMedium';">내 정보</h1>
                </div>
                <div class="form-content">
-                     <div class="form-group">
-                        <label>비밀번호</label>
-                        <input style = "margin-bottom: 16px; margin-left: 1px;" type="password" id="pw" placeholder="<% for(int i=0; i< info.getP_pw().length();i++){%>●<%} %>">
+                     <div class="form-group" style = "font-family: 'GmarketSansMedium';">
+                        <label style = "font-family: 'GmarketSansMedium';">비밀번호</label>
+                        <input style = "margin-bottom: 16px; margin-left: 1px; font-family: 'GmarketSansMedium';" type="password" id="pw" placeholder="<% for(int i=0; i< info.getP_pw().length();i++){%>●<%} %>">
                         <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_pw();" id="pw_modify">수정</button>
                      </div>
-                     <div class="form-group">
-                        <label>이름</label>
-                        <input style = "margin-bottom: 16px; margin-left: 30px;" type="text" id="name" placeholder="<%= info.getP_name() %>">
-                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_name();" id="name_modify">수정</button>
+                     <div class="form-group" style = "font-family: 'GmarketSansMedium';">
+                        <label style = "font-family: 'GmarketSansMedium';">이름</label>
+                        <input style = "margin-bottom: 16px; margin-left: 30px; font-family: 'GmarketSansMedium';" type="text" id="name" placeholder="<%= info.getP_name() %>">
+                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left; font-family: 'GmarketSansMedium';" onclick="click_name();" id="name_modify">수정</button>
                      </div>
                      
-                     <div class="form-group">
-                        <label>주소</label>
-                        <input style = "margin-bottom: 16px; margin-left: 30px;" type="text" id="addr" placeholder="<%= info.getP_addr() %>">
-                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_addr();" id="addr_modify">수정</button>
+                     <div class="form-group" style = "font-family: 'GmarketSansMedium';">
+                        <label style = "font-family: 'GmarketSansMedium';">주소</label>
+                        <input style = "margin-bottom: 16px; margin-left: 30px; font-family: 'GmarketSansMedium';" type="text" id="addr" placeholder="<%= info.getP_addr() %>">
+                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left; font-family: 'GmarketSansMedium';" onclick="click_addr();" id="addr_modify">수정</button>
                      </div>
                      
-                     <div class="form-group">
-                        <label>전화번호</label>
-                        <input style = "margin-bottom: 16px; margin-left: 1px;" type="text" id="phone" placeholder="<%= info.getP_phone() %>">
-                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left;" onclick="click_phone();" id="phone_modify">수정</button>
+                     <div class="form-group" style = "font-family: 'GmarketSansMedium';">
+                        <label style = "font-family: 'GmarketSansMedium';">전화번호</label>
+                        <input style = "margin-bottom: 16px; margin-left: 1px; font-family: 'GmarketSansMedium';" type="text" id="phone" placeholder="<%= info.getP_phone() %>">
+                        <button style = "height: 37px; width: 63px; font-size: 11px; text-align: left; font-family: 'GmarketSansMedium';" onclick="click_phone();" id="phone_modify">수정</button>
                      </div>
                </div>
          </div>
       </div>
-      <div align="center" class="form-panel one" style = "position: relative; top: -40px; z-index: 1; border-radius: 4px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); margin:0 auto; width:max-content; padding-top: 10px;">
+      <div align="center" class="form-panel one" style = "position: relative; top: -40px; z-index: 1; border-radius: 4px; box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); margin:0 auto; width:max-content; padding-top: 10px; font-family: 'GmarketSansMedium';">
                <div class="form-header">
-                  <h1 style = "text-align:center; font-sizse: 24px;">아이 정보</h1>
+                  <h1 style = "text-align:center; font-sizse: 24px; font-family: 'GmarketSansMedium';">아이 정보</h1>
                </div>
-            <h3 style = "text-align:center; margin-bottom: 10px;">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
+            <h3 style = "text-align:center; margin-bottom: 10px; font-family: 'GmarketSansMedium';">- 아이 정보 등록, 수정은 어플에서만 가능합니다.</h3><br>
                <% if(info.getC_photo() != null){
             	   MemberDAO dao = new MemberDAO();
 				   ArrayList<ChildListDTO> list = dao.child_list(info.getP_id());
 				   for(int i=list.size()-1; i>=0; i--){%>
-				   <div align="center" style="display:inline-block;">
+				   <div align="center" style="display:inline-block; font-family: 'GmarketSansMedium';">
 				   <table>
-				   	<tr><td width="300px" colspan="2"><img style = "display : block;margin : 0 auto; width: 200px;" src="child/<%= list.get(i).getC_photo() %>"></td></tr>
-					<tr><td width="150px" style="text-align:right;"><h2>이름: </h2></td><td><h2><%= list.get(i).getC_name() %></h2></td></tr>
-					<tr><td width="150px" style="text-align:right;"><h2>나이: </h2></td><td><h2><%= list.get(i).getC_age() %></h2></td></tr>
-					<tr><td width="150px" style="text-align:right;"><h2>성별: </h2></td><td><h2><%= list.get(i).getC_sex() %></h2></td></tr>
+				   	<tr><td width="300px" colspan="2"><img style = "display : block;margin : 0 auto; width: 200px; font-family: 'GmarketSansMedium';" src="child/<%= list.get(i).getC_photo() %>"></td></tr>
+					<tr><td width="150px" style="text-align:right; font-family: 'GmarketSansMedium';"><h2>이름: </h2></td><td><h2><%= list.get(i).getC_name() %></h2></td></tr>
+					<tr><td width="150px" style="text-align:right; font-family: 'GmarketSansMedium';"><h2>나이: </h2></td><td><h2><%= list.get(i).getC_age() %></h2></td></tr>
+					<tr><td width="150px" style="text-align:right; font-family: 'GmarketSansMedium';"><h2>성별: </h2></td><td><h2><%= list.get(i).getC_sex() %></h2></td></tr>
 					</table>
 					</div>
 					<%}}} %>
             </div>
 </div>
 <div class="wall" style="height:10px; background:white"></div>
-<div class="inner">
-         <section style = "background:#3D3D3D; text-align:center; color: rgb(245, 245, 220);" class="about">
-            <h4 class="major">스마트 미디어 인재 개발원</h4>
-            <p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
-            <p>Team Well-Deep.</p>
-            <p>광주 CGI센터 교육실4
-               광주 송암로60.</p>
-         </section></div> 
+<div class="inner"
+		style="background: #3D3D3D; color: rgb(245, 245, 220); padding-top: 10px; padding-bottom: 10px;">
+		<section style="text-align: center; font-family: 'GmarketSansMedium';">
+			<h4 class="major" style="color: #FFC000; ">스마트 미디어 인재 개발원</h4>
+			<p>딥러닝 기반 에너지 빅데이터 응용 sw전문가 과정.</p>
+			<p>광주 CGI센터 교육실4 광주 송암로60.</p>
+			<p>Design by Team Well-Deep.</p>
+		</section>
+	</div>
             
       
 <script type="text/javascript" src="js/jquery.min.js"></script>
